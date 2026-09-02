@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2420af10ca2189544b73729be4226b87
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 243406
+  packageName: Decorative Lights Asset (C#)
+  packageVersion: 1.0
+  assetPath: Assets/Decorative Lights C#/HDRPDefaultResources/HDRenderPipelineAsset.asset
+  uploadId: 553487

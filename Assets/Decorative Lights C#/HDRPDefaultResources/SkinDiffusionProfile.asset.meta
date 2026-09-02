@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ad2d900fe22b559439230af915d42d3d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 243406
+  packageName: Decorative Lights Asset (C#)
+  packageVersion: 1.0
+  assetPath: Assets/Decorative Lights C#/HDRPDefaultResources/SkinDiffusionProfile.asset
+  uploadId: 553487

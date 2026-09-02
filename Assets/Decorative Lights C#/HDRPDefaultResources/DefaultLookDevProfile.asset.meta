@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b51a095e9bc80ae489bbe4a8ad83e9cd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 243406
+  packageName: Decorative Lights Asset (C#)
+  packageVersion: 1.0
+  assetPath: Assets/Decorative Lights C#/HDRPDefaultResources/DefaultLookDevProfile.asset
+  uploadId: 553487
