@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 56149098}
   - component: {fileID: 56149097}
   - component: {fileID: 56149101}
+  - component: {fileID: 56149102}
   m_Layer: 0
   m_Name: BLUEcube
   m_TagString: Untagged
@@ -244,7 +245,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2a2ef813d784b058d4b67fdea5f9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BLUEdemoScript
-  blueCube: {fileID: 1315671676}
+  moveSpeed: 3
+  moveInput: {x: 0, y: 0}
+  moveAction: {fileID: 0}
+--- !u!114 &56149102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56149096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: fedb0e19c0b534436af94ec81fd9c8a8, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 28193618-6ed8-48fe-a9b9-2fce0c705dfb
+    m_ActionName: 'PLAYER/Walking[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: PLAYER
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &605601738
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +421,8 @@ GameObject:
   - component: {fileID: 1315671679}
   - component: {fileID: 1315671678}
   - component: {fileID: 1315671677}
+  - component: {fileID: 1315671682}
+  - component: {fileID: 1315671681}
   m_Layer: 0
   m_Name: REDcube
   m_TagString: Untagged
@@ -484,6 +523,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1315671681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315671676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2a2ef813d784b058d4b67fdea5f9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BLUEdemoScript
+  moveSpeed: 0
+  moveInput: {x: 0, y: 0}
+  moveAction: {fileID: 0}
+--- !u!114 &1315671682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315671676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: fedb0e19c0b534436af94ec81fd9c8a8, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 28193618-6ed8-48fe-a9b9-2fce0c705dfb
+    m_ActionName: 'PLAYER/Walking[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: PLAYER
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1395237301
 GameObject:
   m_ObjectHideFlags: 0
