@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 172770185}
   - component: {fileID: 172770184}
   m_Layer: 5
-  m_Name: Yanqi Dialogue
+  m_Name: YQ Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,7 +860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogueBox: {fileID: 1447914357}
   dialogueText: {fileID: 267721016}
-  words: 'Zaisi:
+  words: 'ZZS:
 
     How was your day?'
 --- !u!65 &542085025
@@ -1248,9 +1248,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogueBox: {fileID: 1215802733}
   dialogueText: {fileID: 284956511}
-  words: 'Yanqi:
+  words: 'XYQ:
 
-    Hi Wenxin!'
+    Hi!'
 --- !u!65 &858896794
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2247,7 +2247,7 @@ GameObject:
   - component: {fileID: 1498918520}
   - component: {fileID: 1498918519}
   m_Layer: 5
-  m_Name: Zaisi Dialogue
+  m_Name: ZS Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
