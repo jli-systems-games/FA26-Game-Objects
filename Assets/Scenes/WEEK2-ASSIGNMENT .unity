@@ -248,6 +248,9 @@ MonoBehaviour:
   moveSpeed: 3
   moveInput: {x: 0, y: 0}
   moveAction: {fileID: 619168474871904541, guid: 6042b9629d37f4a74aa970c976f71ab6, type: 3}
+  renderer: {fileID: 0}
+  myMaterial1: {fileID: 2100000, guid: bbe667ec76f6b43a9a0029eb1ef81cfa, type: 2}
+  myMaterial2: {fileID: 2100000, guid: b5f76d5b8c1e74a3086b48477a9c40e6, type: 2}
 --- !u!114 &789944762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +281,19 @@ MonoBehaviour:
     m_ActionId: 16a1bf3b-1ab1-443b-aae2-39f1e83ad0ff
     m_ActionName: 'CUBE/MOVE[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 5632fc40af3d24addbd67a4af314dd80, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5b0e7c81-378d-4375-95aa-b1ff88212d6f
     m_ActionName: 'CUBE/MAT[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -473,7 +488,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 46
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
