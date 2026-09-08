@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "Cube Movement",
+    "name": "CUBE",
     "maps": [
         {
             "name": "CUBE",
@@ -14,6 +14,16 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "MAT",
+                    "type": "Button",
+                    "id": "5b0e7c81-378d-4375-95aa-b1ff88212d6f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
                     "priority": 0
                 }
             ],
@@ -32,7 +42,7 @@
                 {
                     "name": "up",
                     "id": "2b6338b9-50c7-485f-8729-1d8b6a0de479",
-                    "path": "",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -43,7 +53,7 @@
                 {
                     "name": "down",
                     "id": "9d5fbc0e-5d3c-4089-ab78-35f3a28735ce",
-                    "path": "",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -54,7 +64,7 @@
                 {
                     "name": "left",
                     "id": "91cbb74a-3d3a-44c1-8d17-19807f53dbe2",
-                    "path": "",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -65,13 +75,24 @@
                 {
                     "name": "right",
                     "id": "2d11499d-28fa-40d8-a25d-4f658a5b6778",
-                    "path": "",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "MOVE",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "f7abf37a-73f7-47fc-b5bc-0b5863dacf59",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MAT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
