@@ -247,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BLUEdemoScript
   moveSpeed: 3
   moveInput: {x: 0, y: 0}
-  moveAction: {fileID: 0}
+  moveAction: {fileID: 402754090707061330, guid: fedb0e19c0b534436af94ec81fd9c8a8, type: 3}
 --- !u!114 &56149102
 MonoBehaviour:
   m_ObjectHideFlags: 0
