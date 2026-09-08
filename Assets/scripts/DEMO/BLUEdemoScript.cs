@@ -26,8 +26,8 @@ public class BLUEdemoScript : MonoBehaviour
     void Update()
     {
 
-moveInput = moveAction.action.ReadValue<Vector2>(); //reads the input values from the input action reference and stores them in the moveInput variable
-transform.position += new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed * Time.deltaTime; //moves the object in the direction of the input values, multiplied by the move speed and delta time to make it frame rate independent
+        moveInput = moveAction.action.ReadValue<Vector2>(); //reads the input values from the input action reference and stores them in the moveInput variable
+        transform.position += new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed * Time.deltaTime; //moves the object in the direction of the input values, multiplied by the move speed and delta time to make it frame rate independent
 
         transform.position += new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed * Time.deltaTime; //moves the object in the direction of the input values, multiplied by the move speed and delta time to make it frame rate independent
 //INPUT MOVEMENT CODE
