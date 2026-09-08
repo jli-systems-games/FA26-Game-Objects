@@ -87,7 +87,7 @@
                     "name": "",
                     "id": "f7abf37a-73f7-47fc-b5bc-0b5863dacf59",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "MAT",
