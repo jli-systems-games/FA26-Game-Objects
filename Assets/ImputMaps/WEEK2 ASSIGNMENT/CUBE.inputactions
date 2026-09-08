@@ -15,16 +15,6 @@
                     "interactions": "",
                     "initialStateCheck": true,
                     "priority": 0
-                },
-                {
-                    "name": "MAT",
-                    "type": "Button",
-                    "id": "5b0e7c81-378d-4375-95aa-b1ff88212d6f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
                 }
             ],
             "bindings": [
@@ -82,17 +72,6 @@
                     "action": "MOVE",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "f7abf37a-73f7-47fc-b5bc-0b5863dacf59",
-                    "path": "<Keyboard>/e",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MAT",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }

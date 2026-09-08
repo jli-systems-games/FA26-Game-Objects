@@ -11,12 +11,12 @@ public class CUBE : MonoBehaviour
     public Material myMaterial1; 
     public Material myMaterial2;
     
+    public bool defaultActive = true; //default state of the cube is active 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        renderer = GetComponent<MeshRenderer>(); 
-
+        renderer = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -28,21 +28,20 @@ public class CUBE : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) 
         {
             Debug.Log("E key was pressed"); 
-           // ChangeColor();
-           renderer.material = myMaterial2;
+            //renderer.material = myMaterial2;
+
+            if (defaultActive)
+            {
+                renderer.material = myMaterial2; 
+                defaultActive = false; //set the defaultActive to false so that the next time the E key is pressed, it will switch back to the original material
+            }
+            else
+            {
+                renderer.material = myMaterial1; 
+                defaultActive = true; //set the defaultActive to true so that the next time the E key is pressed, it will switch back to the original material
+            }
         }
 
-    }
-    public void ChangeColor() 
-    {
-        if (renderer.material == myMaterial1)
-        {
-            renderer.material = myMaterial2;
-        }
-        else
-        {
-            renderer.material = myMaterial1;
-        }
     }
     
 }

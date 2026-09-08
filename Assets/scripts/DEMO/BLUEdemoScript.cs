@@ -12,7 +12,7 @@ public class BLUEdemoScript : MonoBehaviour
     
     public float moveSpeed; //variable will control movement speed of my object
     
-    public Vector2 moveInput; //variable to store the input values for movement
+    private Vector2 moveInput; //variable to store the input values for movement
     public InputActionReference moveAction; //variable to store the input action reference for movement
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,8 +27,6 @@ public class BLUEdemoScript : MonoBehaviour
     {
 
         moveInput = moveAction.action.ReadValue<Vector2>(); //reads the input values from the input action reference and stores them in the moveInput variable
-        transform.position += new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed * Time.deltaTime; //moves the object in the direction of the input values, multiplied by the move speed and delta time to make it frame rate independent
-
         transform.position += new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed * Time.deltaTime; //moves the object in the direction of the input values, multiplied by the move speed and delta time to make it frame rate independent
 //INPUT MOVEMENT CODE
         // horizontalMove = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
