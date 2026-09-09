@@ -1,39 +1,25 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Scripting.APIUpdating;
 
-public class firstScript : MonoBehaviour
+public class SimpleMovement3D : MonoBehaviour
 {
-   //public GameObject redCube;
-   public float moveSpeed;
-  // public float verticalMove;
-   //public float horizontalMove;
-   
-   public InputActionReference moveAction;
+    public float moveSpeed = 5f; 
 
-    public Vector2 moveInput;
-
-
-   void Start()
-   {
-
- 
-    moveInput = moveAction.action.ReadValue<Vector2>();
-
-    transform.position += new Vector3(moveInput.x, 0, moveInput.y) *moveSpeed * Time.deltaTime;
-   }
+    public float rotationSpeed = 720f; 
 
     void Update()
     {
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
 
+        Vector3 moveDirection = new Vector3(moveX, 0f, moveZ).normalized;
 
-        
-       // horizontalMove = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; old system
-        //verticalMove = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        //transform.position += new Vector3(horizontalMove, 0, verticalMove);
+        if (moveDirection != Vector3.zero)
+        {
+            transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
 
-        //transform.position = Vector3.Lerp(transform.position, redCube.transform.position, moveSpeed * Time.deltaTime); move to cube
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
     }
-
 }
