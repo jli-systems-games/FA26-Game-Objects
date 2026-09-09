@@ -1,5 +1,6 @@
 using UnityEngine;
 public class COLLISIONdemo : MonoBehaviour
+
 {
     public Transform startPosLocation;
     public GameObject playerObj; 
