@@ -9,7 +9,9 @@ public class CollectCubes : MonoBehaviour
     //btw just ignore my comments because im just taking notes from the tutorial
     public UnityEngine.GameObject finalCube;
     //i added this because i want something to appear after the player finish the collection as an output but idk what to do with it yet
-
+    public AudioClip hitSound;
+    public AudioClip finishSound;
+    private AudioSource audioSource;
 
 
 
@@ -17,7 +19,7 @@ public class CollectCubes : MonoBehaviour
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-        
+            audioSource = GetComponent<AudioSource>();
             if (finalCube != null)
             //if the finalcube is not null(if i have a final cube, hide it)
             {
@@ -31,6 +33,11 @@ public class CollectCubes : MonoBehaviour
             if (collision.gameObject.CompareTag("Target"))
             //if the one we collide with is one of the target tagged cubes
             {
+             if (hitSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(hitSound);
+                //wait why do i hear nothing 
+            }
              Destroy(collision.gameObject);
              //kaimetsuuuuu
              collectedCount++;
@@ -49,6 +56,11 @@ public class CollectCubes : MonoBehaviour
             if (finalCube != null)
             {
             finalCube.SetActive(true);
+            }
+            if (finishSound != null && audioSource != null)
+            {
+            audioSource.PlayOneShot(finishSound);
+            //toriwa nande sorawo toberuno nekowa nande zutto neteruno kimiwa donna kyouwo ikiruno zenbu zenbu zenbu
             }
         }
 
