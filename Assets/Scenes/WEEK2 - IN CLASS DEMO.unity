@@ -245,9 +245,10 @@ GameObject:
   - component: {fileID: 56149097}
   - component: {fileID: 56149101}
   - component: {fileID: 56149102}
+  - component: {fileID: 56149103}
   m_Layer: 0
   m_Name: BLUEcube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,6 +394,64 @@ MonoBehaviour:
   m_DefaultActionMap: PLAYER
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!54 &56149103
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56149096}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!1 &232829055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232829056}
+  m_Layer: 0
+  m_Name: START POS BLUE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &232829056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232829055}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.39, y: 0.5, z: -0.09471}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332409647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1149,7 @@ GameObject:
   - component: {fileID: 1750761413}
   - component: {fileID: 1750761412}
   - component: {fileID: 1750761411}
+  - component: {fileID: 1750761415}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1190,6 +1250,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 793553901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1750761415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750761410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e164a6fa40264741a619c78dcbae052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::COLLISIONdemo
+  startPosLocation: {fileID: 232829056}
+  playerObj: {fileID: 56149096}
 --- !u!1 &2124085952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,6 +1382,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1395237304}
   - {fileID: 605601741}
+  - {fileID: 232829056}
   - {fileID: 56149100}
   - {fileID: 1315671680}
   - {fileID: 793553901}
