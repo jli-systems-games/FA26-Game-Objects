@@ -1,0 +1,148 @@
+{
+    "doors": [
+        {
+            "name": "ENTRY_DOOR",
+            "measuredOpeningWidth": 0.8500001430511475,
+            "doorWidth": 0.8100001215934753,
+            "hingeWorldPosition": [
+                2.450000047683716,
+                0.0,
+                -4.074999809265137
+            ],
+            "leafWorldPosition": [
+                2.450000047683716,
+                1.0399999618530274,
+                -3.669999837875366
+            ],
+            "doorDimensions": [
+                0.8100001215934753,
+                2.049999952316284,
+                0.03999999910593033
+            ],
+            "finalYRotation": 0.0,
+            "overlaps": [
+                "Apartment/ExteriorWalls/SERVICE_WEST | intersectionSize=(0.0200, 2.0500, 0.5950) | may be intentional hinge/jamb seating",
+                "Apartment/InteriorWalls/BATH_TOP_LEFT | intersectionSize=(0.0100, 2.0500, 0.1000) | may be intentional hinge/jamb seating"
+            ]
+        },
+        {
+            "name": "LEFT_CLOSET_DOOR",
+            "measuredOpeningWidth": 0.8100001811981201,
+            "doorWidth": 0.770000159740448,
+            "hingeWorldPosition": [
+                2.4549999237060549,
+                0.0,
+                -3.440000057220459
+            ],
+            "leafWorldPosition": [
+                2.069999933242798,
+                1.0399999618530274,
+                -3.440000057220459
+            ],
+            "doorDimensions": [
+                0.770000159740448,
+                2.049999952316284,
+                0.03999999910593033
+            ],
+            "finalYRotation": 270.0,
+            "overlaps": []
+        },
+        {
+            "name": "BATHROOM_DOOR",
+            "measuredOpeningWidth": 0.9690001010894775,
+            "doorWidth": 0.9290000796318054,
+            "hingeWorldPosition": [
+                3.259999990463257,
+                0.0,
+                -3.440000057220459
+            ],
+            "leafWorldPosition": [
+                3.259999990463257,
+                1.0399999618530274,
+                -3.9045000076293947
+            ],
+            "doorDimensions": [
+                0.9290000796318054,
+                2.049999952316284,
+                0.03999999910593033
+            ],
+            "finalYRotation": 180.0,
+            "overlaps": [
+                "Apartment/InteriorWalls/UPPER_LEFT_RIGHT | intersectionSize=(0.0300, 2.0500, 0.1000) | may be intentional hinge/jamb seating",
+                "Apartment/InteriorWalls/BATH_TOP_LEFT | intersectionSize=(0.0200, 2.0500, 0.1000) | may be intentional hinge/jamb seating"
+            ]
+        },
+        {
+            "name": "WD_CLOSET_DOOR",
+            "measuredOpeningWidth": 0.8099997043609619,
+            "doorWidth": 0.7699996829032898,
+            "hingeWorldPosition": [
+                4.679999828338623,
+                0.0,
+                -3.43999981880188
+            ],
+            "leafWorldPosition": [
+                4.295000076293945,
+                1.0399999618530274,
+                -3.43999981880188
+            ],
+            "doorDimensions": [
+                0.7699996829032898,
+                2.049999952316284,
+                0.03999999910593033
+            ],
+            "finalYRotation": 270.0,
+            "overlaps": [
+                "Apartment/InteriorWalls/CENTER_BRIDGE | intersectionSize=(0.4510, 2.0500, 0.0200) | may be intentional hinge/jamb seating"
+            ]
+        },
+        {
+            "name": "RIGHT_CLOSET_DOOR_UPPER",
+            "measuredOpeningWidth": 1.0299999713897706,
+            "doorWidth": 0.4949999749660492,
+            "hingeWorldPosition": [
+                5.552999973297119,
+                0.0,
+                -3.759999990463257
+            ],
+            "leafWorldPosition": [
+                5.80049991607666,
+                1.0399999618530274,
+                -3.759999990463257
+            ],
+            "doorDimensions": [
+                0.4949999749660492,
+                2.049999952316284,
+                0.03999999910593033
+            ],
+            "finalYRotation": 90.0,
+            "overlaps": [
+                "Apartment/InteriorWalls/ALCOVE_ENTRY_STUB | intersectionSize=(0.0330, 2.0500, 0.0200) | may be intentional hinge/jamb seating"
+            ]
+        },
+        {
+            "name": "RIGHT_CLOSET_DOOR_LOWER",
+            "measuredOpeningWidth": 1.0299999713897706,
+            "doorWidth": 0.4949999749660492,
+            "hingeWorldPosition": [
+                5.552999973297119,
+                0.0,
+                -4.789999961853027
+            ],
+            "leafWorldPosition": [
+                5.80049991607666,
+                1.0399999618530274,
+                -4.789999961853027
+            ],
+            "doorDimensions": [
+                0.4949999749660492,
+                2.049999952316284,
+                0.03999999910593033
+            ],
+            "finalYRotation": 90.0,
+            "overlaps": [
+                "Apartment/ExteriorWalls/ALCOVE_LEFT_RETURN | intersectionSize=(0.0670, 2.0500, 0.0200) | may be intentional hinge/jamb seating"
+            ]
+        }
+    ]
+}
