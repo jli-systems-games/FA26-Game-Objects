@@ -17,7 +17,8 @@ public class SphereBehavior : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("I am deleted.");
-        if (collision.gameObject.tag == "Player") 
+
+        if (collision.gameObject.name == "Player") 
         {
             
             //gameObject.SetActive(false);
