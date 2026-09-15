@@ -22,6 +22,7 @@ public class SpriteBehavior : MonoBehaviour
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
         if (collision.gameObject.tag == "Player")
+        //if (collision.gameObject.name == "Player")
         {
             //gameObject.SetActive(false);
             Destroy(gameObject, 3f);
