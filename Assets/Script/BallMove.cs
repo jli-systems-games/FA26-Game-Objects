@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class BallMove : MonoBehaviour
 {
     public Rigidbody rb;
-    public float ForceSpeed = 10f;
+    public float ForceSpeed = 25f;
     public float moveSpeed = 5f;
     public Vector2 moveInput;
     public InputActionReference MoveAction;

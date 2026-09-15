@@ -183,12 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0573156280fd241e2a3fd570e20eec49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::INclassScript
-  rb: {fileID: 0}
-  ForceSpeed: 8
-  moveSpeed: 2
-  moveInput: {x: 0, y: 0}
-  MoveAction: {fileID: 0}
-  hasLaunched: 0
 --- !u!135 &38535589
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -807,12 +801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0573156280fd241e2a3fd570e20eec49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::INclassScript
-  rb: {fileID: 0}
-  ForceSpeed: 8
-  moveSpeed: 2
-  moveInput: {x: 0, y: 0}
-  MoveAction: {fileID: -2590105121589429106, guid: f08edd7fd622346dcbcab01364777e56, type: 3}
-  hasLaunched: 0
 --- !u!114 &246824351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,12 +1085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0573156280fd241e2a3fd570e20eec49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::INclassScript
-  rb: {fileID: 0}
-  ForceSpeed: 8
-  moveSpeed: 2
-  moveInput: {x: 0, y: 0}
-  MoveAction: {fileID: -2590105121589429106, guid: f08edd7fd622346dcbcab01364777e56, type: 3}
-  hasLaunched: 0
 --- !u!114 &271426260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1914,8 +1896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallMove
   rb: {fileID: 0}
-  ForceSpeed: 8
-  moveSpeed: 10
+  ForceSpeed: 25
+  moveSpeed: 5
   moveInput: {x: 0, y: 0}
   MoveAction: {fileID: -2590105121589429106, guid: f08edd7fd622346dcbcab01364777e56, type: 3}
 --- !u!1 &527742859
