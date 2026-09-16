@@ -25,7 +25,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void MovePlayer()
     {
         Vector3 rbMovement = new Vector3(move.x, 0, move.y);
-        rbMovement = rbMovement.normalized * force * Time.deltaTime;
-        rb.MovePosition(transform.position + rbMovement);
+        rb.AddForce(rbMovement * force);
     }
 }
