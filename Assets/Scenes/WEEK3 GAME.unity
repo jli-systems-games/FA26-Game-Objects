@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3869c417cbd448afa6613c23a1700ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SPHERE
+  sphereSpawn: {fileID: 227967315}
+  spherePrefab: {fileID: 37021433}
 --- !u!1 &186288716
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +611,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1188,11 +1190,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3598687586936059299, guid: cdc5be5148ee046578913fcbda0a41ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.55851
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 3598687586936059299, guid: cdc5be5148ee046578913fcbda0a41ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03538
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: 3598687586936059299, guid: cdc5be5148ee046578913fcbda0a41ba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1226,9 +1228,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7123252468892746484, guid: cdc5be5148ee046578913fcbda0a41ba, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8533970160062017468, guid: cdc5be5148ee046578913fcbda0a41ba, type: 3}
       propertyPath: m_Name
       value: gameOBJECT
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533970160062017468, guid: cdc5be5148ee046578913fcbda0a41ba, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
