@@ -4,15 +4,17 @@ public class PrizeFinishScript : MonoBehaviour
 {
     public Rigidbody prizeBody;
     public GameObject prizeText;
+    public ParticleSystem prizeConfetti;
 
     private bool finished = false;
 
     private void Start()
     {
         if (prizeText != null)
-        {
             prizeText.SetActive(false);
-        }
+
+        if (prizeConfetti != null)
+            prizeConfetti.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +23,12 @@ public class PrizeFinishScript : MonoBehaviour
             return;
 
         finished = true;
-        prizeText.SetActive(true);
+
+        if (prizeText != null)
+            prizeText.SetActive(true);
+
+        if (prizeConfetti != null)
+            prizeConfetti.Play();
 
         Debug.Log("PRIZE DISPENSED!");
     }
