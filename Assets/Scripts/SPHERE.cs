@@ -4,6 +4,7 @@ public class SphereSPAWN : MonoBehaviour
 {
     public Transform sphereSpawn;
     public GameObject spherePrefab;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,4 +19,4 @@ public class SphereSPAWN : MonoBehaviour
             Instantiate(spherePrefab, sphereSpawn.position, sphereSpawn.rotation);
         }
     }
-}
+} 
