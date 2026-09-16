@@ -3,14 +3,14 @@
     "name": "CUP",
     "maps": [
         {
-            "name": "SIDE INPUT",
-            "id": "290cf19c-8889-46da-a6c0-367f014926c2",
+            "name": "SIDE",
+            "id": "0d6e57eb-f0f3-4184-ba60-ec7a0c689814",
             "actions": [
                 {
-                    "name": "side",
+                    "name": "New action",
                     "type": "Value",
-                    "id": "17719840-aaa2-456d-92e3-9f55d181b620",
-                    "expectedControlType": "Vector2",
+                    "id": "1959529d-0a63-4dbd-94c5-56ac9fc87e28",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true,
@@ -20,34 +20,34 @@
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "37b55276-c248-4d14-a94c-0f506cb94799",
+                    "id": "0c276411-ebda-4972-bc8f-014304fd9ee1",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "side",
+                    "action": "New action",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "left",
-                    "id": "6ceb0041-6796-4241-8005-a6a5ef56124b",
+                    "id": "ab88a3e9-afc7-4db0-95ae-c0e40ee65483",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "side",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "ad59a47c-2152-479c-ada5-bd0607c3f0a9",
+                    "id": "440614b2-c63c-43e3-a4fc-8556ec976654",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "side",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
