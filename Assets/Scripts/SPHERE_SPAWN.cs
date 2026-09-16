@@ -5,7 +5,8 @@ public class SPHERE_SPAWN : MonoBehaviour
 
     public Transform sphereSpawn;
     public GameObject spherePrefab;
-    
+    public Camera mainCamera; 
+
     public float speed = 2.0f;
     public float distance = 3.0f;
     public Vector3 startPosition;
@@ -22,13 +23,17 @@ public class SPHERE_SPAWN : MonoBehaviour
     void Update()
     {
         float newX = startPosition.x + Mathf.Sin(Time.time * speed) * distance;
-        transform.position = new Vector3(newX, transform.position.y, transform.position.z);
-
-        timer += Time.deltaTime;
-        if (timer >= checkInterval)
+        
+        if(mainCamera.gameObject.activeInHierarchy)
         {
-            Instantiate(spherePrefab, sphereSpawn.position, sphereSpawn.rotation);
-            timer -= checkInterval;
+            transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+
+            timer += Time.deltaTime;
+            if (timer >= checkInterval)
+            {
+                Instantiate(spherePrefab, sphereSpawn.position, sphereSpawn.rotation);
+                timer -= checkInterval;
+            }
         }
     }
 }
