@@ -10,6 +10,7 @@ public class Sphere1 : MonoBehaviour
     private bool NoTotsugeki = false;
     private bool Totsugeki = false;
     private bool stopped = false;
+    public GameObject startText;
     // public Vector3 moveDirection = Vector3.right;
     void Awake()
     {
@@ -32,6 +33,10 @@ public class Sphere1 : MonoBehaviour
         {
             Totsugeki = true;
             NoTotsugeki = true;
+            if (startText !=null)
+            {
+                startText.SetActive(false);
+            }
         }
     }
 
