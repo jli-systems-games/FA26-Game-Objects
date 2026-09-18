@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class MenuSwitch : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Menu Panels")]
+    public GameObject mainMenuPanel;
+    public GameObject randomizerPanel;
+
+    public void OpenRandomizer()
     {
-        
+        if (mainMenuPanel != null && randomizerPanel != null)
+        {
+            mainMenuPanel.SetActive(false);
+            randomizerPanel.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenMainMenu()
     {
-        
+        if (mainMenuPanel != null && randomizerPanel != null)
+        {
+            mainMenuPanel.SetActive(true);
+            randomizerPanel.SetActive(false);
+        }
     }
 }

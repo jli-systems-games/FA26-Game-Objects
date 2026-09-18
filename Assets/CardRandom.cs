@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CardRandom : MonoBehaviour
+public class CardRandomizer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("UI Reference")]
+    public Image cardDisplayImage; 
 
-    // Update is called once per frame
-    void Update()
+    [Header("Card Collection")]
+    public Sprite[] tarotCards; 
+
+    public void DisplayRandomCard()
     {
-        
+
+        int randomIndex = Random.Range(0, tarotCards.Length);
+
+        cardDisplayImage.sprite = tarotCards[randomIndex];
     }
 }
