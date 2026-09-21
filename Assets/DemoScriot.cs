@@ -1,6 +1,5 @@
 using UnityEngine;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Collections;
 
 public class LoopExample: MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class LoopExample: MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        greenCubes = GameObject.FindObjectsWithTag("green");
+        greenCubes = GameObject.FindGameObjectsWithTag("green");
 
         for (int i= 0; i >= timer; i++)
         {
@@ -37,7 +36,7 @@ public class LoopExample: MonoBehaviour
         }
     }
 
-    public IEnumerator()
+    public IEnumerator TimerRoutine()
     {
         timer -= 1;
         yield return new WaitForSeconds(3f);
