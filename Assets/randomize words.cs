@@ -1,8 +1,11 @@
+
 using TMPro;
+
 using UnityEngine;
 
 public class randomizewords : MonoBehaviour
 {
+
     public TMP_Text words;
     public string[] AltTitles = new string[6];
     public string newTitle;
@@ -12,5 +15,6 @@ public class randomizewords : MonoBehaviour
     {
         newTitle = AltTitles[Random.Range(0, AltTitles.Length)];
         words.text = newTitle;
+
     }
 }
