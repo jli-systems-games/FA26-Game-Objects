@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwap : MonoBehaviour
 {
+    public Animator whateverAnim;
+    public float animSpeed;
  
     //SINGLETON EXAMPLE
     public static SceneSwap scriptInstance;//Step 1: Create a static variable for your script that you don't want destroyed on Scene switch.
@@ -30,6 +32,7 @@ public class SceneSwap : MonoBehaviour
     void Start()
     {
         scriptInstance = GetComponent<SceneSwap>();
+        whateverAnim.speed = animSpeed;
     }
 
 
