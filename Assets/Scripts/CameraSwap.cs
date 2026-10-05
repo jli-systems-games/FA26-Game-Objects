@@ -22,6 +22,7 @@ public class CameraSwap : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("I Have Been Hit");
+
         currentCamera.SetActive(false);
         switchCamera.SetActive(true);
         currentCamera = switchCamera;

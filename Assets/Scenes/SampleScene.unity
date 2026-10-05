@@ -1487,7 +1487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 581.11993, y: -34}
+  m_AnchoredPosition: {x: 581.11993, y: 12}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132251041
@@ -1539,8 +1539,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2163,6 +2163,7 @@ GameObject:
   - component: {fileID: 157815964}
   - component: {fileID: 157815963}
   - component: {fileID: 157815962}
+  - component: {fileID: 157815965}
   m_Layer: 5
   m_Name: nextDesc(1)
   m_TagString: Untagged
@@ -2233,7 +2234,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 157815963}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 157815965}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &157815963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2272,6 +2285,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157815960}
   m_CullTransparentMesh: 1
+--- !u!114 &157815965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157815960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 817648053}
+  numbersList: 0
+  dialogueText:
+  - This graceful jar is simple in design, beautiful in execution, and prominently
+    signed Dave by its creator. Such a bold claim to authorship might not seem unusual
+    to us today. After all, the object shows incredible skill, and the potter should
+    be justly proud.
+  - "We should note, however, that this storage vessel was made by an enslaved Black
+    man at a ceramics manufactory in South Carolina in 1859. It was crafted during
+    a time when it was unlawful to teach enslaved workers to read and write. Dave
+    took risks to announce his identity as he practiced his art. \r\n"
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &163712600
 GameObject:
   m_ObjectHideFlags: 0
@@ -6177,7 +6217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.16666, y: -218}
+  m_AnchoredPosition: {x: 86.16667, y: -145.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &381258812
@@ -6252,7 +6292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 645.83325, y: -218}
+  m_AnchoredPosition: {x: 430.83337, y: -145.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388434649
@@ -7702,6 +7742,7 @@ GameObject:
   - component: {fileID: 464781868}
   - component: {fileID: 464781867}
   - component: {fileID: 464781866}
+  - component: {fileID: 464781869}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
@@ -7726,7 +7767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 670, y: -429}
+  m_AnchoredPosition: {x: 818, y: -505}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464781866
@@ -7773,13 +7814,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 464781869}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7823,6 +7864,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464781864}
   m_CullTransparentMesh: 1
+--- !u!114 &464781869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464781864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 132251041}
+  numbersList: 0
+  dialogueText:
+  - "When this wheel-shaped window was excavated at the site of Ma\u2019aridh II
+    in the Ctesiphon area, it was in pieces, indicating that it fell from a height.
+    It is decorated on only one side, with palmettes forming spokes that connect
+    an inner and an outer ring of beads."
+  - Based on round windows found at contemporary monuments in Syria, the decorated
+    side of the window may have faced outward. The occurrence of such windows at
+    Ctesiphon provides evidence of the exchange of artistic ideas between Mesopotamia
+    and the eastern Mediterranean.
+  - "The city of Ctesiphon was located on the east bank of the Tigris River, 20 miles
+    (32 km) south of modern Baghdad in Iraq. It flourished for more than 800 years
+    as the capital of the Parthians and the Sasanians, the last two dynasties to
+    rule the ancient Near East before the Islamic conquest in the seventh century.
+    Systematic excavations in the Ctesiphon area were undertaken by an expedition
+    in 1928\u201329 sponsored by the German Oriental Society (Deutsche Orient-Gesellschaft). "
+  - "The Metropolitan Museum of Art and the Staatliche Museen, Berlin, undertook
+    a joint expedition for one season in 1931\u201332. Several excavations were conducted,
+    including at the main palace (Taq-i Kisra), in a small fortified area south of
+    the palace at Tell Dheheb, at multiple houses at the mounds of Ma\u2019aridh,
+    and at additional houses at a small mound called Umm ez-Za\u2019tir."
+  - "Over the course of the excavations in the Ctesiphon area, six houses from a
+    series of small mounds called el Ma\u2019aridh were excavated. These houses follow
+    typical Sasanian design with a mix of square and elongated rooms. Ma\u2019aridh
+    II is a large house that is entered through a small entry way rather than directly
+    from the street. The house is divided into a utilitarian, or service, sector
+    on the eastern side of the building, and a monumental decorated space to the
+    west of the entryway. "
+  - The western rooms were decorated with pillars, a double horseshoe archway, and
+    stucco reliefs. A long barrel vaulted arched room, 19 meters in length, was probably
+    the most important room of the house. It was entered through a smaller room with
+    four pillars. This large house, with the excavated portion revealing more than
+    1800 square meters, represents an elite household.
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &465603334
 GameObject:
   m_ObjectHideFlags: 0
@@ -8444,6 +8535,7 @@ GameObject:
   - component: {fileID: 530972549}
   - component: {fileID: 530972548}
   - component: {fileID: 530972547}
+  - component: {fileID: 530972550}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
@@ -8514,7 +8606,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 530972548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 530972550}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &530972548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8553,6 +8657,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530972545}
   m_CullTransparentMesh: 1
+--- !u!114 &530972550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530972545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 1277862390}
+  numbersList: 0
+  dialogueText:
+  - At the sixth impressionist exhibition in the spring of 1881, Edgar Degas presented
+    the only sculpture that he would ever exhibit in public. The Little Dancer Aged
+    Fourteen, the title given by the artist, has become one of the most beloved works
+    of art, well known through the many bronze casts produced from this unique original
+    statuette, following the artist's death.
+  - "The sculpture was not so warmly received when she first appeared. The critics
+    protested almost unanimously that she was ugly, but had to acknowledge the work's
+    astonishing realism as well as its revolutionary nature. The mixed media of the
+    Little Dancer, basically a wax statuette dressed in real clothes, was very innovative,
+    most of all because she was considered a modern subject\u2014a student dancer
+    of the Paris Opera Ballet."
+  - "Marie van Goethem, the model for the figure, was the daughter of a Belgian tailor
+    and a laundress; her working\u2013class background was typical of the Paris Opera
+    school's ballerinas. These dancers were known as \"petits rats de l'op\xE9ra,\"
+    literally opera rats, presumably because of their scurrying around the opera
+    stage in tiny, fast\u2013moving steps. But the derogatory association of the
+    name with dirt and poverty was also intentional."
+  - "Young, pretty, and poor, the ballet students also were potential targets of
+    male \"protectors.\" Degas understood the predicament of the Little Dancer\u2014what
+    the contemporary reviewer Joris\u2013Karl Huysmans called her \"terrible reality.\"
+    The Little Dancer is a very poignant, deeply felt work of art in which a little
+    girl of fourteen, in spite of the difficult position in which she is placed,
+    both physically and psychologically, struggles for a measure of dignity: her
+    head is held high, though her arms and hands are uncomfortably stretched behind
+    her back."
+  - 'In the context of the evolution of sculpture, the Little Dancer is a groundbreaking
+    work of art. The liberating idea that any medium or technique necessary to convey
+    the desired effect is fair game may be traced back to this sculpture. '
+  - "Degas represented a working\u2013class subject, though not an everyday one,
+    with both realism and compassion, but without moralizing. In so doing, he captured
+    with brilliant simplicity the difficult tension between art and life."
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &540744064
 GameObject:
   m_ObjectHideFlags: 0
@@ -8702,6 +8856,7 @@ GameObject:
   - component: {fileID: 541422550}
   - component: {fileID: 541422549}
   - component: {fileID: 541422548}
+  - component: {fileID: 541422551}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
@@ -8772,7 +8927,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 541422549}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 541422551}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &541422549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8811,6 +8978,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541422546}
   m_CullTransparentMesh: 1
+--- !u!114 &541422551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541422546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 1918233633}
+  numbersList: 0
+  dialogueText:
+  - "Scrolls and spirals \u2013whether single or interlocking, or in combination
+    with hieroglyphs or floral motifs\u2013 already decorate the earliest types of
+    scarabs and are common throughout the first half of the second millennium B.C.
+    While their meaning and source of inspiration remains unknown, scroll designs
+    are also appealing to the eye."
+  - "A wide variety of combinations, some of which more complex than others, is found
+    on Egyptian scarabs of the Middle Kingdom and scrolls become particularly popular
+    during late Dynasty 12 and Dynasty 13 (ca. 1850\u20131640 B.C.). "
+  - "While these designs continue to appear on scarabs in the Second Intermediate
+    Period (ca. 1640\u20131550 B.C.) and on contemporary Canaanite imitations, details
+    in the composition or on the scarab\u2019s back or its legs allow the seal-amulet
+    to be more precisely dated.\r\n"
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &547391297
 GameObject:
   m_ObjectHideFlags: 0
@@ -9287,7 +9485,7 @@ GameObject:
   - component: {fileID: 593474922}
   - component: {fileID: 593474921}
   m_Layer: 5
-  m_Name: SPdescription
+  m_Name: LRdescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9361,8 +9559,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9897,8 +10095,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13994,8 +14192,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14812,7 +15010,7 @@ MonoBehaviour:
 
     Sculptor, French, 1834 - 1917
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -15034,7 +15232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 581.11993, y: -232}
+  m_AnchoredPosition: {x: 581.11993, y: -155}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &866053214
@@ -15086,8 +15284,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -17864,9 +18062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is where the discription will go
-
-'
+  m_text: No Further Description
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17893,8 +18089,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18327,6 +18523,7 @@ GameObject:
   - component: {fileID: 1082379789}
   - component: {fileID: 1082379788}
   - component: {fileID: 1082379787}
+  - component: {fileID: 1082379790}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
@@ -18397,7 +18594,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1082379788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1082379790}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1082379788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18436,6 +18645,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082379785}
   m_CullTransparentMesh: 1
+--- !u!114 &1082379790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082379785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 1561083371}
+  numbersList: 0
+  dialogueText:
+  - "Fragonard\u2019s brushwork is as much the subject of this painting as the young
+    woman. A flurry of rapid marks captures her blushing face.  \r\n"
+  - Bold, fluid strokes of unblended color define her dress, ribbons, and cushion.
+    Fragonard created the lace of her ruff (the frill around her neck) and the bodice
+    of her dress by dragging his brush handle through the paint while it was still
+    wet.
+  - "Young Girl Reading is part of the \u201Cfantasy portrait\u201D series, in which
+    Fragonard\u2019s friends and patrons are dressed in elaborate costumes. He supposedly
+    painted each portrait in an hour."
+  - ' Like the others in the series, the girl in this painting originally faced the
+    viewer, but Fragonard later repainted her absorbed in reading.'
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &1132285431
 GameObject:
   m_ObjectHideFlags: 0
@@ -19519,7 +19758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1169798973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20397,13 +20636,14 @@ GameObject:
   - component: {fileID: 1200701416}
   - component: {fileID: 1200701415}
   - component: {fileID: 1200701414}
+  - component: {fileID: 1200701417}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1200701413
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20467,7 +20707,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1200701415}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1200701417}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1200701415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20506,6 +20758,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200701412}
   m_CullTransparentMesh: 1
+--- !u!114 &1200701417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200701412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 1062290473}
+  numbersList: 0
+  dialogueText:
+  - No Further Discription
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &1208983789
 GameObject:
   m_ObjectHideFlags: 0
@@ -21736,7 +22008,7 @@ GameObject:
   - component: {fileID: 1277862391}
   - component: {fileID: 1277862390}
   m_Layer: 5
-  m_Name: MFdescription
+  m_Name: LDdescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21810,8 +22082,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -21849,7 +22121,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -122.07596, y: 0, z: -197.17393, w: 0}
+  m_margin: {x: -122.07596, y: 0, z: -385.4809, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -22368,7 +22640,7 @@ MonoBehaviour:
 
     Sasanian
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -22817,6 +23089,7 @@ GameObject:
   - component: {fileID: 1309415148}
   - component: {fileID: 1309415147}
   - component: {fileID: 1309415146}
+  - component: {fileID: 1309415149}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
@@ -22887,7 +23160,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1309415147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1309415149}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1309415147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22926,6 +23211,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309415144}
   m_CullTransparentMesh: 1
+--- !u!114 &1309415149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309415144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 1592116291}
+  numbersList: 0
+  dialogueText:
+  - "The text at the top of this print states in German: \u201COn 1 May 1513 was
+    brought from India to the great and powerful king Emanuel of Portugal to Lisbon
+    such a live animal called a rhinoceros.\u201D As we can now tell from this intricately
+    carved woodcut, the artist Albrecht D\xFCrer never actually saw the animal."
+  - " For one thing, his rhinoceros wears an amusing suit of chain mail and armor,
+    like a medieval knight. The animal also has reptilian-like scales on its legs.
+    Despite these inaccuracies, D\xFCrer\u2019s woodcut was accepted as the standard
+    image of a rhinoceros until the 18th century. "
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &1313472115
 GameObject:
   m_ObjectHideFlags: 0
@@ -23890,6 +24202,7 @@ GameObject:
   - component: {fileID: 1382798430}
   - component: {fileID: 1382798429}
   - component: {fileID: 1382798428}
+  - component: {fileID: 1382798431}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
@@ -23960,7 +24273,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1382798429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1382798431}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1382798429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23999,6 +24324,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382798426}
   m_CullTransparentMesh: 1
+--- !u!114 &1382798431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382798426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 593474921}
+  numbersList: 0
+  dialogueText:
+  - Miniature paintings in watercolor on ivory, of a single eye, were introduced
+    first in France and quickly became a fad in Great Britain in the late eighteenth-century.
+    This art form later transferred, in a modest way, to the United States by the
+    early nineteenth-century.
+  - "They came to be known as \u201Clover\u2019s eyes\u201D \u2013- intensely private
+    objects, usually of the giver\u2019s eye presented to a loved one. The disembodied
+    eye allowed the viewer to gaze upon the object of their affection, known only
+    to them, and then, actively, the gaze was returned. Eye miniatures also served
+    as mourning jewelry for lost loved ones.\r\n"
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &1387535972
 GameObject:
   m_ObjectHideFlags: 0
@@ -24784,7 +25137,7 @@ MonoBehaviour:
 
     Painter, American, 1848 - 1892
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -24923,9 +25276,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is where the discription will go
-
-'
+  m_text: No Further Description
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -24952,8 +25303,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25039,7 +25390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 387.49997, y: -218}
+  m_AnchoredPosition: {x: 258.5, y: -145.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420249286
@@ -26383,7 +26734,7 @@ MonoBehaviour:
 
     Probably British
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -27515,6 +27866,7 @@ GameObject:
   - component: {fileID: 1561083370}
   - component: {fileID: 1561083372}
   - component: {fileID: 1561083371}
+  - component: {fileID: 1561083373}
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -27590,8 +27942,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -27643,6 +27995,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561083369}
   m_CullTransparentMesh: 1
+--- !u!114 &1561083373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561083369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 0}
+  numbersList: 0
+  dialogueText: []
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &1563701666
 GameObject:
   m_ObjectHideFlags: 0
@@ -28009,6 +28380,7 @@ GameObject:
   - component: {fileID: 1580697631}
   - component: {fileID: 1580697630}
   - component: {fileID: 1580697629}
+  - component: {fileID: 1580697632}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
@@ -28080,13 +28452,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1580697632}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -28130,6 +28502,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580697627}
   m_CullTransparentMesh: 1
+--- !u!114 &1580697632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580697627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 606158309}
+  numbersList: 0
+  dialogueText:
+  - "Is a picture a portrait if it doesn\u2019t include a face? Alfred Stieglitz
+    took hundreds of photographs of his wife, artist Georgia O\u2019Keeffe. Many
+    focused on only a part of her body. He felt these images captured her essence. "
+  - "Here, her hands dance gracefully over dark swirling fabric. She clasps a sewing
+    needle between the finger and thumb of one hand. A thimble caps a finger on the
+    other. O\u2019Keeffe was not only a pioneering painter but also an expert seamstress."
+  - "Stieglitz\u2019s innovative approach to composing, cropping, and printing photographs
+    made him an influential figure in 20th-century art. "
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &1589267114
 GameObject:
   m_ObjectHideFlags: 0
@@ -28328,8 +28727,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -29839,7 +30238,7 @@ MonoBehaviour:
     Artist,
     American, 1864 - 1946
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -30770,13 +31169,14 @@ GameObject:
   - component: {fileID: 1693592669}
   - component: {fileID: 1693592668}
   - component: {fileID: 1693592667}
+  - component: {fileID: 1693592670}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1693592666
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30841,13 +31241,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1693592670}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -30891,6 +31291,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693592665}
   m_CullTransparentMesh: 1
+--- !u!114 &1693592670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693592665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 866053214}
+  numbersList: 0
+  dialogueText:
+  - "Harnett was the leading still-life painter in centennial America, celebrated
+    for pushing the art of trompe l\u2019oeil (French for \"fool the eye\") to its
+    limits. While this composition may at first appear flat, it is full of depth
+    and plasticity, emphasizing the tension between illusion and reality. "
+  - The hinged door is slightly ajar, and objects hang on prominent nails, casting
+    strong shadows. These playfully illusionistic still lifes were especially popular
+    with middle-class collectors who favored skillful depictions of realistic subjects.
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &1695406570
 GameObject:
   m_ObjectHideFlags: 0
@@ -32209,6 +32635,7 @@ GameObject:
   - component: {fileID: 1814381678}
   - component: {fileID: 1814381677}
   - component: {fileID: 1814381676}
+  - component: {fileID: 1814381679}
   m_Layer: 5
   m_Name: nextDesc
   m_TagString: Untagged
@@ -32279,7 +32706,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1814381677}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1814381679}
+        m_TargetAssemblyTypeName: TextScript, Assembly-CSharp
+        m_MethodName: DialogueDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1814381677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32318,6 +32757,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814381674}
   m_CullTransparentMesh: 1
+--- !u!114 &1814381679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814381674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb3bbaee11a14408aa2255a2f56fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextScript
+  randomPhrases: []
+  phraseObj: {fileID: 1987008721}
+  numbersList: 0
+  dialogueText:
+  - 'Photographs by Carrie Mae Weems make us look and think twice. At first glance,
+    this seems to be a 19th-century sepia-toned print of three girls in an idyllic
+    pastoral setting. They are tightly arranged within a circular frame, reminiscent
+    of celestial angels in religious paintings from the Renaissance. '
+  - 'When we look closer, we notice the expressions of these girls in floral dresses
+    are focused and deliberate. The figure at center sizes us up, as if to dare us
+    to include them in traditional art historical representations. '
+  dialogueTracker: 0
+  randomImage: []
+  spriteDisplay: {fileID: 0}
 --- !u!1 &1821640403
 GameObject:
   m_ObjectHideFlags: 0
@@ -33834,8 +34299,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -34635,8 +35100,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
