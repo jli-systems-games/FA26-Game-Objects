@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
 
-        hurtSound = FindObjectOfType<HurtSound>();
+        hurtSound = Object.FindFirstObjectByType<HurtSound>();
         
     }
 
