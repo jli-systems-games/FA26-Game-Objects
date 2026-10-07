@@ -14,9 +14,27 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Week3 Rube Goldberg.unity
     guid: 3d3d8ff3d94144e8f836fe4558d68aea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Week4 Fortune Teller.unity
     guid: e358bef8cd39e46cca63fcaf9f95fb5f
+  - enabled: 1
+    path: Assets/Week5_6/Scenes/00_Start.unity
+    guid: 8aef537f8bf534d17a1a93b508b9e724
+  - enabled: 1
+    path: Assets/Week5_6/Scenes/01_Menu.unity
+    guid: e3b6dc4a0d89f4efab8d4c838aa91db1
+  - enabled: 1
+    path: Assets/Week5_6/Scenes/02_ShellGame.unity
+    guid: c61f74471d1fc4996af3276d47429b90
+  - enabled: 1
+    path: Assets/Week5_6/Scenes/03_CaterpillarGame.unity
+    guid: 39b7e7a7df2244030a044f0515936204
+  - enabled: 1
+    path: Assets/Week5_6/Scenes/04_SpiderGame.unity
+    guid: bd931103c2da94316834fbb0086aae76
+  - enabled: 0
+    path: Assets/Week5_6/Scenes/05_MonsterGame.unity
+    guid: 406796ef3628942d8a1199933497ff14
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
