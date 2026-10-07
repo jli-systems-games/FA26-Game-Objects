@@ -912,9 +912,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1268921060}
   - {fileID: 2006183934}
   - {fileID: 465475939}
-  - {fileID: 1268921060}
   m_Father: {fileID: 1720568277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2236,11 +2236,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 164855032}
-  - {fileID: 1775808997}
   - {fileID: 72773934}
   - {fileID: 682467918}
   - {fileID: 551953602}
+  - {fileID: 164855032}
+  - {fileID: 1775808997}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2277,7 +2277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6cfa2b623a1849159b5fde90d3811f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::changingText
-  text: {fileID: 0}
 --- !u!1 &1775808996
 GameObject:
   m_ObjectHideFlags: 0
