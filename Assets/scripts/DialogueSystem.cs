@@ -21,14 +21,13 @@ public class DialogueSystem : MonoBehaviour
 
     private int index;
 
+    public AudioSource clickSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         dialogueText.text = string.Empty;
         StartDialogue();
-
-        // int randomLeft = Random.Range(0, char1.Length);
-        // int randomRight = Random.Range(0, char2.Length);
     }
 
     // Update is called once per frame
@@ -45,6 +44,8 @@ public class DialogueSystem : MonoBehaviour
 
                 leftSprite.sprite = char1[randomLeft];
                 rightSprite.sprite = char2[randomRight];
+
+                clickSound.Play();
             }
             else
             {
