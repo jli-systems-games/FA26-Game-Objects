@@ -80,7 +80,7 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             Debug.Log("lines are done");
-            //SceneManager.LoadScene(""); 
+            SceneManager.LoadScene("week5&6InteractiveImage"); 
             //write exact name of scene WITHIN QUOTATIONS
         }
     }
