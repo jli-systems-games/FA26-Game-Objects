@@ -1098,7 +1098,8 @@ MonoBehaviour:
   - "Oh, the day has flown by\u2014the sun is already setting."
   - Huh? Where did Hoodie go? Hasn't he come back yet?
   - I should go look for him...
-  - Let me ask Ribbon first to see if she knows where Hoodie went!
+  - Where should I start? ...Let's try the woods first; I think he headed that way
+    when he left.
   listIndex: 0
 --- !u!1 &2050252979
 GameObject:

@@ -1,5 +1,6 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class buttonclick1 : MonoBehaviour
 {
@@ -10,7 +11,15 @@ public class buttonclick1 : MonoBehaviour
 
     public void ProceedDialogue()
     {
-        dialogue1.text = AltTitles[listIndex];
-        listIndex++;
+        
+        if (listIndex < AltTitles.Length)
+        {
+            dialogue1.text = AltTitles[listIndex];
+            listIndex++;
+        }
+        else
+        {
+            SceneManager.LoadScene("scene3");
+        }
     }
 }
