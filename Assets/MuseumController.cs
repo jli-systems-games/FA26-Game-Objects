@@ -22,19 +22,20 @@ public class MuseumController : MonoBehaviour
 
     public void OpenWorld1()
     {
-        galleryPanel.SetActive(false);
+        // Keep the museum visible behind the world while the entry animation expands.
+        galleryPanel.SetActive(true);
         world1Panel.SetActive(true);
     }
 
     public void OpenWorld2()
     {
-        galleryPanel.SetActive(false);
+        galleryPanel.SetActive(true);
         world2Panel.SetActive(true);
     }
 
     public void OpenWorld3()
     {
-        galleryPanel.SetActive(false);
+        galleryPanel.SetActive(true);
         world3Panel.SetActive(true);
     }
 }
