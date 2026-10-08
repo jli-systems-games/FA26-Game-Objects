@@ -5,9 +5,36 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: a0b05580c633a4c178e67aea96e5b496
+  - enabled: 1
+    path: Assets/Scenes/MeetMalo.unity
+    guid: 3040b467653e04739b173b7377825299
+  - enabled: 1
+    path: Assets/Scenes/MaloRequest.unity
+    guid: 3c85d200e33bb496da6cf353d7feb148
+  - enabled: 1
+    path: Assets/Scenes/MeetCat.unity
+    guid: 662a2e0d73d1f45079afaf523d5927e4
+  - enabled: 1
+    path: Assets/Scenes/PetCat.unity
+    guid: 668aeb941ede246b1930b184dce9d586
+  - enabled: 1
+    path: Assets/Scenes/MeetXYZ.unity
+    guid: f6e5084b426264790bac9228b8de70d1
+  - enabled: 1
+    path: Assets/Scenes/XYZRequest.unity
+    guid: 05d12e4d36df148b88bd664e86b6fcf3
+  - enabled: 1
+    path: Assets/Scenes/End1.unity
+    guid: 379aa637a06934dedae6f28822599a4a
+  - enabled: 1
+    path: Assets/Scenes/End2.unity
+    guid: b4041d8fe04034cdd8c2eb97067865d8
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
