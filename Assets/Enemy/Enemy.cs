@@ -23,8 +23,9 @@ public class Enemy : MonoBehaviour
         transform.position += new Vector3(xSpeed, ySpeed, 0) * Time.deltaTime;
     }
 
-    void OnTriggerEntur2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("Enemy collided with " + col.gameObject.name);
         hurtSound.DisplayARandomHurtText();
     }
 
