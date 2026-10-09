@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float xSpeed;
     public float ySpeed;
+    public float distance;
 
     HurtSound hurtSound;
 
@@ -17,10 +18,13 @@ public class Enemy : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
-        transform.position += new Vector3(xSpeed, ySpeed, 0) * Time.deltaTime;
+        float newX = transform.position.x - Mathf.Sin(Time.time * xSpeed) * distance;
+        transform.position += new Vector3(newX, ySpeed, 0) * Time.deltaTime;
+        
+
     }
 
     void OnTriggerEnter2D(Collider2D col)
