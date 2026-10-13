@@ -15,6 +15,9 @@ public class ClickSequence : MonoBehaviour
     [Header("Animator on the final object")]
     public Animator finalAnimator;
 
+    [Header("Game progress ID")]
+    public int gameID;
+
     private int currentStage = 0;
 
     void Start()
@@ -42,6 +45,8 @@ public class ClickSequence : MonoBehaviour
         // Play animation when the final stage appears
         if (currentStage == stages.Length - 1)
         {
+            GameProgress.CompleteGame(gameID);
+            
             if (finalAnimator != null)
             {
                 finalAnimator.SetTrigger("Play");

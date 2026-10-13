@@ -16,6 +16,7 @@ public class ShellGameManager : MonoBehaviour
 
     void Start()
     {
+
         completePanel.SetActive(false);
     }
 
@@ -25,6 +26,7 @@ public class ShellGameManager : MonoBehaviour
 
         if (placedShells >= totalShells)
         {
+            GameProgress.CompleteGame(0);
             completePanel.SetActive(true);
         }
     }

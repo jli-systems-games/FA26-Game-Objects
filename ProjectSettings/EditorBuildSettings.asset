@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Week5_6/Scenes/04_SpiderGame.unity
     guid: bd931103c2da94316834fbb0086aae76
-  - enabled: 0
+  - enabled: 1
     path: Assets/Week5_6/Scenes/05_MonsterGame.unity
     guid: 406796ef3628942d8a1199933497ff14
   m_configObjects:
