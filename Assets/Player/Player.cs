@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
+    public float HealthVariable = 100;
+
 
 
     // Start is called before the first frame update
@@ -34,4 +36,8 @@ public class Player : MonoBehaviour
         }
         
     }
+      public void OnCollisionEnter2D(Collision2D collision)
+  {
+      HealthVariable -= 10;
+  }
 }

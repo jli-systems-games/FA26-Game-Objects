@@ -2,31 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyFollowPlayer : MonoBehaviour
 {
-    public float xSpeed;
-    public float ySpeed;
+    [SerializeField] private float speed = 1.5f;
 
-    HurtSound hurtSound;
+    private GameObject player;
 
     // Start is called before the first frame update
+
     void Start()
     {
-
-        hurtSound = FindObjectOfType<HurtSound>();
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        transform.position += new Vector3(xSpeed, ySpeed, 0) * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
-
-    void OnTriggerEntur2D(Collider2D col)
-    {
-        hurtSound.DisplayARandomHurtText();
-    }
-
-
 }
