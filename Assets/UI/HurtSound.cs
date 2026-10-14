@@ -1,29 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class HurtSound : MonoBehaviour
 {
     TextMeshProUGUI text;
+    Coroutine clearTextRoutine;
 
     public string[] hurtSounds;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
+        if (text != null)
+            text.text = string.Empty;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisplayARandomHurtText()
     {
-        
+        if (text == null || hurtSounds == null || hurtSounds.Length == 0)
+            return;
+
+        text.text = hurtSounds[Random.Range(0, hurtSounds.Length)];
+
+        if (clearTextRoutine != null)
+            StopCoroutine(clearTextRoutine);
+
+        clearTextRoutine = StartCoroutine(ClearTextAfterDelay());
     }
 
-    public void DisplayARandomHurtText() {
-        string randomHurtSound = hurtSounds[Random.Range(0, hurtSounds.Length)];
-        text.text = randomHurtSound;
+    IEnumerator ClearTextAfterDelay()
+    {
+        yield return new WaitForSeconds(0.65f);
+        text.text = string.Empty;
     }
 }
