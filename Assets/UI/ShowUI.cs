@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class ShowUI : MonoBehaviour
 {
@@ -17,7 +18,22 @@ public class ShowUI : MonoBehaviour
     {
         if (playerScriptRef.health == 0) 
         {
+           
             canvasOn.SetActive(true);
         }
+    }
+    public void restartGame()
+    { 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void endGame()
+    {
+ 
+        Application.Quit();
+
+        
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
