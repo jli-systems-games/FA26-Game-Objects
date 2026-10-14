@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
 
-        hurtSound = GameObject.Find("GameManager").GetComponent<HurtSound>();
+        hurtSound = GameObject.Find("Game manager").GetComponent<HurtSound>();
         
     }
 
