@@ -4,7 +4,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed = 6.5f;
+    [SerializeField] float boostMultiplier = 1.7f;
+    [SerializeField] float boostDuration = 3f;
 
     [Header("Health")]
     [SerializeField] int maxHealth = 3;
@@ -12,6 +14,7 @@ public class Player : MonoBehaviour
 
     public int CurrentHealth { get; private set; }
     public int MaxHealth => maxHealth;
+    public float BoostTimeRemaining { get; private set; }
 
     Vector3 startingPosition;
     SpriteRenderer spriteRenderer;
@@ -35,8 +38,21 @@ public class Player : MonoBehaviour
 
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         input = Vector2.ClampMagnitude(input, 1f);
-        transform.position += (Vector3)(input * speed * Time.deltaTime);
+        float currentSpeed = BoostTimeRemaining > 0f ? speed * boostMultiplier : speed;
+        transform.position += (Vector3)(input * currentSpeed * Time.deltaTime);
+
+        if (BoostTimeRemaining > 0f)
+            BoostTimeRemaining = Mathf.Max(0f, BoostTimeRemaining - Time.deltaTime);
+
+        if (lightTrail != null)
+            lightTrail.startWidth = BoostTimeRemaining > 0f ? 0.52f : 0.28f;
         KeepInsideCamera();
+    }
+
+    public float ActivateSpeedBoost()
+    {
+        BoostTimeRemaining = boostDuration;
+        return boostDuration;
     }
 
     void KeepInsideCamera()
@@ -98,6 +114,7 @@ public class Player : MonoBehaviour
         transform.position = startingPosition;
         CurrentHealth = maxHealth;
         isInvincible = false;
+        BoostTimeRemaining = 0f;
 
         if (spriteRenderer != null)
         {
