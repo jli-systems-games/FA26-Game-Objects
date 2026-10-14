@@ -6,14 +6,13 @@ public class Enemy : MonoBehaviour
 {
     public float xSpeed;
     public float ySpeed;
-
-    HurtSound hurtSound;
+    private HurtSound hurtSound;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        hurtSound = FindObjectOfType<HurtSound>();
+        hurtSound = GameObject.Find("GameManager").GetComponent<HurtSound>();
         
     }
 
@@ -23,7 +22,7 @@ public class Enemy : MonoBehaviour
         transform.position += new Vector3(xSpeed, ySpeed, 0) * Time.deltaTime;
     }
 
-    void OnTriggerEntur2D(Collider2D col)
+    public void OnTriggerEnter(Collider other)
     {
         hurtSound.DisplayARandomHurtText();
     }
