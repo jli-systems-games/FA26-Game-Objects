@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
