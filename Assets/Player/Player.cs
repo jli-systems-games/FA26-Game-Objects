@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontal, vertical, 0);
 
-        // 防止斜着走时速度变快
         if (movement.magnitude > 1f)
         {
             movement.Normalize();

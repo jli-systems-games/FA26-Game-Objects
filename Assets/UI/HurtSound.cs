@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HurtSound : MonoBehaviour
 {
@@ -7,19 +8,30 @@ public class HurtSound : MonoBehaviour
 
     public string[] hurtSounds;
 
+    // HP
     public int health = 3;
     public TextMeshProUGUI healthText;
 
+    // Timer
     public float timeToWin = 10f;
     public TextMeshProUGUI timerText;
 
+    // Panels
     public GameObject startPanel;
     public GameObject gameOverPanel;
     public GameObject winPanel;
 
+    // Audio
+    public AudioSource audioSource; 
+    public AudioClip hurtSoundEffect;
+    public AudioClip winSoundEffect;
+    public AudioClip loseSoundEffect;
+
+    // Timer
     private float timeRemaining;
     private bool gameEnded = false;
 
+    // Damage cooldown
     public float damageCooldown = 1f;
     private float nextDamageTime = 0f;
 
@@ -36,6 +48,7 @@ public class HurtSound : MonoBehaviour
         UpdateHealthText();
         UpdateTimerText();
 
+        // Pause the game at the start
         Time.timeScale = 0f;
     }
 
@@ -60,11 +73,30 @@ public class HurtSound : MonoBehaviour
             WinGame();
         }
     }
-
-    public void StartGame()
+    
+    public void StartLevel1()
     {
-        startPanel.SetActive(false);
+        StartLevel(10f);
+    }
 
+    public void StartLevel2()
+    {
+        StartLevel(20f);
+    }
+    
+    public void StartLevel3()
+    {
+        StartLevel(30f);
+    }
+    void StartLevel(float levelTime)
+    {
+        timeToWin = levelTime;
+        timeRemaining = timeToWin;
+        
+        UpdateTimerText();
+        
+        startPanel.SetActive(false);
+        
         Time.timeScale = 1f;
     }
 
@@ -91,6 +123,10 @@ public class HurtSound : MonoBehaviour
         if (health <= 0)
         {
             GameOver();
+        }
+        else
+        {
+            PlaySound(hurtSoundEffect);
         }
     }
 
@@ -122,6 +158,8 @@ public class HurtSound : MonoBehaviour
 
         gameOverPanel.SetActive(true);
 
+        PlaySound(loseSoundEffect);
+
         Time.timeScale = 0f;
     }
 
@@ -129,8 +167,25 @@ public class HurtSound : MonoBehaviour
     {
         gameEnded = true;
 
+        PlaySound(winSoundEffect);
+
         winPanel.SetActive(true);
 
         Time.timeScale = 0f;
+    }
+
+    void PlaySound(AudioClip sound)
+    {
+        if (audioSource != null && sound != null)
+        {
+            audioSource.PlayOneShot(sound);
+        }
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
