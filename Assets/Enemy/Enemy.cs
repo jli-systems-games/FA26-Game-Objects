@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,13 +7,17 @@ public class Enemy : MonoBehaviour
     private HurtSound hurtSound;
     public bool canMove = false;
 
-    private Health playerHealth; 
+    private Health playerHealth;
+    private bool hasFinished = false;
+    private EnemyRoundManager roundManager;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject manager = GameObject.Find("Game manager");
         hurtSound = GameObject.Find("Game manager").GetComponent<HurtSound>();
         playerHealth = GameObject.Find("Game manager").GetComponent<Health>();
+        roundManager = FindFirstObjectByType<EnemyRoundManager>();
 
     }
 
@@ -24,11 +26,24 @@ public class Enemy : MonoBehaviour
     {
         if (!canMove) return;
         transform.position += new Vector3(xSpeed, ySpeed, 0) * Time.deltaTime;
+
+        Vector3 pos = transform.position;
+
+        if (pos.x < -15 || pos.x > 15 ||
+    pos.y < -4 || pos.y > 10 ||
+    pos.z < -15 || pos.z > 15)
+        {
+            hasFinished = true;
+
+            if (roundManager != null)
+                roundManager.EnemyFinished();
+
+            Destroy(gameObject);
+        }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("this hits me" + other.name);
 
         if (other.CompareTag("Player"))
         {

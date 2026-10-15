@@ -10,6 +10,10 @@ public class Health : MonoBehaviour
 
     private int currentHealth = 5;
 
+    public bool IsAlive
+    {
+        get { return currentHealth > 0; }
+    }
 
     public void TakeDamage()
     {
