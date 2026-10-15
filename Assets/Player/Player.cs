@@ -5,12 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
-    public int health = 3;
+    public int health;
+
+    private SpriteRenderer playerSprite;
+
+    public GameObject gameScreen;
+    public GameObject endScreen;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = 5;
+        playerSprite = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -34,18 +42,35 @@ public class Player : MonoBehaviour
         }
         
     }
+        
+        IEnumerator GotHurt()
+        {
+            playerSprite.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            playerSprite.color = Color.white;
+        }
 
         void OnTriggerEnter2D(Collider2D col)
         {
             Debug.Log("Player collided with Enemy");
             health--;
+            
+
+            StartCoroutine(GotHurt());
+
+
             Debug.Log("Player health: " + health);
 
             if (health <= 0)
             {
-                gameObject.SetActive(false);
+                gameScreen.SetActive(false);
+                endScreen.SetActive(true);
+                health = 5;
+
+                playerSprite.color = Color.white; 
             }
             
+
         }
 }
 
