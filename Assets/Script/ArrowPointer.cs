@@ -5,19 +5,16 @@ public class ArrowPointer : MonoBehaviour
     public Transform player;
     public Transform goal;
 
-    public float height = 2f;
-
-    void LateUpdate()
+    void Update()
     {
-        if (player != null && goal != null)
+        if (player != null && goal != null) // Both player and goal must be assigned
         {
-            transform.position = player.position + new Vector3(0, height, 0);
+            Vector2 direction = goal.position - player.position; // Calculate the direction from the player to the goal
 
-            Vector2 direction = goal.position - player.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Calculate the angle in degrees
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+            transform.localRotation = Quaternion.Euler(0, 0, angle - 90f); // Rotate the arrow to point towards the goal
         }
     }
 }
+

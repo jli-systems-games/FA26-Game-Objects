@@ -4,12 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public GameObject[] hearts;
-    public GetHurt getHurt;
-    public float hitCooldown = 1f;
-
+    public GameObject[] hearts; 
+    public GetHurt getHurt; // Reference to the GetHurt script
     private int health;
-    private float nextHitTime;
 
     void Start()
     {
@@ -19,16 +16,14 @@ public class PlayerHealth : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Enemy") && health > 0 && Time.time >= nextHitTime)
+        if (col.CompareTag("Enemy") && health > 0) // Check if there's health remaining
         {
             health--;
             hearts[health].SetActive(false);
 
-            nextHitTime = Time.time + hitCooldown;
-
             if (getHurt != null)
             {
-                getHurt.DisplayARandomHurtText();
+                getHurt.RandomDisplay(); //display a random hurt text & sound
             }
 
             if (health == 0)
@@ -40,7 +35,8 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Over");
+        yield return null; // Wait for the scene to load before continuing
     }
 }
+
