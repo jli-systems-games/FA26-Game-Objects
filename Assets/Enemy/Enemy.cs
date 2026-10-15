@@ -7,13 +7,14 @@ public class Enemy : MonoBehaviour
     public float xSpeed;
     public float ySpeed;
     public float distance;
+    public Vector3 startingPosition;
 
     HurtSound hurtSound;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        startingPosition = transform.position;
         hurtSound = FindFirstObjectByType<HurtSound>();
         
     }
@@ -21,10 +22,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        float newX = transform.position.x - Mathf.Sin(Time.time * xSpeed) * distance;
-        transform.position += new Vector3(newX, ySpeed, 0) * Time.deltaTime;
+        float newX = startingPosition.x + Mathf.Sin(Time.time * xSpeed) * distance;
+        float newY = startingPosition.y + Mathf.Sin(Time.time * ySpeed) * distance;
+        transform.position = new Vector3(newX, newY, 0);
         
-
     }
 
     void OnTriggerEnter2D(Collider2D col)
