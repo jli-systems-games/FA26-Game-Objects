@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
-
+    public int health = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -34,4 +34,18 @@ public class Player : MonoBehaviour
         }
         
     }
+
+        void OnTriggerEnter2D(Collider2D col)
+        {
+            Debug.Log("Player collided with Enemy");
+            health--;
+            Debug.Log("Player health: " + health);
+
+            if (health <= 0)
+            {
+                gameObject.SetActive(false);
+            }
+            
+        }
 }
+

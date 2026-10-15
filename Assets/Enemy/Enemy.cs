@@ -28,11 +28,5 @@ public class Enemy : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("Enemy collided with " + col.gameObject.name);
-        hurtSound.DisplayARandomHurtText();
-    }
-
 
 }
