@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float xSpeed;
     public float ySpeed;
     private HurtSound hurtSound;
+    public bool canMove = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +20,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) return;
         transform.position += new Vector3(xSpeed, ySpeed, 0) * Time.deltaTime;
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        hurtSound.DisplayARandomHurtText();
+        Debug.Log("this hits me" + other.name);
+
+        if (other.CompareTag("Player"))
+        {
+            hurtSound.DisplayARandomHurtText();
+        }
     }
-
-
 }
