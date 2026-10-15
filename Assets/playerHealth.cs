@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,9 +9,11 @@ public class PlayerHealth : MonoBehaviour
     {
         hits++;
 
+        Debug.Log("Player hit! Hits taken: " + hits);
+
         if (hits >= maxHits)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            FindFirstObjectByType<GameManager>().GameOver();
         }
     }
 }
