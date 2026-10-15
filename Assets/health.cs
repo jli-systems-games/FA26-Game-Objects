@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public Image[] hearts;
-    public string gameOverSceneNmae = "Gameover";
+    public string gameOverSceneName = "Gameover";
 
     private int currentHealth = 5;
+
 
     public void TakeDamage()
     {
@@ -20,7 +21,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene(gameOverSceneNmae);
+            SceneManager.LoadScene(gameOverSceneName);
         }
     }
 }

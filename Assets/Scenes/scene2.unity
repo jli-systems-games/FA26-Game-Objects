@@ -1327,7 +1327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29, y: 14}
+  m_AnchoredPosition: {x: 29, y: -5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696668484
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   - {fileID: 188152848}
   - {fileID: 657313916}
   - {fileID: 676350600}
-  gameOverSceneNmae: Gameover
+  gameOverSceneName: Gameover
 --- !u!1001 &1296860395
 PrefabInstance:
   m_ObjectHideFlags: 0
