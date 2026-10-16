@@ -6,8 +6,7 @@ public class RaycastScript : MonoBehaviour
 {
     public TMP_Text displayText;// Will display the name of the object my Raycast has detected.
 
-    public Camera mainCamera;
-
+    
     public float xMove;
     public float yMove;
     public float moveSpeed;
@@ -15,6 +14,7 @@ public class RaycastScript : MonoBehaviour
     void Start()
     {
         
+
         displayText = GameObject.Find("DisplayText").GetComponent<TMP_Text>();
     }
 
@@ -22,22 +22,22 @@ public class RaycastScript : MonoBehaviour
     void Update()
     {
         //Creates a ray that shoots out from where the mouse is currently positioned on screen.
-        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit clickDetection;
+        //Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        //RaycastHit clickDetection;
 
         //Ray sphereRay = new Ray(transform.position, transform.forward);
         //RaycastHit raycastHit;
 
 
-        if (Input.GetMouseButtonUp(0))//Activates when the player presses the right-mouse button.
-        {
-            if (Physics.Raycast(cameraRay, out clickDetection, Mathf.Infinity))
-            {
-                print("You clicked on the " + clickDetection.collider.name);
-                displayText.text = clickDetection.collider.name;
-            }
+        //if (Input.GetMouseButtonUp(0))//Activates when the player presses the right-mouse button.
+        //{
+        //    if (Physics.Raycast(cameraRay, out clickDetection, Mathf.Infinity))
+        //    {
+        //        print("You clicked on the " + clickDetection.collider.name);
+        //        displayText.text = clickDetection.collider.name;
+        //    }
 
-        }
+        //}
 
        
 
@@ -46,11 +46,13 @@ public class RaycastScript : MonoBehaviour
         yMove = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 
         transform.position += new Vector3(xMove, 0, yMove);
+
+       
         
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision collision)
     {
-        
+       
     }
 }
