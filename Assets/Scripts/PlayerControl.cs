@@ -1,24 +1,26 @@
+
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
+    public Animator characterAnimator;//This will reference the players Animator component.
    [SerializeField] CharacterController controller;
    [SerializeField] Vector3 playerVelocity;
    [SerializeField] bool groundedPlayer;
    [SerializeField] float playerSpeed;
    [SerializeField] float gravityValue;
-
    [SerializeField] GameObject activeChar;
    [SerializeField] float moveHorizontal;
    [SerializeField] float moveVertical;
    [SerializeField] float speed = 4;
-   [SerializeField] float rotateSpeed = 4;
+   [SerializeField] float rotateSpeed = 2;
    [SerializeField] float jumpHeight = 1.2f;
    [SerializeField] bool isJumping;
 
 
     void Start()
     {
+        characterAnimator = GetComponent<Animator>();// This will automatically grab the Animator component if it exists on the gameboject.
         playerSpeed = 4;
         gravityValue = -20;
 
@@ -27,41 +29,57 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0f;
-        }
-        transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        float curSpeed = speed * Input.GetAxis("Vertical");
-        controller.SimpleMove(forward * curSpeed);
-        if (Input.GetButtonDown("Jumping") && groundedPlayer)
-        {
-            isJumping = true;
-            activeChar.GetComponent<Animator>().Play("Jumping");
-            playerVelocity.y += 10;
-        }
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        
+       
 
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-        {
-            this.gameObject.GetComponent<CharacterController>().minMoveDistance = 0.001f;
-            if(isJumping == false)
-            {
-                activeChar.GetComponent<Animator>().Play("Standard Run");
-            }
-        }
+        float moveHorizontal = Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime;
+        float moveVertical = Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime;
 
-        else
+        if( moveHorizontal == 0 && moveVertical == 0)
         {
-            this.gameObject.GetComponent<CharacterController>().minMoveDistance = 0.901f;
-            if(isJumping == false)
-            {
-                activeChar.GetComponent<Animator>().Play("Idle");
-            }
+            
+            characterAnimator.SetInteger("AnimState", 0);
         }
+        
+
+
+        transform.position += new Vector3(moveHorizontal, 0, moveVertical);
+        //==================
+        // groundedPlayer = controller.isGrounded;
+        // if (groundedPlayer && playerVelocity.y < 0)
+        // {
+        //     playerVelocity.y = 0f;
+        // }
+        // transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
+        // Vector3 forward = transform.TransformDirection(Vector3.forward);
+        // float curSpeed = speed * Input.GetAxis("Vertical");
+        // controller.SimpleMove(forward * curSpeed);
+        // if (Input.GetButtonDown("Jumping") && groundedPlayer)
+        // {
+        //     isJumping = true;
+        //     activeChar.GetComponent<Animator>().Play("Jumping");
+        //     playerVelocity.y += 10;
+        // }
+        // playerVelocity.y += gravityValue * Time.deltaTime;
+        // controller.Move(playerVelocity * Time.deltaTime);
+
+        // if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        // {
+        //     this.gameObject.GetComponent<CharacterController>().minMoveDistance = 0.001f;
+        //     if(isJumping == false)
+        //     {
+        //         activeChar.GetComponent<Animator>().Play("Standard Run");
+        //     }
+        // }
+
+        // else
+        // {
+        //     this.gameObject.GetComponent<CharacterController>().minMoveDistance = 0.901f;
+        //     if(isJumping == false)
+        //     {
+        //         activeChar.GetComponent<Animator>().Play("Idle");
+        //     }
+        // }
 
 
 
