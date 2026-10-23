@@ -54,12 +54,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
         // Vector3 forward = transform.TransformDirection(Vector3.forward);
         // float curSpeed = speed * Input.GetAxis("Vertical");
         // controller.SimpleMove(forward * curSpeed);
-        // if (Input.GetButtonDown("Jumping") && groundedPlayer)
-        // {
-        //     isJumping = true;
-        //     activeChar.GetComponent<Animator>().Play("Jumping");
-        //     playerVelocity.y += 10;
-        // }
+        if (Input.GetKey(KeyCode.E) && groundedPlayer)
+        {
+             isJumping = true;
+             activeChar.GetComponent<Animator>().Play("Jumping");
+             playerVelocity.y += 10;
+         }
         // playerVelocity.y += gravityValue * Time.deltaTime;
         // controller.Move(playerVelocity * Time.deltaTime);
 
