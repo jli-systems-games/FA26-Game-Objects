@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -26,7 +25,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
@@ -44,42 +43,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
 
         transform.position += new Vector3(moveHorizontal, 0, moveVertical);
-        //==================
-        // groundedPlayer = controller.isGrounded;
-        // if (groundedPlayer && playerVelocity.y < 0)
-        // {
-        //     playerVelocity.y = 0f;
-        // }
-        // transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
-        // Vector3 forward = transform.TransformDirection(Vector3.forward);
-        // float curSpeed = speed * Input.GetAxis("Vertical");
-        // controller.SimpleMove(forward * curSpeed);
+
         if (Input.GetKey(KeyCode.E) && groundedPlayer)
         {
              isJumping = true;
              activeChar.GetComponent<Animator>().Play("Jumping");
              playerVelocity.y += 10;
          }
-        // playerVelocity.y += gravityValue * Time.deltaTime;
-        // controller.Move(playerVelocity * Time.deltaTime);
-
-        // if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-        // {
-        //     this.gameObject.GetComponent<CharacterController>().minMoveDistance = 0.001f;
-        //     if(isJumping == false)
-        //     {
-        //         activeChar.GetComponent<Animator>().Play("Standard Run");
-        //     }
-        // }
-
-        // else
-        // {
-        //     this.gameObject.GetComponent<CharacterController>().minMoveDistance = 0.901f;
-        //     if(isJumping == false)
-        //     {
-        //         activeChar.GetComponent<Animator>().Play("Idle");
-        //     }
-        // }
+    
 
 
 
