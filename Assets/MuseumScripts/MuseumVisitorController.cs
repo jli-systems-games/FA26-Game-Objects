@@ -10,8 +10,11 @@ public class MuseumVisitorController : MonoBehaviour
     public TMP_Text controlsText;
     public float walkSpeed=3.5f, runSpeed=5.5f, sensitivity=0.1f;
     public bool firstPerson=true;
+    // Set by MuseumExhibitInteractor while an exhibit panel is open: no move/look/click-lock.
+    [System.NonSerialized] public bool inputLocked;
     CharacterController body;
     Animator animator;
+    Animator[] animators; // Starter Assets body + optional astronaut suit visual
     Renderer[] visuals;
     Vector3 spawn;
     float yaw,pitch,verticalSpeed,animationSpeed;
@@ -22,15 +25,15 @@ public class MuseumVisitorController : MonoBehaviour
 #endif
     void Awake()
     {
-        body=GetComponent<CharacterController>();animator=GetComponent<Animator>();
+        body=GetComponent<CharacterController>();animator=GetComponent<Animator>();animators=GetComponentsInChildren<Animator>();
         visuals=GetComponentsInChildren<Renderer>();spawn=transform.position;
         if(worldCamera==null)worldCamera=Camera.main;
         yaw=transform.eulerAngles.y;
-        if(animator!=null){animator.applyRootMotion=false;animator.cullingMode=AnimatorCullingMode.AlwaysAnimate;}
+        foreach(var a in animators){a.applyRootMotion=false;a.cullingMode=AnimatorCullingMode.AlwaysAnimate;}
         ApplyView();
     }
     void Start(){UpdateCamera();UpdateHint();}
-    void SetLocked(bool value)
+    public void SetLocked(bool value)
     { locked=value;Cursor.lockState=value?CursorLockMode.Locked:CursorLockMode.None;Cursor.visible=!value;UpdateHint(); }
     void OnDisable(){Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}
     void OnApplicationFocus(bool focus){if(!focus)SetLocked(false);}
@@ -46,11 +49,12 @@ public class MuseumVisitorController : MonoBehaviour
         if(controlsText==null)return;
         controlsText.text=(locked?"":"CLICK TO EXPLORE  |  ")+
             (firstPerson?"FIRST PERSON":"THIRD PERSON")+
-            "\nWASD / ARROWS  MOVE     MOUSE  LOOK     SHIFT  RUN     V  VIEW     ESC  CURSOR";
+            "\nWASD / ARROWS  MOVE     MOUSE  LOOK     SHIFT  RUN     V  VIEW     E  INSPECT     ESC  CURSOR";
     }
     void Update()
     {
         var keys=Keyboard.current;var mouse=Mouse.current;
+        if(inputLocked){keys=null;mouse=null;}
         if(keys!=null && keys.escapeKey.wasPressedThisFrame)SetLocked(false);
         else if(mouse!=null && mouse.leftButton.wasPressedThisFrame && !locked)SetLocked(true);
         if(keys!=null && keys.vKey.wasPressedThisFrame)ToggleView();
@@ -76,10 +80,11 @@ public class MuseumVisitorController : MonoBehaviour
         verticalSpeed=Mathf.Max(verticalSpeed-20*Time.deltaTime,-35);
         body.Move((move*speed+Vector3.up*verticalSpeed)*Time.deltaTime);
         if(transform.position.y<-5){body.enabled=false;transform.position=spawn;body.enabled=true;verticalSpeed=-2;}
-        if(animator!=null){
-            animationSpeed=Mathf.MoveTowards(animationSpeed,input.magnitude*speed,12*Time.deltaTime);
-            animator.SetFloat("Speed",animationSpeed);animator.SetFloat("MotionSpeed",1);
-            animator.SetBool("Grounded",body.isGrounded);animator.SetBool("Jump",false);animator.SetBool("FreeFall",!body.isGrounded && verticalSpeed<-4);
+        animationSpeed=Mathf.MoveTowards(animationSpeed,input.magnitude*speed,12*Time.deltaTime);
+        foreach(var a in animators){
+            if(a==null||a.runtimeAnimatorController==null)continue;
+            a.SetFloat("Speed",animationSpeed);a.SetFloat("MotionSpeed",1);
+            a.SetBool("Grounded",body.isGrounded);a.SetBool("Jump",false);a.SetBool("FreeFall",!body.isGrounded && verticalSpeed<-4);
         }
     }
     void LateUpdate(){UpdateCamera();}
