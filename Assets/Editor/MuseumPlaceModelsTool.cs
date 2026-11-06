@@ -107,32 +107,52 @@ public static class MuseumPlaceModelsTool
     // The Starter Assets character stays underneath (collider + skeleton) but its renderers are switched off.
     // The astronaut gets its own Animator: Idle / Walk / Run blended by "Speed", set by MuseumVisitorController.
     [MenuItem("Tools/Museum/Dress Visitor As Astronaut")]
-    public static void DressVisitor()
+    public static void DressVisitor()=>DressWith("Astronaut","AstronautSuit_Visual");
+
+    // Concept: an alien visits a museum about humans. The astronaut suit goes back to being an exhibit.
+    [MenuItem("Tools/Museum/Dress Visitor As Alien")]
+    public static void DressAlien()
+    {
+        var visitor=Object.FindFirstObjectByType<MuseumVisitorController>();
+        if(visitor==null||EditorApplication.isPlaying)return;
+        var suit=visitor.transform.Find("AstronautSuit_Visual");if(suit!=null)Hide(suit);
+        DressWith("Alien","AlienBody_Visual");
+        var exhibit=GameObject.Find("Exhibit_04_SpaceSuit");
+        if(exhibit!=null){var fig=exhibit.transform.Find("Astronaut_Figure");
+            if(fig!=null){Undo.RecordObject(fig.gameObject,"show");fig.gameObject.SetActive(true);}
+            var ex=exhibit.GetComponent<MuseumExhibit>();
+            if(ex!=null){Undo.RecordObject(ex,"text");
+                ex.body=ex.body.Replace("Look down: as a visitor of this museum, you are already wearing one.","The figure beside this plinth wears the full suit: notice how much of a human it hides.");
+                ex.credit="Models: \"Space Helmet - Model 1b\" by Alan Zimmerman, CC BY 3.0; \"Astronaut\" by Quaternius, CC0. Both via Poly Pizza.";}}
+        EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+    }
+
+    static void DressWith(string file,string visualName)
     {
         var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         if(EditorApplication.isPlaying){Debug.LogError("Exit Play Mode first.");return;}
         var visitor=Object.FindFirstObjectByType<MuseumVisitorController>();
-        var asset=Load("Astronaut");
-        if(visitor==null||asset==null){Debug.LogError("Need MuseumVisitor and Astronaut.glb");return;}
-        if(visitor.transform.Find("AstronautSuit_Visual")!=null){Debug.Log("Visitor already wears the suit.");return;}
+        var asset=Load(file);
+        if(visitor==null||asset==null){Debug.LogError("Need MuseumVisitor and "+file+".glb");return;}
+        if(visitor.transform.Find(visualName)!=null){Debug.Log(visualName+" already exists.");return;}
         Undo.IncrementCurrentGroup();int undo=Undo.GetCurrentGroup();
 
         // Earlier attempt (white mannequin + helmet): hide the helmet, keep it in the scene.
         foreach(var m in visitor.GetComponentsInChildren<MuseumHelmetMarker>(true))Hide(m.transform);
         // Hide the Starter Assets body (renderers off, nothing deleted).
-        foreach(var r in visitor.GetComponentsInChildren<Renderer>()){Undo.RecordObject(r,"hide body");r.enabled=false;}
+        foreach(var r in visitor.GetComponentsInChildren<Renderer>()){Undo.RecordObject(r,"hide body");r.enabled=false;} // only active bodies
 
         // Looping copies of the clips we need (imported clips are read-only).
         var clips=new System.Collections.Generic.Dictionary<string,AnimationClip>();
-        foreach(var o in AssetDatabase.LoadAllAssetsAtPath("Assets/MuseumModels/Astronaut.glb"))
+        foreach(var o in AssetDatabase.LoadAllAssetsAtPath("Assets/MuseumModels/"+file+".glb"))
             if(o is AnimationClip c)foreach(var want in new[]{"Idle","Walk","Run"})
                 if(c.name.EndsWith("|"+want)||c.name.EndsWith("_"+want)||c.name==want){
-                    var copy=Object.Instantiate(c);copy.name="Astronaut_"+want;
+                    var copy=Object.Instantiate(c);copy.name=file+"_"+want;
                     var st=AnimationUtility.GetAnimationClipSettings(copy);st.loopTime=true;AnimationUtility.SetAnimationClipSettings(copy,st);
-                    string cp="Assets/MuseumGenerated/Astronaut_"+want+".anim";AssetDatabase.DeleteAsset(cp);AssetDatabase.CreateAsset(copy,cp);clips[want]=copy;}
+                    string cp="Assets/MuseumGenerated/"+file+"_"+want+".anim";AssetDatabase.DeleteAsset(cp);AssetDatabase.CreateAsset(copy,cp);clips[want]=copy;}
         if(clips.Count<3)Debug.LogWarning("Found clips: "+string.Join(",",clips.Keys)+" (expected Idle, Walk, Run)");
 
-        string ctrlPath="Assets/MuseumGenerated/AstronautVisitor.controller";AssetDatabase.DeleteAsset(ctrlPath);
+        string ctrlPath="Assets/MuseumGenerated/"+file+"Visitor.controller";AssetDatabase.DeleteAsset(ctrlPath);
         var ctrl=UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath(ctrlPath);
         foreach(var n in new[]{"Speed","MotionSpeed"})ctrl.AddParameter(n,AnimatorControllerParameterType.Float);
         foreach(var n in new[]{"Grounded","Jump","FreeFall"})ctrl.AddParameter(n,AnimatorControllerParameterType.Bool);
@@ -142,15 +162,15 @@ public static class MuseumPlaceModelsTool
         if(clips.TryGetValue("Walk",out var walk))tree.AddChild(walk,visitor.walkSpeed);
         if(clips.TryGetValue("Run",out var run))tree.AddChild(run,visitor.runSpeed);
 
-        var holder=new GameObject("AstronautSuit_Visual");Undo.RegisterCreatedObjectUndo(holder,"suit");
+        var holder=new GameObject(visualName);Undo.RegisterCreatedObjectUndo(holder,"suit");
         holder.transform.SetParent(visitor.transform,false);
-        var g=(GameObject)PrefabUtility.InstantiatePrefab(asset,holder.transform);g.name="Astronaut";
+        var g=(GameObject)PrefabUtility.InstantiatePrefab(asset,holder.transform);g.name=file;
         var b=Bounds(g);if(b.size.y>0.001f)holder.transform.localScale=Vector3.one*(1.8f/b.size.y);
         b=Bounds(g);g.transform.position+=new Vector3(visitor.transform.position.x-b.center.x,visitor.transform.position.y-b.min.y,visitor.transform.position.z-b.center.z);
         var anim=g.GetComponent<Animator>();if(anim==null)anim=g.AddComponent<Animator>();
         anim.runtimeAnimatorController=ctrl;anim.applyRootMotion=false;anim.cullingMode=AnimatorCullingMode.AlwaysAnimate;
 
-        var exhibit=GameObject.Find("Exhibit_04_SpaceSuit");
+        var exhibit=file=="Astronaut"?GameObject.Find("Exhibit_04_SpaceSuit"):null;
         if(exhibit!=null){foreach(var n in new[]{"Astronaut_Figure","Visitor_Figure"}){var t=exhibit.transform.Find(n);if(t!=null)Hide(t);}
             var ex=exhibit.GetComponent<MuseumExhibit>();
             if(ex!=null){Undo.RecordObject(ex,"text");
@@ -158,7 +178,7 @@ public static class MuseumPlaceModelsTool
                 ex.credit="Models: \"Space Helmet - Model 1b\" by Alan Zimmerman, CC BY 3.0; your suit: \"Astronaut\" by Quaternius, CC0. Both via Poly Pizza.";}}
 
         Undo.CollapseUndoOperations(undo);EditorSceneManager.MarkSceneDirty(scene);AssetDatabase.SaveAssets();EditorSceneManager.SaveScene(scene);
-        Debug.Log("Visitor now wears the full Astronaut suit. If it faces backwards, set MuseumVisitor/AstronautSuit_Visual rotation Y to 180.");
+        Debug.Log("Visitor body is now "+file+". If it faces backwards, set MuseumVisitor/"+visualName+" rotation Y to 180.");
     }
 
     static GameObject Load(string file)=>AssetDatabase.LoadAssetAtPath<GameObject>("Assets/MuseumModels/"+file+".glb");

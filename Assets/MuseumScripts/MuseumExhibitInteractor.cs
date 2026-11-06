@@ -15,6 +15,7 @@ public class MuseumExhibitInteractor : MonoBehaviour
     public TMP_Text titleText, metaText, bodyText, themeText, captionText, creditText;
     public Button[] modeButtons;
     public Button closeButton;
+    public ScrollRect scroll;   // optional: panel text scrolls with the mouse wheel / trackpad
     public AudioSource audioSource;
 
     MuseumExhibit[] exhibits;
@@ -47,6 +48,7 @@ public class MuseumExhibitInteractor : MonoBehaviour
                 if(keys.digit1Key.wasPressedThisFrame)SelectMode(0);
                 if(keys.digit2Key.wasPressedThisFrame)SelectMode(1);
                 if(keys.digit3Key.wasPressedThisFrame)SelectMode(2);
+                if(keys.digit4Key.wasPressedThisFrame)SelectMode(3);
             }
             return;
         }
@@ -98,10 +100,13 @@ public class MuseumExhibitInteractor : MonoBehaviour
         // Simple exhibits leave Modes empty: the panel is then just title + text + close.
         bool interactive=e.modes!=null && e.modes.Length>0;
         if(captionText)captionText.gameObject.SetActive(interactive);
+        // In the scrollable layout the buttons sit in their own row: hide the whole row for simple exhibits.
+        if(modeButtons.Length>0 && modeButtons[0]!=null && modeButtons[0].transform.parent.name=="ModeButtons")modeButtons[0].transform.parent.gameObject.SetActive(interactive);
         var hint=panelRoot!=null?panelRoot.transform.Find("Content/KeysHint"):null;
         if(hint)hint.gameObject.SetActive(interactive);
         RefreshMode();
         if(panelRoot!=null)panelRoot.SetActive(true);
+        if(scroll!=null){Canvas.ForceUpdateCanvases();scroll.verticalNormalizedPosition=1;} // start at the top
         Play(openClip,0.5f);
     }
 
@@ -128,7 +133,7 @@ public class MuseumExhibitInteractor : MonoBehaviour
         for(int i=0;i<modeButtons.Length;i++){
             if(modeButtons[i]==null)continue;
             var img=modeButtons[i].GetComponent<Image>();
-            if(img)img.color=i==open.CurrentMode?new Color(0.25f,0.85f,0.9f,0.95f):new Color(0.16f,0.12f,0.3f,0.95f);
+            if(img)img.color=i==open.CurrentMode && open.IsPlayingMode(i)?new Color(0.25f,0.85f,0.9f,0.95f):new Color(0.16f,0.12f,0.3f,0.95f);
         }
     }
 

@@ -49,7 +49,7 @@ public class MuseumVisitorController : MonoBehaviour
         if(controlsText==null)return;
         controlsText.text=(locked?"":"CLICK TO EXPLORE  |  ")+
             (firstPerson?"FIRST PERSON":"THIRD PERSON")+
-            "\nWASD / ARROWS  MOVE     MOUSE  LOOK     SHIFT  RUN     V  VIEW     E  INSPECT     ESC  CURSOR";
+            "\nWASD / ARROWS  MOVE     MOUSE  LOOK     SHIFT  RUN     V  VIEW     E  INSPECT     F  FULLSCREEN     ESC  CURSOR";
     }
     void Update()
     {
@@ -58,6 +58,8 @@ public class MuseumVisitorController : MonoBehaviour
         if(keys!=null && keys.escapeKey.wasPressedThisFrame)SetLocked(false);
         else if(mouse!=null && mouse.leftButton.wasPressedThisFrame && !locked)SetLocked(true);
         if(keys!=null && keys.vKey.wasPressedThisFrame)ToggleView();
+        // F: browser/desktop fullscreen (works in WebGL because it happens on a key press).
+        if(keys!=null && keys.fKey.wasPressedThisFrame)Screen.fullScreen=!Screen.fullScreen;
         if(locked && mouse!=null && Cursor.lockState==CursorLockMode.Locked){
             Vector2 delta=Vector2.ClampMagnitude(mouse.delta.ReadValue(),300);
             yaw+=delta.x*sensitivity;pitch=Mathf.Clamp(pitch-delta.y*sensitivity,-65,70);
