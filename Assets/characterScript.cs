@@ -6,8 +6,12 @@ public class characterScript : MonoBehaviour
     public float mouseSensitivity = 2f;
     public Transform camera;
 
+    public float sprintSpeed = 10f;
+    public float jump = 6f;
+
     Rigidbody rb;
     float currentAngle;
+    bool jumped;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +32,11 @@ public class characterScript : MonoBehaviour
         currentAngle = Mathf.Clamp(currentAngle - my, -80f, 80f);
 
         camera.localRotation = Quaternion.Euler(currentAngle, 0f, 0f);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumped = true;
+        }
         
     }
 
@@ -40,10 +49,24 @@ public class characterScript : MonoBehaviour
         //so w+d doesn't go faster together
         if (move.sqrMagnitude > 1f) move.Normalize();
 
+        float speed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : moveSpeed;
+
         //builds the velocity for unity physics
-        Vector3 v = move * moveSpeed;
+        Vector3 v = move * speed; 
         v.y = rb.linearVelocity.y;
+
+        if (jumped && IsGrounded())
+        {
+            v.y = jump;
+        }
+
+        jumped = false;
         rb.linearVelocity = v;
+    }
+
+    bool IsGrounded()
+    {
+        return Physics.SphereCast(transform.position, 0.4f, Vector3.down, out _, 0.7f);
     }
 
 }
