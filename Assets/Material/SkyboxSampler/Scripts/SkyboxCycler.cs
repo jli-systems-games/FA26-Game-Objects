@@ -15,6 +15,8 @@ namespace TheKnightShift.SkyboxSampler
         public Material[] skyboxes;
         public bool showLabel = true;
 
+        public float skyboxRotationSpeed; 
+
         int index;
 
         void Start()
@@ -24,6 +26,8 @@ namespace TheKnightShift.SkyboxSampler
 
         void Update()
         {
+            RenderSettings.skybox.SetFloat("_Rotation", Time.time * skyboxRotationSpeed);
+
             if (skyboxes == null || skyboxes.Length == 0) return;
             if (Pressed(true)) Apply(index + 1);
             else if (Pressed(false)) Apply(index - 1);
