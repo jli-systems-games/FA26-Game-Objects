@@ -1,0 +1,48 @@
+# Human Museum — project structure
+
+Main scene: `Assets/Scenes/MidtermMuseum.unity`
+
+## Runtime scripts (in the game) — `Assets/MuseumScripts/`
+
+| Script | On | What it does |
+|---|---|---|
+| `MuseumVisitorController.cs` | MuseumVisitor | WASD move, mouse look, Shift run, V first/third person, F fullscreen, click to lock mouse, Esc to release, respawn after falling, drives walk animations |
+| `MuseumExhibit.cs` | each exhibit | Holds the label text (title, meta, body, "why it is here", credit) and optional modes (iPhone stages, turntable records) |
+| `MuseumExhibitInteractor.cs` | MuseumVisitor | Finds the nearest exhibit in front of you, shows "[E] INSPECT", opens/closes the scrollable panel, pauses movement while reading, plays UI sounds |
+| `MuseumHelmetMarker.cs` | (tag only) | Empty marker component used by a build tool |
+
+## Editor build tools (NOT in the game) — `Assets/Editor/MuseumBuildTools/`
+
+One-off helpers run from **Tools → Museum**. Each one placed things in the scene and saved it; the results now live in the scene.
+They are numbered in the order they were used. You do not need to run them again — edit the scene directly.
+
+| # | Tool | Built |
+|---|---|---|
+| 01 | PolygonFloor | Irregular hexagon floor with collider |
+| 02 | Architecture | Glass walls, metal frames, light strips, entry bridge, lobby desk, plinths |
+| 03 | PlayerSetup | Starter Assets visitor + controls HUD |
+| 04 | Exhibit | iPhone exhibit + shared exhibit panel UI |
+| 05 | PlaceModels | Downloaded exhibits on plinths; astronaut/alien visitor body |
+| 06 | Shape | Crystal roof, entrance canopy, guiding fins |
+| 07 | RecordPlayer | Glass fins, lobby record player with music |
+| 08 | SketchfabModels | Turntable, synthesizer, Boeing 757 cockpit |
+| 09 | SkyShip | Alien nebula skybox, parked spaceship |
+| 10 | FourthRecord | 4th record + 4th panel button |
+| 11 | PanelLayout | Larger, scrollable, screen-scaled exhibit panel |
+
+## Assets
+
+| Folder | Contents |
+|---|---|
+| `Assets/MuseumModels/` | Downloaded .glb models (imported with glTFast) |
+| `Assets/MuseumAudio/` | Music for the turntable |
+| `Assets/MuseumSky/` | Nebula skybox image + material |
+| `Assets/MuseumGenerated/` | Materials, meshes, animation controllers made by the tools |
+| `Assets/MuseumGenerated/SceneBackups/` | Automatic scene backups taken before each tool ran (not in the build) |
+
+Sources and licences of every model/sound: `MuseumCredits.md`.
+
+## Rendering chain (keep intact)
+
+Main Camera → `PixelRenderTexture` → `Canvas/PixelRender` (RawImage) → DisplayCamera → screen.
+`Canvas/ColorNoise` adds the coloured noise on top of the pixelated image.
