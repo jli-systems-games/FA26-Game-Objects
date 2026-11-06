@@ -10,8 +10,9 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
 AssetOrigin:
   serializedVersion: 1
-  productId: 422958
-  packageName: "Principal Evil FREE \u2013 Abandoned Horror School Classroom"
+  productId: 422960
+  packageName: "Gas & Dash FREE \u2013 Modular Gas Station Convenience Store with
+    Interior"
   packageVersion: 1.0
   assetPath: Assets/RetroStyleGames/Base/Shaders/RSG_Lit.shadergraph
-  uploadId: 1033274
+  uploadId: 1033332
