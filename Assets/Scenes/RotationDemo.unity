@@ -556,13 +556,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613674796}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 3.82, y: 2.5, z: 1.25}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.033960104, y: 1.1769999, z: -2.3168097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_Father: {fileID: 1106581734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &613674800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,6 +891,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 613674799}
   - {fileID: 1752625088}
   - {fileID: 807152138}
   m_Father: {fileID: 0}
@@ -908,6 +909,7 @@ GameObject:
   - component: {fileID: 1752625086}
   - component: {fileID: 1752625085}
   - component: {fileID: 1752625084}
+  - component: {fileID: 1752625089}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -922,16 +924,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752625083}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d62e5eff64f81414c8699aeb40bc9845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotationDemo
-  rotationState: 4
+  rotationState: 0
   rotationSpeed: 20
   targetObject: {fileID: 381083883}
   moveSpeed: 10
-  sensitivity: 3
 --- !u!65 &1752625085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1026,12 +1027,26 @@ Transform:
   - {fileID: 748923842}
   m_Father: {fileID: 1106581734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1752625089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752625083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0032fe2d45277364cb2bb4c4c3ac05ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotate
+  sensitivity: 6
+  maxRot: 50
+  minRot: -50
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1031045981}
-  - {fileID: 613674799}
   - {fileID: 333828035}
   - {fileID: 166158763}
   - {fileID: 1106581734}
