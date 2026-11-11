@@ -4782,7 +4782,7 @@ Transform:
   m_GameObject: {fileID: 138468896}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.48, y: 0.512, z: 14.73}
+  m_LocalPosition: {x: -1.39, y: 0.512, z: -0.742}
   m_LocalScale: {x: 0.20049603, y: 1, z: 0.22587083}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7467,7 +7467,7 @@ Transform:
   m_GameObject: {fileID: 243935406}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 6.8, y: 3.08, z: 19.5}
+  m_LocalPosition: {x: 6.509, y: 4.566, z: 19.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7524,11 +7524,11 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 0
-  m_Color: {r: 1, g: 0.58, b: 0.25, a: 1}
-  m_Intensity: 6.1465945
-  m_Range: 10.435516
+  m_Color: {r: 0.9009434, g: 0.22646604, b: 0.20823693, a: 1}
+  m_Intensity: 20
+  m_Range: 7.8284907
   m_SpotAngle: 130
-  m_InnerSpotAngle: 65
+  m_InnerSpotAngle: 130
   m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 0
@@ -13421,7 +13421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3118194605974767367, guid: bb3059742e586b04baf89217b991280c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1739522
+      value: 1.173952
       objectReference: {fileID: 0}
     - target: {fileID: 3118194605974767367, guid: bb3059742e586b04baf89217b991280c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21780,7 +21780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2303921294396319334, guid: 2cf8072ebed1149479d25d30c324125c, type: 3}
       propertyPath: keypadCombo
-      value: 12345
+      value: 48276
       objectReference: {fileID: 0}
     - target: {fileID: 2303921294396319334, guid: 2cf8072ebed1149479d25d30c324125c, type: 3}
       propertyPath: onAccessGranted.m_PersistentCalls.m_Calls.Array.size
@@ -32038,7 +32038,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 03b3a4a85ccc6a344995c6c2582ad0a6, type: 2}
+  - {fileID: 2100000, guid: b371a6db7a221c547bd347d2997402b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -51141,7 +51141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1078d7f16f5e145a3137f0c509fb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NavKeypad.SlidingDoor
-  anim: {fileID: 0}
+  anim: {fileID: 1827787455}
 --- !u!95 &1827787455
 Animator:
   serializedVersion: 7
@@ -51152,7 +51152,7 @@ Animator:
   m_GameObject: {fileID: 1827787450}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47d9ff08a019dd8418e485801ccc91ad, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
