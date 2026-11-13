@@ -15,6 +15,7 @@ The alien visitor starts inside its spaceship, presses E to open the hatch, cros
 | `MuseumExhibit.cs` | each exhibit | Holds the label text (title, meta, body, "why it is here", credit) and optional modes (iPhone stages, turntable records) |
 | `MuseumExhibitInteractor.cs` | MuseumVisitor | Finds the nearest exhibit in front of you, shows "[E] INSPECT", opens/closes the scrollable panel, pauses movement while reading, plays UI sounds |
 | `MuseumSlidingDoor.cs` | 08_ShipAirlock | Spaceship hatch at the start: press E nearby, it slides open and stays open |
+| `MuseumAutoDoor.cs` | 09_EntranceAutoDoor | Museum entrance: glass doors slide apart automatically when the visitor is near, close when they leave |
 | `MuseumMenu.cs` | Canvas/MuseumMenu | Start screen (START) and pause menu on TAB/P (RESUME, RESTART, EXIT); pauses time and locks movement while open |
 | `MuseumHelmetMarker.cs` | (tag only) | Empty marker component used by a build tool |
 
@@ -42,6 +43,9 @@ They are numbered in the order they were used. You do not need to run them again
 | 15 | ShipHull | Scales the spaceship ~3x so its hull hides the cabin; cabin re-skinned as dark ship interior |
 | 16 | StoryAndShipFix | Fixed ship size/position (explicit numbers), Aphex Twin as record 1, extinction story text |
 | 17 | ShipReset | Reverts a moved part inside the spaceship model, measures it properly and wraps the hull around the cabin |
+| 18 | ShipLayFlat | Lays the nose-up spaceship flat (tries 90-degree turns, keeps the flattest), then wraps the hull around the cabin |
+| 19 | AutoDoor | Automatic sliding glass doors at the museum entrance |
+| 20 | Font | Pixelify Sans (headings) + Space Mono (body) TMP font assets applied to all scene text |
 
 ## Assets
 
@@ -49,6 +53,7 @@ They are numbered in the order they were used. You do not need to run them again
 |---|---|
 | `Assets/MuseumModels/` | Downloaded .glb models (imported with glTFast) |
 | `Assets/MuseumAudio/` | Music for the turntable |
+| `Assets/MuseumFonts/` | Pixelify Sans + Space Mono (OFL) and their TMP font assets |
 | `Assets/MuseumSky/` | Nebula skybox image + material |
 | `Assets/MuseumGenerated/` | Materials, meshes, animation controllers made by the tools |
 | `Assets/MuseumGenerated/SceneBackups/` | Automatic scene backups taken before each tool ran (not in the build) |

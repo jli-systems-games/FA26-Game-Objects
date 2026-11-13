@@ -66,6 +66,13 @@ Note: Apple product models made by fans may still show Apple logos/trademarks; p
 |---|---|---|---|
 | Aphex Twin – "#21" | `Assets/MuseumAudio/AphexTwin_21.wav` (converted to 16-bit, ~45 MB) | Copyright the artist / record label. **No licence obtained.** | Student's choice for a non-commercial class project. May be taken down by itch.io/GitHub on a copyright claim. Remove before any public or commercial release. |
 
+## Fonts (added 2026-11-13)
+
+| Font | File | Author | Source | Licence |
+|---|---|---|---|---|
+| Pixelify Sans | `Assets/MuseumFonts/PixelifySans.ttf` | The Pixelify Sans Project Authors | https://fonts.google.com/specimen/Pixelify+Sans | SIL OFL 1.1 (`OFL_PixelifySans.txt`) |
+| Space Mono | `Assets/MuseumFonts/SpaceMono-Regular.ttf`, `-Bold.ttf` | The Space Mono Project Authors (Colophon) | https://fonts.google.com/specimen/Space+Mono | SIL OFL 1.1 (`OFL_SpaceMono.txt`) |
+
 ## Facts used in exhibit labels
 - iPhone: announced 9 Jan 2007, US release 29 Jun 2007, App Store July 2008; NASA PhoneSat flights 2013.
 - Voyager Golden Records: on Voyager 1 and 2, launched 1977.
