@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 
 // The spaceship hatch at the start of the game.
-// When the visitor stands close and presses E, the door panel slides sideways and stays open.
+// When the visitor stands close and presses SPACE, the door panel slides sideways and stays open.
 public class MuseumSlidingDoor : MonoBehaviour
 {
     public Transform door;            // the panel that moves (has a collider, so it blocks until open)
@@ -28,6 +28,7 @@ public class MuseumSlidingDoor : MonoBehaviour
         if(visitor!=null)controller=visitor.GetComponent<MuseumVisitorController>();
         closedPos=door.localPosition;
         sound=gameObject.AddComponent<AudioSource>();sound.playOnAwake=false;sound.spatialBlend=0.7f;
+        if(prompt!=null)prompt.text="<b>[SPACE]</b>  OPEN HATCH";
         hiss=MuseumExhibitInteractor.Tone("Hatch",new[]{220f,330f,440f},0.12f,0.25f);
     }
 
@@ -42,7 +43,7 @@ public class MuseumSlidingDoor : MonoBehaviour
             welcomeUI.SetActive(inside);
         }
         var keys=Keyboard.current;
-        if(!open && near && keys!=null && keys.eKey.wasPressedThisFrame){open=true;sound.PlayOneShot(hiss,0.6f);}
+        if(!open && near && keys!=null && keys.spaceKey.wasPressedThisFrame){open=true;sound.PlayOneShot(hiss,0.6f);}
         // Slide smoothly from closed to open over about half a second.
         t=Mathf.MoveTowards(t,open?1:0,Time.unscaledDeltaTime*2f);
         door.localPosition=closedPos+openOffset*Mathf.SmoothStep(0,1,t);

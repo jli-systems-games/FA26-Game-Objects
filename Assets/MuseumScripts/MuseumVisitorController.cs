@@ -37,6 +37,8 @@ public class MuseumVisitorController : MonoBehaviour
     { locked=value;Cursor.lockState=value?CursorLockMode.Locked:CursorLockMode.None;Cursor.visible=!value;UpdateHint(); }
     void OnDisable(){Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}
     void OnApplicationFocus(bool focus){if(!focus)SetLocked(false);}
+    // Call after swapping the visible body (e.g. putting on the spacesuit) so first person hides the new body too.
+    public void RefreshVisuals(){visuals=GetComponentsInChildren<Renderer>();ApplyView();}
     public void ToggleView(){firstPerson=!firstPerson;ApplyView();UpdateCamera();UpdateHint();}
     void ApplyView()
     {
@@ -84,7 +86,7 @@ public class MuseumVisitorController : MonoBehaviour
         if(transform.position.y<-5){body.enabled=false;transform.position=spawn;body.enabled=true;verticalSpeed=-2;}
         animationSpeed=Mathf.MoveTowards(animationSpeed,input.magnitude*speed,12*Time.deltaTime);
         foreach(var a in animators){
-            if(a==null||a.runtimeAnimatorController==null)continue;
+            if(a==null||!a.isActiveAndEnabled||a.runtimeAnimatorController==null)continue;
             a.SetFloat("Speed",animationSpeed);a.SetFloat("MotionSpeed",1);
             a.SetBool("Grounded",body.isGrounded);a.SetBool("Jump",false);a.SetBool("FreeFall",!body.isGrounded && verticalSpeed<-4);
         }

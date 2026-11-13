@@ -44,6 +44,7 @@ public class MuseumExhibitInteractor : MonoBehaviour
     {
         var keys=Keyboard.current;
         if(open!=null){
+            ScrollPanel(keys);
             if(keys!=null){
                 if(keys.eKey.wasPressedThisFrame||keys.escapeKey.wasPressedThisFrame){Close();return;}
                 if(keys.digit1Key.wasPressedThisFrame)SelectMode(0);
@@ -136,6 +137,18 @@ public class MuseumExhibitInteractor : MonoBehaviour
             var img=modeButtons[i].GetComponent<Image>();
             if(img)img.color=i==open.CurrentMode && open.IsPlayingMode(i)?new Color(0.25f,0.85f,0.9f,0.95f):new Color(0.16f,0.12f,0.3f,0.95f);
         }
+    }
+
+    // Scroll the open panel with the mouse wheel / trackpad, or W/S and the arrow keys.
+    // Done in code so it works wherever the mouse is (the text itself does not catch UI clicks).
+    void ScrollPanel(Keyboard keys)
+    {
+        if(scroll==null||scroll.content==null||scroll.viewport==null)return;
+        float extra=scroll.content.rect.height-scroll.viewport.rect.height;if(extra<=1)return;
+        float delta=0;
+        var mouse=Mouse.current;if(mouse!=null)delta+=mouse.scroll.ReadValue().y*0.5f;
+        if(keys!=null){if(keys.wKey.isPressed||keys.upArrowKey.isPressed)delta+=900*Time.unscaledDeltaTime;if(keys.sKey.isPressed||keys.downArrowKey.isPressed)delta-=900*Time.unscaledDeltaTime;}
+        if(delta!=0)scroll.verticalNormalizedPosition=Mathf.Clamp01(scroll.verticalNormalizedPosition+delta/extra);
     }
 
     void Play(AudioClip clip,float volume){if(audioSource!=null&&clip!=null)audioSource.PlayOneShot(clip,volume);}

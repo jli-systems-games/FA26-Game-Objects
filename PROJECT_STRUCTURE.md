@@ -14,8 +14,9 @@ The alien visitor starts inside its spaceship, presses E to open the hatch, cros
 | `MuseumVisitorController.cs` | MuseumVisitor | WASD move, mouse look, Shift run, V first/third person, F fullscreen, click to lock mouse, Esc to release, respawn after falling, drives walk animations |
 | `MuseumExhibit.cs` | each exhibit | Holds the label text (title, meta, body, "why it is here", credit) and optional modes (iPhone stages, turntable records) |
 | `MuseumExhibitInteractor.cs` | MuseumVisitor | Finds the nearest exhibit in front of you, shows "[E] INSPECT", opens/closes the scrollable panel, pauses movement while reading, plays UI sounds |
-| `MuseumSlidingDoor.cs` | 08_ShipAirlock | Spaceship hatch at the start: press E nearby, it slides open and stays open |
+| `MuseumSlidingDoor.cs` | 08_ShipAirlock | Spaceship hatch at the start: press SPACE nearby, it slides open and stays open |
 | `MuseumAutoDoor.cs` | 09_EntranceAutoDoor | Museum entrance: glass doors slide apart automatically when the visitor is near, close when they leave |
+| `MuseumWearableSuit.cs` | Exhibit_04_SpaceSuit | "Try on the suit": swaps the alien body for the spacesuit (and back), suit drifts gently |
 | `MuseumMenu.cs` | Canvas/MuseumMenu | Start screen (START) and pause menu on TAB/P (RESUME, RESTART, EXIT); pauses time and locks movement while open |
 | `MuseumHelmetMarker.cs` | (tag only) | Empty marker component used by a build tool |
 
@@ -47,6 +48,11 @@ They are numbered in the order they were used. You do not need to run them again
 | 19 | AutoDoor | Automatic sliding glass doors at the museum entrance |
 | 20 | Font | Pixelify Sans (headings) + Space Mono (body) TMP font assets applied to all scene text |
 | 21 | RestoreCockpit | Puts the removed Boeing 757 cockpit model back on its exhibit spot |
+| 22 | SuitAndSky | 4k Nebula 2 sky; Jungle Jim astronaut figure; wearable suit choices on the spacesuit exhibit |
+| 23 | SuitUpright | Turns the Jungle Jim astronaut right way up (checks where the visor is) |
+| 24 | PhoneFace | iPhone faces the visitor, sways instead of spinning, glowing screen that changes with the stages |
+| 25 | Atmosphere | Spot lights per exhibit, coloured wall wash, light probes, post FX (bloom, ACES, vignette), fog, static flags + baked lighting |
+| 26 | Brighten | Fixes the too-dark atmosphere: trilight ambient, stronger lights, neutral tonemapping, more exposure, thinner fog, re-bake |
 
 ## Assets
 

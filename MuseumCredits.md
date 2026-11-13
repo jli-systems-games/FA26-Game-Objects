@@ -73,6 +73,13 @@ Note: Apple product models made by fans may still show Apple logos/trademarks; p
 | Pixelify Sans | `Assets/MuseumFonts/PixelifySans.ttf` | The Pixelify Sans Project Authors | https://fonts.google.com/specimen/Pixelify+Sans | SIL OFL 1.1 (`OFL_PixelifySans.txt`) |
 | Space Mono | `Assets/MuseumFonts/SpaceMono-Regular.ttf`, `-Bold.ttf` | The Space Mono Project Authors (Colophon) | https://fonts.google.com/specimen/Space+Mono | SIL OFL 1.1 (`OFL_SpaceMono.txt`) |
 
+## Added 2026-11-13: HD sky + wearable suit
+
+| Item | File | Author | Source URL | Licence | Note |
+|---|---|---|---|---|---|
+| Alien Space Nebula 2 (Skybox), 4k | `Assets/MuseumSky/AlienNebula2_Equirect_4k.png` | Jungle Jim | https://sketchfab.com/3d-models/alien-space-nebula-2-skybox-a1c688c6e8164fd4ad5a7e56047e8b50 | CC BY 4.0 | 4096x2048 image extracted from the 4k .glb; now the active sky |
+| Astronaut by Jungle Jim | `Assets/MuseumModels/AstronautJJ.glb` | Jungle Jim | https://sketchfab.com/3d-models/astronaut-by-jungle-jim-c775a977606a4e4e990afe783c6bc845 | CC BY 4.0 | Spacesuit exhibit figure + wearable visitor body (no skeleton; drifts instead of walking) |
+
 ## Facts used in exhibit labels
 - iPhone: announced 9 Jan 2007, US release 29 Jun 2007, App Store July 2008; NASA PhoneSat flights 2013.
 - Voyager Golden Records: on Voyager 1 and 2, launched 1977.

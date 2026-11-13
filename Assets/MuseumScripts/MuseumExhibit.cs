@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 // One curated exhibit: label text, interaction modes and the scene objects each mode drives.
 public class MuseumExhibit : MonoBehaviour
@@ -26,8 +27,12 @@ public class MuseumExhibit : MonoBehaviour
     public Transform interactPoint;
     public float interactRange=3f;
     public Transform model;
+    public bool sway;                   // true: model swings gently left/right facing the visitor instead of spinning
+    public float swayAngle=28f;
     public Renderer screen;
     public GameObject focusHighlight;
+    public bool keepModeOnOpen;         // e.g. the spacesuit: reopening the panel must not take the suit off
+    public UnityEvent<int> onModeChanged; // other scripts react to the chosen mode (wired in the Inspector)
     public AudioSource musicSource;     // plays Mode.music; keeps playing after the panel closes
 
     public Mode[] modes;
@@ -36,13 +41,14 @@ public class MuseumExhibit : MonoBehaviour
     public Mode Current => modes!=null && modes.Length>0 ? modes[CurrentMode] : null;
 
     Vector3 modelStart;
+    Quaternion modelRot;
     float lift;
     MaterialPropertyBlock block;
 
     void Awake()
     {
         if(interactPoint==null)interactPoint=transform;
-        if(model!=null)modelStart=model.localPosition;
+        if(model!=null){modelStart=model.localPosition;modelRot=model.localRotation;}
         SetFocused(false);
         SetMode(0);
     }
@@ -52,7 +58,7 @@ public class MuseumExhibit : MonoBehaviour
     public bool IsPlayingMode(int i)=>!HasMusic || (musicSource.isPlaying && musicSource.clip==modes[i].music);
 
     // Record player: opening/closing the panel does not change the record.
-    public void SetInspecting(bool value){Inspecting=value;if(!HasMusic)SetMode(0);}
+    public void SetInspecting(bool value){Inspecting=value;if(!HasMusic&&!keepModeOnOpen)SetMode(0);}
 
     public void SetMode(int index)
     {
@@ -72,6 +78,7 @@ public class MuseumExhibit : MonoBehaviour
             block.SetColor("_BaseColor",c);block.SetColor("_EmissionColor",c*2.2f);
             screen.SetPropertyBlock(block);
         }
+        onModeChanged?.Invoke(CurrentMode);
     }
 
     void Update()
@@ -82,6 +89,7 @@ public class MuseumExhibit : MonoBehaviour
         float spin=Inspecting && m!=null ? m.spinSpeed : 10;
         lift=Mathf.Lerp(lift,target,1-Mathf.Exp(-4*Time.deltaTime));
         model.localPosition=modelStart+Vector3.up*(lift+Mathf.Sin(Time.time*1.3f)*0.015f);
-        model.Rotate(0,spin*Time.deltaTime,0,Space.World);
+        if(sway)model.localRotation=modelRot*Quaternion.Euler(0,Mathf.Sin(Time.time*(0.4f+spin*0.02f))*swayAngle,0);
+        else model.Rotate(0,spin*Time.deltaTime,0,Space.World);
     }
 }
