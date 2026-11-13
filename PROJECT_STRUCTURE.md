@@ -46,6 +46,7 @@ They are numbered in the order they were used. You do not need to run them again
 | 18 | ShipLayFlat | Lays the nose-up spaceship flat (tries 90-degree turns, keeps the flattest), then wraps the hull around the cabin |
 | 19 | AutoDoor | Automatic sliding glass doors at the museum entrance |
 | 20 | Font | Pixelify Sans (headings) + Space Mono (body) TMP font assets applied to all scene text |
+| 21 | RestoreCockpit | Puts the removed Boeing 757 cockpit model back on its exhibit spot |
 
 ## Assets
 
