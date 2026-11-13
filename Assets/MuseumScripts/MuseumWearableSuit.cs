@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // The spacesuit exhibit can be worn. Choosing mode 1 ("Try on the suit") swaps the visitor's alien body for the suit;
-// mode 0 swaps back. The suit model has no skeleton, so it drifts gently instead of walking, like floating in zero gravity.
+// mode 0 swaps back. While wearing it the visitor floats, so footsteps are muted. The suit model has no skeleton, so it drifts gently instead of walking, like floating in zero gravity.
 public class MuseumWearableSuit : MonoBehaviour
 {
     public MuseumVisitorController visitor;
@@ -20,7 +20,7 @@ public class MuseumWearableSuit : MonoBehaviour
         if(alienBody!=null)alienBody.SetActive(!wear);
         if(suitBody!=null)suitBody.SetActive(wear);
         if(exhibitFigure!=null)exhibitFigure.SetActive(!wear);
-        if(visitor!=null)visitor.RefreshVisuals();
+        if(visitor!=null){visitor.RefreshVisuals();visitor.silentSteps=wear;} // floating in the suit: no footsteps
     }
 
     void Update()

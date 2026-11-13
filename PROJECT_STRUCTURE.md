@@ -4,7 +4,7 @@ Main scene: `Assets/Scenes/MidtermMuseum.unity`
 
 ## Opening
 
-Story: the humans are extinct; the museum was built afterwards from what they left behind.
+Story: the humans are extinct; aliens collected the machines they left behind and built this museum in orbit.
 The alien visitor starts inside its spaceship, presses E to open the hatch, crosses the bridge and enters the museum lobby.
 
 ## Runtime scripts (in the game) — `Assets/MuseumScripts/`
@@ -53,6 +53,7 @@ They are numbered in the order they were used. You do not need to run them again
 | 24 | PhoneFace | iPhone faces the visitor, sways instead of spinning, glowing screen that changes with the stages |
 | 25 | Atmosphere | Spot lights per exhibit, coloured wall wash, light probes, post FX (bloom, ACES, vignette), fog, static flags + baked lighting |
 | 26 | Brighten | Fixes the too-dark atmosphere: trilight ambient, stronger lights, neutral tonemapping, more exposure, thinner fog, re-bake |
+| 27 | StoryAudioBalcony | Past-tense labels (humans extinct, objects collected by aliens), footsteps + ambience, NW balcony with the final exhibit "Where Earth Was" |
 
 ## Assets
 

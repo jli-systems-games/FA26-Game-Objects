@@ -12,6 +12,11 @@ public class MuseumVisitorController : MonoBehaviour
     public bool firstPerson=true;
     // Set by MuseumExhibitInteractor while an exhibit panel is open: no move/look/click-lock.
     [System.NonSerialized] public bool inputLocked;
+    [Header("Footsteps")]
+    public AudioSource footstepSource;
+    public AudioClip[] footstepClips;   // Starter Assets footstep sounds
+    public AudioClip landClip;
+    [System.NonSerialized] public bool silentSteps; // true while floating in the spacesuit
     CharacterController body;
     Animator animator;
     Animator[] animators; // Starter Assets body + optional astronaut suit visual
@@ -110,6 +115,15 @@ public class MuseumVisitorController : MonoBehaviour
         worldCamera.transform.SetPositionAndRotation(position,rotation);
     }
     // Animation clips contain these events; keep receivers on the new controller.
-    void OnFootstep(AnimationEvent e){}
-    void OnLand(AnimationEvent e){}
+    // The Starter Assets walk/run animations call these at each foot contact; we play a step sound there.
+    void OnFootstep(AnimationEvent e)
+    {
+        if(silentSteps||footstepSource==null||footstepClips==null||footstepClips.Length==0)return;
+        if(e.animatorClipInfo.weight<0.5f||!body.isGrounded)return;   // ignore blended-out clips
+        footstepSource.PlayOneShot(footstepClips[Random.Range(0,footstepClips.Length)],0.35f);
+    }
+    void OnLand(AnimationEvent e)
+    {
+        if(!silentSteps&&footstepSource!=null&&landClip!=null&&e.animatorClipInfo.weight>0.5f)footstepSource.PlayOneShot(landClip,0.3f);
+    }
 }

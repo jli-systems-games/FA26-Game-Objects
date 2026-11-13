@@ -80,8 +80,16 @@ Note: Apple product models made by fans may still show Apple logos/trademarks; p
 | Alien Space Nebula 2 (Skybox), 4k | `Assets/MuseumSky/AlienNebula2_Equirect_4k.png` | Jungle Jim | https://sketchfab.com/3d-models/alien-space-nebula-2-skybox-a1c688c6e8164fd4ad5a7e56047e8b50 | CC BY 4.0 | 4096x2048 image extracted from the 4k .glb; now the active sky |
 | Astronaut by Jungle Jim | `Assets/MuseumModels/AstronautJJ.glb` | Jungle Jim | https://sketchfab.com/3d-models/astronaut-by-jungle-jim-c775a977606a4e4e990afe783c6bc845 | CC BY 4.0 | Spacesuit exhibit figure + wearable visitor body (no skeleton; drifts instead of walking) |
 
+## Audio added 2026-11-13
+
+| Item | File | Author / source | Licence | Note |
+|---|---|---|---|---|
+| Footsteps + landing | `Assets/Starter Assets/.../Sfx/Player_Footstep_01-10.wav`, `Player_Land.wav` | Unity Technologies, Starter Assets | Unity Asset Store EULA | Played on the walk animation's foot contacts; muted while wearing the suit |
+| Space ambience loop | `Assets/MuseumAudio/Ambience_StarsBlinking.mp3` | "Sci-fi Ambience – Stars Are Blinking", kitsunemusic (Pixabay, file id 270037) | Pixabay Content License (free use, no attribution required) | **Check the Pixabay page and confirm the licence before submitting** |
+
 ## Facts used in exhibit labels
 - iPhone: announced 9 Jan 2007, US release 29 Jun 2007, App Store July 2008; NASA PhoneSat flights 2013.
 - Voyager Golden Records: on Voyager 1 and 2, launched 1977.
 - Boeing 757: first flight 1982, entered service 1983, two-crew flight deck with EFIS screens.
 - Modular synthesizers (Moog and others): commercial from the mid-1960s.
+- Voyager 1 "Pale Blue Dot" image of Earth: 14 February 1990, about 6 billion km away.
