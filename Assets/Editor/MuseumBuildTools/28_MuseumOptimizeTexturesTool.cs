@@ -11,11 +11,16 @@ using UnityEngine;
 // The scene then uses the copies (the original .glb files are untouched; revert = Prefab > Revert on the model).
 public static class MuseumOptimizeTexturesTool
 {
-    const int MaxSize=1024;
+    static int MaxSize=2048;
     const string OutDir="Assets/MuseumGenerated/Optimized";
     static readonly string[] Models={"Turntable","Cockpit757","Synthesizer","Perseverance","AlienSpaceship","ISS","LanderB","Watch","Smartphone","AstronautJJ","MacBookPro","SpaceHelmet"};
 
-    [MenuItem("Tools/Museum/Optimize Model Textures For WebGL")]
+    // 2048: textures keep (almost) all their detail, just compressed. 1024: smallest download.
+    [MenuItem("Tools/Museum/Optimize Model Textures For WebGL (2048, keep quality)")]
+    public static void Run2048(){MaxSize=2048;Run();}
+    [MenuItem("Tools/Museum/Optimize Model Textures For WebGL (1024, smallest)")]
+    public static void Run1024(){MaxSize=1024;Run();}
+
     public static void Run()
     {
         var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();

@@ -3,25 +3,28 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 // Balcony telescope. Stand next to it and press E: the camera looks through the eyepiece at Earth with a narrow
-// field of view (zoom) and a round "lens" mask. Move the mouse a little to look around. E or Esc steps back.
+// field of view (zoom) and a round "lens" mask. Move the mouse a little to look around. E (or Q) steps back.
 public class MuseumTelescope : MonoBehaviour
 {
     public MuseumVisitorController visitor;
     public MuseumExhibitInteractor interactor;
     public Transform eye;            // camera position at the eyepiece
     public Transform target;         // Earth
-    public float zoomFov=1.8f, range=2.2f, lookAround=1.5f;
+    public float zoomFov=0.95f, range=2.2f, lookAround=0.6f;
+    public float earthSpin=8f;      // degrees per second, so continents drift past while you watch
     public GameObject prompt;        // "[E] LOOK THROUGH THE TELESCOPE"
     public GameObject view;          // lens mask + caption, shown while looking
     public RawImage lens;
 
     bool viewing; int enteredFrame; Vector2 offset;
+    Renderer[] ownParts;  // the telescope's own body: hidden while looking, otherwise the camera sees the inside of the tube
 
     void Awake()
     {
         if(visitor==null)visitor=FindFirstObjectByType<MuseumVisitorController>();
         if(interactor==null&&visitor!=null)interactor=visitor.GetComponent<MuseumExhibitInteractor>();
         if(lens!=null)lens.texture=MakeLens();
+        ownParts=GetComponentsInChildren<Renderer>();
         if(view!=null)view.SetActive(false);if(prompt!=null)prompt.SetActive(false);
     }
 
@@ -34,12 +37,13 @@ public class MuseumTelescope : MonoBehaviour
             if(near && keys!=null && keys.eKey.wasPressedThisFrame)Enter();
             return;
         }
+        if(target!=null)target.Rotate(0,earthSpin*Time.deltaTime,0,Space.Self);
         // Gentle look-around with the mouse, limited to a small cone around Earth.
         var mouse=Mouse.current;
-        if(mouse!=null){offset+=mouse.delta.ReadValue()*0.01f;offset=Vector2.ClampMagnitude(offset,lookAround);}
+        if(mouse!=null){offset+=mouse.delta.ReadValue()*0.004f;offset=Vector2.ClampMagnitude(offset,lookAround);}
         eye.rotation=Quaternion.LookRotation(target.position-eye.position)*Quaternion.Euler(-offset.y,offset.x,0);
         if(lens!=null){float a=(float)Screen.width/Screen.height;lens.uvRect=new Rect(-(a-1)/2f,0,a,1);} // keep the lens round
-        if(Time.frameCount>enteredFrame && keys!=null && (keys.eKey.wasPressedThisFrame||keys.escapeKey.wasPressedThisFrame))Exit();
+        if(Time.frameCount>enteredFrame && keys!=null && (keys.eKey.wasPressedThisFrame||keys.qKey.wasPressedThisFrame||keys.escapeKey.wasPressedThisFrame))Exit();
     }
 
     void Enter()
@@ -47,12 +51,14 @@ public class MuseumTelescope : MonoBehaviour
         viewing=true;enteredFrame=Time.frameCount;offset=Vector2.zero;
         visitor.inputLocked=true;visitor.SetLocked(true);visitor.overrideFov=zoomFov;visitor.cameraOverride=eye;
         if(interactor!=null)interactor.enabled=false;
+        foreach(var r in ownParts)r.enabled=false;
         if(prompt!=null)prompt.SetActive(false);if(view!=null)view.SetActive(true);
     }
     void Exit()
     {
         viewing=false;visitor.cameraOverride=null;visitor.inputLocked=false;
         if(interactor!=null)interactor.enabled=true;if(view!=null)view.SetActive(false);
+        foreach(var r in ownParts)r.enabled=true;
     }
 
     // Black texture with a soft round hole in the middle.

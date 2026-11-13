@@ -55,9 +55,12 @@ They are numbered in the order they were used. You do not need to run them again
 | 25 | Atmosphere | Spot lights per exhibit, coloured wall wash, light probes, post FX (bloom, ACES, vignette), fog, static flags + baked lighting |
 | 26 | Brighten | Fixes the too-dark atmosphere: trilight ambient, stronger lights, neutral tonemapping, more exposure, thinner fog, re-bake |
 | 27 | StoryAudioBalcony | Past-tense labels (humans extinct, objects collected by aliens), footsteps + ambience, NW balcony with the final exhibit "Where Earth Was" |
-| 28 | OptimizeTextures | WebGL size: copies the big models' materials with textures shrunk to 1024 px and compressed |
+| 28 | OptimizeTextures | WebGL size: copies the big models' materials with textures compressed (max 2048 or 1024 px) |
 | 29 | Telescope | Balcony telescope + textured Earth far out in space (NASA image) |
 | 30 | InfoDesk | Lobby desk becomes the Information Desk: hologram + E panel with the museum intro and route |
+| 31 | TelescopeFix | Earth closer (clear through the telescope, spins), telescope at the railing, Esc removed from hints |
+| 32 | WebGLSize | Lossless size settings: Brotli, no splash, code stripping, Vorbis music |
+| 33 | SoftGlow | Soft round fading floor glow + a small light on the object when you can press E (replaces the pink ellipse) |
 
 ## Assets
 

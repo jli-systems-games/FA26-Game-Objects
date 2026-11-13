@@ -46,7 +46,7 @@ public class MuseumExhibitInteractor : MonoBehaviour
         if(open!=null){
             ScrollPanel(keys);
             if(keys!=null){
-                if(keys.eKey.wasPressedThisFrame||keys.escapeKey.wasPressedThisFrame){Close();return;}
+                if(keys.eKey.wasPressedThisFrame||keys.qKey.wasPressedThisFrame||keys.escapeKey.wasPressedThisFrame){Close();return;} // Esc also exits browser fullscreen, so E/Q are the main keys
                 if(keys.digit1Key.wasPressedThisFrame)SelectMode(0);
                 if(keys.digit2Key.wasPressedThisFrame)SelectMode(1);
                 if(keys.digit3Key.wasPressedThisFrame)SelectMode(2);
