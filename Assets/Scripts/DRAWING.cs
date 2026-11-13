@@ -88,15 +88,14 @@ public class DRAWING : MonoBehaviour
                 PointToMousePosition();
             }
 
-            else
-            {
-                currentLineRenderer = null;
-            }
+                else
+                {
+                    currentLineRenderer = null;
+                }
 
         }
 
     }
-
 
 
 
@@ -160,14 +159,4 @@ public class DRAWING : MonoBehaviour
     } 
 
 
-
-
-
-}
-
-
-
-
-internal class vector2
-{
 }
