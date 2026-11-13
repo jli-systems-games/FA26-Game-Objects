@@ -49,7 +49,7 @@ public class MuseumVisitorController : MonoBehaviour
         if(controlsText==null)return;
         controlsText.text=(locked?"":"CLICK TO EXPLORE  |  ")+
             (firstPerson?"FIRST PERSON":"THIRD PERSON")+
-            "\nWASD / ARROWS  MOVE     MOUSE  LOOK     SHIFT  RUN     V  VIEW     E  INSPECT     F  FULLSCREEN     ESC  CURSOR";
+            "\nWASD / ARROWS  MOVE     MOUSE  LOOK     SHIFT  RUN     V  VIEW     E  INSPECT     F  FULLSCREEN     TAB  MENU";
     }
     void Update()
     {

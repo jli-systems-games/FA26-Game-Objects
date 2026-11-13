@@ -20,6 +20,7 @@ public class MuseumExhibitInteractor : MonoBehaviour
 
     MuseumExhibit[] exhibits;
     MuseumExhibit focused, open;
+    public bool IsReading => open!=null;   // used by the pause menu
     AudioClip focusClip, openClip, closeClip, modeClip;
 
     void Awake()
@@ -140,7 +141,7 @@ public class MuseumExhibitInteractor : MonoBehaviour
     void Play(AudioClip clip,float volume){if(audioSource!=null&&clip!=null)audioSource.PlayOneShot(clip,volume);}
 
     // Small synthesized chimes so the project has no unlicensed audio files.
-    static AudioClip Tone(string name,float[] notes,float noteLength,float amp)
+    public static AudioClip Tone(string name,float[] notes,float noteLength,float amp)
     {
         const int rate=44100;int per=(int)(rate*noteLength);var data=new float[per*notes.Length+rate/10];
         for(int n=0;n<notes.Length;n++)for(int i=0;i<per+rate/10 && n*per+i<data.Length;i++){
