@@ -146,8 +146,10 @@ public class MuseumExhibitInteractor : MonoBehaviour
         if(scroll==null||scroll.content==null||scroll.viewport==null)return;
         float extra=scroll.content.rect.height-scroll.viewport.rect.height;if(extra<=1)return;
         float delta=0;
-        var mouse=Mouse.current;if(mouse!=null)delta+=mouse.scroll.ReadValue().y*0.5f;
-        if(keys!=null){if(keys.wKey.isPressed||keys.upArrowKey.isPressed)delta+=900*Time.unscaledDeltaTime;if(keys.sKey.isPressed||keys.downArrowKey.isPressed)delta-=900*Time.unscaledDeltaTime;}
+        // Wheel values differ a lot between mouse, trackpad and browsers, so each tick moves a fixed, readable step.
+        var mouse=Mouse.current;
+        if(mouse!=null){float y=mouse.scroll.ReadValue().y;if(Mathf.Abs(y)>0.01f)delta+=Mathf.Sign(y)*Mathf.Clamp(Mathf.Abs(y)*3f,25f,260f);}
+        if(keys!=null){if(keys.wKey.isPressed||keys.upArrowKey.isPressed)delta+=1600*Time.unscaledDeltaTime;if(keys.sKey.isPressed||keys.downArrowKey.isPressed)delta-=1600*Time.unscaledDeltaTime;}
         if(delta!=0)scroll.verticalNormalizedPosition=Mathf.Clamp01(scroll.verticalNormalizedPosition+delta/extra);
     }
 

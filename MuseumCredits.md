@@ -87,6 +87,12 @@ Note: Apple product models made by fans may still show Apple logos/trademarks; p
 | Footsteps + landing | `Assets/Starter Assets/.../Sfx/Player_Footstep_01-10.wav`, `Player_Land.wav` | Unity Technologies, Starter Assets | Unity Asset Store EULA | Played on the walk animation's foot contacts; muted while wearing the suit |
 | Space ambience loop | `Assets/MuseumAudio/Ambience_StarsBlinking.mp3` | "Sci-fi Ambience – Stars Are Blinking", kitsunemusic (Pixabay, file id 270037) | Pixabay Content License (free use, no attribution required) | **Check the Pixabay page and confirm the licence before submitting** |
 
+## Earth (added 2026-11-13)
+
+| Item | File | Author / source | Licence |
+|---|---|---|---|
+| Earth map (Blue Marble, land and oceans) | `Assets/MuseumSky/Earth_NASA_VisibleEarth.jpg` (3840x1920, imported at 1024) | NASA Goddard Space Flight Center, Visible Earth; via Wikimedia Commons "Whole world - land and oceans 12000.jpg" | Public domain |
+
 ## Facts used in exhibit labels
 - iPhone: announced 9 Jan 2007, US release 29 Jun 2007, App Store July 2008; NASA PhoneSat flights 2013.
 - Voyager Golden Records: on Voyager 1 and 2, launched 1977.

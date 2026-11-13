@@ -16,7 +16,10 @@ public class MuseumVisitorController : MonoBehaviour
     public AudioSource footstepSource;
     public AudioClip[] footstepClips;   // Starter Assets footstep sounds
     public AudioClip landClip;
-    [System.NonSerialized] public bool silentSteps; // true while floating in the spacesuit
+    [System.NonSerialized] public bool silentSteps;
+    // Set by MuseumTelescope: the camera looks through this transform with a narrow field of view.
+    [System.NonSerialized] public Transform cameraOverride;
+    [System.NonSerialized] public float overrideFov=2f; // true while floating in the spacesuit
     CharacterController body;
     Animator animator;
     Animator[] animators; // Starter Assets body + optional astronaut suit visual
@@ -100,6 +103,8 @@ public class MuseumVisitorController : MonoBehaviour
     void UpdateCamera()
     {
         if(worldCamera==null)return;
+        if(cameraOverride!=null){worldCamera.transform.SetPositionAndRotation(cameraOverride.position,cameraOverride.rotation);worldCamera.fieldOfView=overrideFov;return;}
+        worldCamera.fieldOfView=firstPerson?66:60;
         Quaternion rotation=Quaternion.Euler(pitch,yaw,0);
         Vector3 pivot=transform.position+Vector3.up*(firstPerson?1.65f:1.45f);
         Vector3 position=pivot;

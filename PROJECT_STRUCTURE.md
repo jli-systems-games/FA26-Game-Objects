@@ -17,6 +17,7 @@ The alien visitor starts inside its spaceship, presses E to open the hatch, cros
 | `MuseumSlidingDoor.cs` | 08_ShipAirlock | Spaceship hatch at the start: press SPACE nearby, it slides open and stays open |
 | `MuseumAutoDoor.cs` | 09_EntranceAutoDoor | Museum entrance: glass doors slide apart automatically when the visitor is near, close when they leave |
 | `MuseumWearableSuit.cs` | Exhibit_04_SpaceSuit | "Try on the suit": swaps the alien body for the spacesuit (and back), suit drifts gently |
+| `MuseumTelescope.cs` | 11_Balcony/Telescope | E at the telescope: camera zooms through the eyepiece to Earth with a round lens mask; E/Esc to step back |
 | `MuseumMenu.cs` | Canvas/MuseumMenu | Start screen (START) and pause menu on TAB/P (RESUME, RESTART, EXIT); pauses time and locks movement while open |
 | `MuseumHelmetMarker.cs` | (tag only) | Empty marker component used by a build tool |
 
@@ -54,6 +55,9 @@ They are numbered in the order they were used. You do not need to run them again
 | 25 | Atmosphere | Spot lights per exhibit, coloured wall wash, light probes, post FX (bloom, ACES, vignette), fog, static flags + baked lighting |
 | 26 | Brighten | Fixes the too-dark atmosphere: trilight ambient, stronger lights, neutral tonemapping, more exposure, thinner fog, re-bake |
 | 27 | StoryAudioBalcony | Past-tense labels (humans extinct, objects collected by aliens), footsteps + ambience, NW balcony with the final exhibit "Where Earth Was" |
+| 28 | OptimizeTextures | WebGL size: copies the big models' materials with textures shrunk to 1024 px and compressed |
+| 29 | Telescope | Balcony telescope + textured Earth far out in space (NASA image) |
+| 30 | InfoDesk | Lobby desk becomes the Information Desk: hologram + E panel with the museum intro and route |
 
 ## Assets
 

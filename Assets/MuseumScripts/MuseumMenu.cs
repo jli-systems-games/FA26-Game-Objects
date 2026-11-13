@@ -30,7 +30,7 @@ public class MuseumMenu : MonoBehaviour
         bool toggle=keys.tabKey.wasPressedThisFrame||keys.pKey.wasPressedThisFrame;
         if(!toggle||(startScreen!=null && startScreen.activeSelf))return;
         if(pauseMenu.activeSelf)Resume();
-        else if(interactor==null||!interactor.IsReading)Show(pauseMenu);
+        else if((interactor==null||!interactor.IsReading)&&(visitor==null||visitor.cameraOverride==null))Show(pauseMenu); // not while reading or using the telescope
     }
 
     void Show(GameObject menu)
