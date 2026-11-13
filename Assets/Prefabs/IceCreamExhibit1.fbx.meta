@@ -1,54 +1,9 @@
 fileFormatVersion: 2
-guid: 2a68e2ed1655045249bd6f80a7417ca6
+guid: 4f6d43e159fbb4f208c9bc8b1ee4e2fa
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: BlueCounter
-    second: {fileID: 2800000, guid: e5489b59a96d641ef9609c1e12c08145, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: GoldStrips
-    second: {fileID: 2800000, guid: a379a685aeabd49e7ae9b441f6cd2424, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Golden strips
-    second: {fileID: 2800000, guid: f255bd26ed4b44f39915c09838a5655c, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: May
-    second: {fileID: 2800000, guid: 6b8cbb9d39fb64814b6c839893849981, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: ScoopPoster2
-    second: {fileID: 2800000, guid: f3571f4d35da145df86137f5c2a5db65, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: SorbetFlooring
-    second: {fileID: 2800000, guid: c9c5e2a9521254a95a105b425f89b1e2, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: SorbetSeat
-    second: {fileID: 2800000, guid: ed5c69af98ff34fab964d7e27b0cb9dd, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: StringLights
-    second: {fileID: 2800000, guid: c1c95018703894ad5a9dda6dd300ba30, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Trashbin
-    second: {fileID: 2800000, guid: 47c4867380aac4fb7b7d80556e905031, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
