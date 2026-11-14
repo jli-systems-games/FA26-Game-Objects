@@ -31,8 +31,8 @@ public class MainCharacter : MonoBehaviour
             direction = move.ReadValue<Vector2>();
             control.Move(this.transform.TransformDirection(new Vector3(direction.x,0,direction.y)) * speed * Time.deltaTime);
             mouse = look.ReadValue<Vector2>();
-            transform.Rotate(0, mouse.x * 0.1f, 0);
-            Camera.main.transform.Rotate(-mouse.y * 0.1f, 0, 0);
+            transform.Rotate(0, mouse.x * 0.5f, 0);
+            Camera.main.transform.Rotate(-mouse.y * 0.5f, 0, 0);
         }
 
     }
