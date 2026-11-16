@@ -18,6 +18,7 @@ The alien visitor starts inside its spaceship, presses E to open the hatch, cros
 | `MuseumAutoDoor.cs` | 09_EntranceAutoDoor | Museum entrance: glass doors slide apart automatically when the visitor is near, close when they leave |
 | `MuseumWearableSuit.cs` | Exhibit_04_SpaceSuit | "Try on the suit": swaps the alien body for the spacesuit (and back), suit drifts gently |
 | `MuseumTelescope.cs` | 11_Balcony/Telescope | E at the telescope: camera zooms through the eyepiece to Earth with a round lens mask; E/Esc to step back |
+| `MuseumAlienNPC.cs` | 12_AlienVisitors/NPC_* | Other alien visitors: walk close and they turn, react and comment in a typed speech bubble with alien-voice blips |
 | `MuseumMenu.cs` | Canvas/MuseumMenu | Start screen (START) and pause menu on TAB/P (RESUME, RESTART, EXIT); pauses time and locks movement while open |
 | `MuseumHelmetMarker.cs` | (tag only) | Empty marker component used by a build tool |
 
@@ -63,6 +64,9 @@ They are numbered in the order they were used. You do not need to run them again
 | 33 | SoftGlow | Soft round fading floor glow + a small light on the object when you can press E (replaces the pink ellipse) |
 | 34 | EarthPhoto | Apollo 17 "Blue Marble" photo in the balcony exhibit panel (panels can now show a picture) |
 | 35 | SpinExhibits | Exhibit models turn slowly on their plinths (not turntable, synthesizer, cockpit; iPhone sways) |
+| 36 | SpinSuitFigure | The full astronaut figure (not just the helmet) turns slowly |
+| 37 | AlienNPCs | Seven alien visitor NPCs with their own lines next to the exhibits, lobby and balcony |
+| 38 | NPCArmsDown | Swaps the two T-pose (no skeleton) NPCs for animated aliens |
 
 ## Assets
 

@@ -94,6 +94,19 @@ Note: Apple product models made by fans may still show Apple logos/trademarks; p
 | "The Blue Marble" photo (Apollo 17, 7 Dec 1972) | `Assets/MuseumSky/Earth_Apollo17_BlueMarble.jpg` | NASA / Apollo 17 crew, via Wikimedia Commons | Public domain |
 | Earth map (Blue Marble, land and oceans) | `Assets/MuseumSky/Earth_NASA_VisibleEarth.jpg` (3840x1920, imported at 1024) | NASA Goddard Space Flight Center, Visible Earth; via Wikimedia Commons "Whole world - land and oceans 12000.jpg" | Public domain |
 
+## Alien visitor NPCs (added 2026-11-16)
+
+| Model | File | Author | Source URL | Licence |
+|---|---|---|---|---|
+| Alien (humanoid, animated) | `Assets/MuseumModels/AlienNPC_Humanoid.glb` | Quaternius | https://poly.pizza/m/RRliSQBP7r | CC0 |
+| Alien (creature, animated) | `Assets/MuseumModels/AlienNPC_Creature.glb` | Quaternius | https://poly.pizza/m/sUTLXji0aL | CC0 |
+| Cosmic Dweller | `Assets/MuseumModels/AlienNPC_CosmicDweller.glb` | Polygonal Mind | https://poly.pizza/m/RLAeLynAGI | CC0 |
+| Little alien guy | `Assets/MuseumModels/AlienNPC_LittleGuy.glb` | Polygonal Mind | https://poly.pizza/m/2gaLTM8Pim | CC0 |
+| Goleling (animated) | `Assets/MuseumModels/AlienNPC_Goleling.glb` | Quaternius | https://poly.pizza/m/71gomWolax | CC0 |
+| Alien | `Assets/MuseumModels/AlienNPC_Classic.glb` | jeremy | https://poly.pizza/m/3SD07SGSMNy | CC BY 3.0 |
+
+Alien "voices" are synthesized in code (no audio files).
+
 ## Facts used in exhibit labels
 - iPhone: announced 9 Jan 2007, US release 29 Jun 2007, App Store July 2008; NASA PhoneSat flights 2013.
 - Voyager Golden Records: on Voyager 1 and 2, launched 1977.
