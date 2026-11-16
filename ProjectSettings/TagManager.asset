@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Key
   - Door
+  - Key2
+  - Door2
+  - PuzzlePanel
   layers:
   - Default
   - TransparentFX
