@@ -17,7 +17,8 @@ public class MuseumTelescope : MonoBehaviour
     public RawImage lens;
 
     bool viewing; int enteredFrame; Vector2 offset;
-    Renderer[] ownParts;  // the telescope's own body: hidden while looking, otherwise the camera sees the inside of the tube
+    Renderer[] ownParts; // the telescope's own body: hidden while looking, otherwise the camera sees the inside of the tube
+    RawImage grain;      // animated film grain over the telescope view
 
     void Awake()
     {
@@ -25,6 +26,11 @@ public class MuseumTelescope : MonoBehaviour
         if(interactor==null&&visitor!=null)interactor=visitor.GetComponent<MuseumExhibitInteractor>();
         if(lens!=null)lens.texture=MakeLens();
         ownParts=GetComponentsInChildren<Renderer>();
+        if(view!=null){
+            var g=new GameObject("Grain",typeof(RectTransform),typeof(RawImage));g.transform.SetParent(view.transform,false);g.transform.SetAsFirstSibling(); // under the lens ring
+            var r=(RectTransform)g.transform;r.anchorMin=Vector2.zero;r.anchorMax=Vector2.one;r.offsetMin=r.offsetMax=Vector2.zero;
+            grain=g.GetComponent<RawImage>();grain.raycastTarget=false;grain.texture=MakeGrain();
+        }
         if(view!=null)view.SetActive(false);if(prompt!=null)prompt.SetActive(false);
     }
 
@@ -42,6 +48,7 @@ public class MuseumTelescope : MonoBehaviour
         var mouse=Mouse.current;
         if(mouse!=null){offset+=mouse.delta.ReadValue()*0.004f;offset=Vector2.ClampMagnitude(offset,lookAround);}
         eye.rotation=Quaternion.LookRotation(target.position-eye.position)*Quaternion.Euler(-offset.y,offset.x,0);
+        if(grain!=null){float a2=(float)Screen.width/Screen.height;grain.uvRect=new Rect(Random.value,Random.value,3f*a2,3f);} // new noise every frame
         if(lens!=null){float a=(float)Screen.width/Screen.height;lens.uvRect=new Rect(-(a-1)/2f,0,a,1);} // keep the lens round
         if(Time.frameCount>enteredFrame && keys!=null && (keys.eKey.wasPressedThisFrame||keys.qKey.wasPressedThisFrame||keys.escapeKey.wasPressedThisFrame))Exit();
     }
@@ -59,6 +66,14 @@ public class MuseumTelescope : MonoBehaviour
         viewing=false;visitor.cameraOverride=null;visitor.inputLocked=false;
         if(interactor!=null)interactor.enabled=true;if(view!=null)view.SetActive(false);
         foreach(var r in ownParts)r.enabled=true;
+    }
+
+    // Grey/white speckles with partial transparency; jittered every frame so it shimmers like an old optical sensor.
+    static Texture2D MakeGrain()
+    {
+        const int S=128;var t=new Texture2D(S,S,TextureFormat.RGBA32,false){wrapMode=TextureWrapMode.Repeat,filterMode=FilterMode.Point};
+        for(int y=0;y<S;y++)for(int x=0;x<S;x++){float v=Random.value;t.SetPixel(x,y,new Color(v,v,v*1.05f,Mathf.Abs(v-0.5f)*0.45f));}
+        t.Apply();return t;
     }
 
     // Black texture with a soft round hole in the middle.

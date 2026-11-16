@@ -61,6 +61,8 @@ They are numbered in the order they were used. You do not need to run them again
 | 31 | TelescopeFix | Earth closer (clear through the telescope, spins), telescope at the railing, Esc removed from hints |
 | 32 | WebGLSize | Lossless size settings: Brotli, no splash, code stripping, Vorbis music |
 | 33 | SoftGlow | Soft round fading floor glow + a small light on the object when you can press E (replaces the pink ellipse) |
+| 34 | EarthPhoto | Apollo 17 "Blue Marble" photo in the balcony exhibit panel (panels can now show a picture) |
+| 35 | SpinExhibits | Exhibit models turn slowly on their plinths (not turntable, synthesizer, cockpit; iPhone sways) |
 
 ## Assets
 

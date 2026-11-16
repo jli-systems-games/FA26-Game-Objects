@@ -20,6 +20,7 @@ public class MuseumExhibitInteractor : MonoBehaviour
 
     MuseumExhibit[] exhibits;
     MuseumExhibit focused, open;
+    RawImage picture;   // created at start inside the scrolling text column, filled from MuseumExhibit.image
     public bool IsReading => open!=null;   // used by the pause menu
     AudioClip focusClip, openClip, closeClip, modeClip;
 
@@ -36,6 +37,15 @@ public class MuseumExhibitInteractor : MonoBehaviour
         if(closeButton!=null)closeButton.onClick.AddListener(Close);
         if(panelRoot!=null)panelRoot.SetActive(false);
         if(promptRoot!=null)promptRoot.SetActive(false);
+        if(scroll!=null && scroll.content!=null && metaText!=null && metaText.transform.parent==scroll.content){
+            // A box that the text column sizes, with the image inside keeping its own proportions (no stretching).
+            var box=new GameObject("Picture",typeof(RectTransform),typeof(LayoutElement));
+            box.transform.SetParent(scroll.content,false);box.transform.SetSiblingIndex(metaText.transform.GetSiblingIndex()+1);
+            var img=new GameObject("Image",typeof(RectTransform),typeof(RawImage),typeof(AspectRatioFitter));img.transform.SetParent(box.transform,false);
+            var ir=(RectTransform)img.transform;ir.anchorMin=Vector2.zero;ir.anchorMax=Vector2.one;ir.offsetMin=ir.offsetMax=Vector2.zero;
+            img.GetComponent<AspectRatioFitter>().aspectMode=AspectRatioFitter.AspectMode.FitInParent;
+            picture=img.GetComponent<RawImage>();picture.raycastTarget=false;box.SetActive(false);
+        }
     }
 
     void Start(){exhibits=FindObjectsByType<MuseumExhibit>(FindObjectsSortMode.None);}
@@ -108,6 +118,15 @@ public class MuseumExhibitInteractor : MonoBehaviour
         if(hint)hint.gameObject.SetActive(interactive);
         RefreshMode();
         if(panelRoot!=null)panelRoot.SetActive(true);
+        if(picture!=null){
+            var box=picture.transform.parent.gameObject;box.SetActive(e.image!=null);
+            if(e.image!=null){
+                Canvas.ForceUpdateCanvases();picture.texture=e.image;
+                picture.GetComponent<AspectRatioFitter>().aspectRatio=e.image.width/(float)e.image.height;
+                float w=((RectTransform)scroll.content).rect.width;if(w<1)w=500;
+                box.GetComponent<LayoutElement>().preferredHeight=Mathf.Min(w*e.image.height/(float)e.image.width,420f);
+            }
+        }
         if(scroll!=null){Canvas.ForceUpdateCanvases();scroll.verticalNormalizedPosition=1;} // start at the top
         Play(openClip,0.5f);
     }

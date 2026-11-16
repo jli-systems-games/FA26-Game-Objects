@@ -2552,7 +2552,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1709524856}
+    m_TransformParent: {fileID: 867813731}
     m_Modifications:
     - target: {fileID: -3970243614316841892, guid: 45b90bcb67cc94b25b22a97bd890c224, type: 3}
       propertyPath: m_LocalScale.x
@@ -2572,7 +2572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: 45b90bcb67cc94b25b22a97bd890c224, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22989607
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: 45b90bcb67cc94b25b22a97bd890c224, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2584,15 +2584,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: 45b90bcb67cc94b25b22a97bd890c224, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: 45b90bcb67cc94b25b22a97bd890c224, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: 45b90bcb67cc94b25b22a97bd890c224, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: 45b90bcb67cc94b25b22a97bd890c224, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3309,9 +3309,11 @@ MonoBehaviour:
     had never existed. Their technology did not only record their lives, it changed
     what those lives sounded like.
   credit: 'Model: "Gary''s Synthesizer" by Fredrik (kird3rf), CC BY 4.0, via Sketchfab.'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 2.8
   model: {fileID: 0}
+  idleSpin: 10
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -3370,7 +3372,7 @@ Transform:
   m_GameObject: {fileID: 163071003}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6532815, y: 0.27059805, z: -0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 0.00000035762787, y: 0.01, z: -0.59999895}
+  m_LocalPosition: {x: 0.00000035762787, y: 0.087, z: -0.59999895}
   m_LocalScale: {x: 2.3999999, y: 2.3999996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3867,7 +3869,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294962137
   m_fontColor: {r: 0.85, g: 0.92, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3880,7 +3882,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -4055,7 +4057,7 @@ Transform:
   m_GameObject: {fileID: 197103282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.006, z: -0.6}
+  m_LocalPosition: {x: 0, y: 0.03, z: -0.6}
   m_LocalScale: {x: 1.6, y: 0.003, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4124,7 +4126,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 452043379}
+    m_TransformParent: {fileID: 1305026558}
     m_Modifications:
     - target: {fileID: -293203802875518696, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_Name
@@ -4144,15 +4146,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7881466077556996133, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00894165
+      value: 0.012260914
       objectReference: {fileID: 0}
     - target: {fileID: 7881466077556996133, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.132
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7881466077556996133, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.024766445
+      value: -0.033959866
       objectReference: {fileID: 0}
     - target: {fileID: 7881466077556996133, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4160,15 +4162,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7881466077556996133, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7881466077556996133, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7881466077556996133, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7881466077556996133, guid: c4791dc76a4ae4c17b23b4ec726c087c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5335,9 +5337,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2013169542}
   - {fileID: 1131798265}
   - {fileID: 601843575}
+  - {fileID: 895648651}
   m_Father: {fileID: 1642637218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &241944276
@@ -5362,9 +5364,11 @@ MonoBehaviour:
     was also the first step to keeping one alive away from their planet.
   credit: 'Model: "Watch" by Poly by Google, CC BY 3.0, via Poly Pizza. A generic
     watch, not a specific product.'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 3
-  model: {fileID: 0}
+  model: {fileID: 895648651}
+  idleSpin: 12
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -6415,9 +6419,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1595509174}
   - {fileID: 1999250321}
   - {fileID: 125576139}
+  - {fileID: 2053047140}
   m_Father: {fileID: 1642637218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &302770969
@@ -6443,9 +6447,11 @@ MonoBehaviour:
     off the planet became a daily routine rather than a short trip.'
   credit: 'Model: "International Space Station" by Poly by Google, CC BY 3.0, via
     Poly Pizza. Simplified, not to scale.'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 3
-  model: {fileID: 0}
+  model: {fileID: 2053047140}
+  idleSpin: 12
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -7563,7 +7569,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4279896586
   m_fontColor: {r: 0.04, g: 0.04, b: 0.1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7576,7 +7582,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -10828,9 +10834,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 198140364}
   - {fileID: 1923242793}
   - {fileID: 1716078989}
+  - {fileID: 1305026558}
   m_Father: {fileID: 1642637218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &452043380
@@ -10856,9 +10862,11 @@ MonoBehaviour:
     and prepare the way. This is the doorway to the final room.
   credit: 'Model: "Lander B" by Kay Lousberg, CC0, via Poly Pizza. Stylised, not
     a model of a real mission.'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 3
-  model: {fileID: 0}
+  model: {fileID: 1305026558}
+  idleSpin: 12
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -12178,7 +12186,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533019093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12186,7 +12194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.54}
   m_AnchorMax: {x: 0.85, y: 0.62}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 54}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &533019095
@@ -12707,10 +12715,13 @@ MonoBehaviour:
     Everything in these rooms came from that dot.
   credit: 'Balcony and plaque built from Unity primitives. Fact source: NASA, Voyager
     1 "Pale Blue Dot" image (1990). Earth image: NASA Goddard Space Flight Center,
-    Visible Earth (public domain).'
+    Visible Earth (public domain). Photo: "The Blue Marble", Apollo 17 crew, NASA,
+    7 December 1972 (public domain).'
+  image: {fileID: 2800000, guid: 2debc24e2af7a4f0cb84905c6395d5bf, type: 3}
   interactPoint: {fileID: 0}
   interactRange: 2.6
   model: {fileID: 0}
+  idleSpin: 10
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -13908,7 +13919,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290746764
   m_fontColor: {r: 0.55, g: 0.6, b: 0.75, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -13921,7 +13932,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -15048,6 +15059,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697370524}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &701882638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701882639}
+  m_Layer: 0
+  m_Name: SpinPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &701882639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701882638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00000008940697, y: -0.0005658865, z: 0.10073781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1903278764}
+  m_Father: {fileID: 1498911345}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &704995096
 GameObject:
   m_ObjectHideFlags: 0
@@ -17182,6 +17225,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818502023}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &819020844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819020845}
+  m_Layer: 0
+  m_Name: SpinPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &819020845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819020844}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.014772415, y: 0.055024147, z: -0.20235014}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1681517807}
+  m_Father: {fileID: 928486220}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &819385793
 GameObject:
   m_ObjectHideFlags: 0
@@ -17727,6 +17802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 845442152}
   - component: {fileID: 845442153}
+  - component: {fileID: 845442154}
   m_Layer: 0
   m_Name: ObjectLight
   m_TagString: Untagged
@@ -17814,6 +17890,35 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &845442154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845442151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &851944547
 GameObject:
   m_ObjectHideFlags: 0
@@ -17892,6 +17997,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 248226490}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &867813730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867813731}
+  m_Layer: 0
+  m_Name: SpinPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &867813731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867813730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.22989607, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 131039119}
+  m_Father: {fileID: 1709524856}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &872595331
 GameObject:
@@ -18047,9 +18184,11 @@ MonoBehaviour:
     continued on the way to space.
   credit: 'Model: "Boeing 757-200 Icelandair Cockpit" by VTX, CC BY-NC-SA 4.0, via
     Sketchfab. Used non-commercially in a student project.'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 4.4
   model: {fileID: 0}
+  idleSpin: 10
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -18329,6 +18468,38 @@ RectTransform:
   m_AnchoredPosition: {x: 7, y: 34}
   m_SizeDelta: {x: -42, y: -104}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &895648650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 895648651}
+  m_Layer: 0
+  m_Name: SpinPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &895648651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895648650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.091733456, y: 0.13, z: 0.0053634644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2013169542}
+  m_Father: {fileID: 241944275}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898019678
 GameObject:
   m_ObjectHideFlags: 0
@@ -18921,9 +19092,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1681517807}
   - {fileID: 2026286556}
   - {fileID: 915485913}
+  - {fileID: 819020845}
   m_Father: {fileID: 1642637218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &928486221
@@ -18949,9 +19120,11 @@ MonoBehaviour:
     began following them wherever they went, instead of humans going to the machine.
   credit: 'Model: "Laptop / MacBook Pro" by Alex Safayan, CC BY 3.0, via Poly Pizza.
     Simplified low-poly model.'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 3
-  model: {fileID: 0}
+  model: {fileID: 819020845}
+  idleSpin: 12
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -19450,7 +19623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.06}
   m_AnchorMax: {x: 1, y: 0.12}
-  m_AnchoredPosition: {x: 3.0000305, y: -771.4961}
+  m_AnchoredPosition: {x: 3, y: -771.4961}
   m_SizeDelta: {x: 2, y: 50.736023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &981114855
@@ -21474,7 +21647,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4279896586
   m_fontColor: {r: 0.04, g: 0.04, b: 0.1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -21487,7 +21660,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -25146,6 +25319,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304596714}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1305026557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1305026558}
+  m_Layer: 0
+  m_Name: SpinPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1305026558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305026557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0033192635, y: 0.13199997, z: 0.00919342}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 198140364}
+  m_Father: {fileID: 452043379}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306877404
 GameObject:
   m_ObjectHideFlags: 0
@@ -25487,7 +25692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1322717758
 Transform:
   m_ObjectHideFlags: 0
@@ -29164,9 +29369,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1903278764}
   - {fileID: 1519842313}
   - {fileID: 137539333}
+  - {fileID: 701882639}
   m_Father: {fileID: 1642637218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1498911346
@@ -29196,9 +29401,11 @@ MonoBehaviour:
     same chips, cameras and sensors, working on another planet. Their machines travelled
     further than they did.'
   credit: 'Model: Mars Perseverance Rover 3D model, NASA/JPL-Caltech (science.nasa.gov).'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 4.2
-  model: {fileID: 0}
+  model: {fileID: 701882639}
+  idleSpin: 6
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -29588,7 +29795,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294963827
   m_fontColor: {r: 0.45, g: 0.95, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -29601,7 +29808,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -30264,7 +30471,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4279896586
   m_fontColor: {r: 0.04, g: 0.04, b: 0.1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -30277,7 +30484,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -32260,11 +32467,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 302770968}
+    m_TransformParent: {fileID: 2053047140}
     m_Modifications:
     - target: {fileID: -8433539566854319736, guid: 20bc4fafc2d7e4807a2e08a8734284c3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08690924
+      value: 0.08690925
       objectReference: {fileID: 0}
     - target: {fileID: -8433539566854319736, guid: 20bc4fafc2d7e4807a2e08a8734284c3, type: 3}
       propertyPath: m_LocalScale.y
@@ -32272,7 +32479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8433539566854319736, guid: 20bc4fafc2d7e4807a2e08a8734284c3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.08690924
+      value: 0.08690925
       objectReference: {fileID: 0}
     - target: {fileID: -8433539566854319736, guid: 20bc4fafc2d7e4807a2e08a8734284c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32280,7 +32487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8433539566854319736, guid: 20bc4fafc2d7e4807a2e08a8734284c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.478
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8433539566854319736, guid: 20bc4fafc2d7e4807a2e08a8734284c3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34536,11 +34743,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 928486220}
+    m_TransformParent: {fileID: 819020845}
     m_Modifications:
     - target: {fileID: -3970243614316841892, guid: a74c3a9fd7cba4e12851ec0d9c764f1b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4660166
+      value: 0.46601656
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: a74c3a9fd7cba4e12851ec0d9c764f1b, type: 3}
       propertyPath: m_LocalScale.y
@@ -34548,19 +34755,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: a74c3a9fd7cba4e12851ec0d9c764f1b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4660166
+      value: 0.46601656
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: a74c3a9fd7cba4e12851ec0d9c764f1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.007627964
+      value: -0.007144451
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: a74c3a9fd7cba4e12851ec0d9c764f1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.055024147
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: a74c3a9fd7cba4e12851ec0d9c764f1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.08396959
+      value: 0.11838055
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: a74c3a9fd7cba4e12851ec0d9c764f1b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35226,7 +35433,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704801908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35234,7 +35441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.58, y: 0.22}
   m_AnchorMax: {x: 0.9, y: 0.52}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 58}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704801910
@@ -35257,9 +35464,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>CONTROLS</b>\nWASD / Arrows   move\nMouse   look\nShift   run\nE  
-    inspect\nSpace   open hatch\n1\u20134   choose in a panel\nScroll   read more\nV  
-    first / third person\nF   fullscreen\nTAB   menu"
+  m_text: "<b>CONTROLS</b>\nWASD / Arrows   move\nTAB   menu\nMouse   look\nShift  
+    run\nE   inspect\nSpace   open hatch\n1\u20134   choose in a panel\nScroll  
+    read more\nV   first / third person\nF   fullscreen"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8188a1074be64a85874b7dabbcfc5fb, type: 2}
   m_sharedMaterial: {fileID: -5642743035492928488, guid: b8188a1074be64a85874b7dabbcfc5fb, type: 2}
@@ -35541,12 +35748,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 131039119}
   - {fileID: 1922074982}
   - {fileID: 2073503414}
   - {fileID: 2662949173758806893}
   - {fileID: 58086759}
   - {fileID: 1972815890}
+  - {fileID: 867813731}
   m_Father: {fileID: 1642637218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1709524857
@@ -35575,9 +35782,11 @@ MonoBehaviour:
     To leave Earth, humans had to carry a piece of it with them.
   credit: 'Models: "Space Helmet - Model 1b" by Alan Zimmerman, CC BY 3.0 (Poly Pizza);
     "Astronaut by Jungle Jim", CC BY 4.0 (Sketchfab).'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 3
-  model: {fileID: 0}
+  model: {fileID: 867813731}
+  idleSpin: 12
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -35837,9 +36046,11 @@ MonoBehaviour:
     Dreams \u2013 Synth-thetic; Floating in Space \u2013 Umplix. Record 4: Aphex
     Twin \u2013 \"#21\" (copyright the artist/label; used without a licence in a
     non-commercial student project)."
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 3.2
   model: {fileID: 0}
+  idleSpin: 10
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -39687,7 +39898,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1498911345}
+    m_TransformParent: {fileID: 701882639}
     m_Modifications:
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalScale.x
@@ -39703,15 +39914,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000000029802322
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0005658865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.23742151
+      value: -0.33815932
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39719,15 +39930,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 0a76f8f483da54e0cb52b78e79730785, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39924,9 +40135,11 @@ MonoBehaviour:
   themeLink: Every object here was once ordinary for a human. Together they tell
     how a species turned its tools into a way off its own world.
   credit: Desk and hologram built from Unity primitives.
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 2.6
   model: {fileID: 931812905}
+  idleSpin: 10
   sway: 0
   swayAngle: 28
   screen: {fileID: 0}
@@ -42845,7 +43058,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 241944275}
+    m_TransformParent: {fileID: 895648651}
     m_Modifications:
     - target: {fileID: -3970243614316841892, guid: bf1e38b55c5824ca388cd75e7d43308d, type: 3}
       propertyPath: m_LocalScale.x
@@ -42861,15 +43074,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: bf1e38b55c5824ca388cd75e7d43308d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.091733456
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: bf1e38b55c5824ca388cd75e7d43308d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: bf1e38b55c5824ca388cd75e7d43308d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0053634644
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3970243614316841892, guid: bf1e38b55c5824ca388cd75e7d43308d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -44143,6 +44356,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050410411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2053047139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2053047140}
+  m_Layer: 0
+  m_Name: SpinPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2053047140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053047139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.47799993, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1595509174}
+  m_Father: {fileID: 302770968}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2053263035
 GameObject:
   m_ObjectHideFlags: 0
@@ -44213,9 +44458,11 @@ MonoBehaviour:
     and sensors made for phones later flew in space (stage 3).
   credit: 'Model: "Smartphone" by smallbigsquare, CC0, via Poly Pizza. Generic smartphone
     shown at 5x scale, not an official Apple model.'
+  image: {fileID: 0}
   interactPoint: {fileID: 0}
   interactRange: 3
   model: {fileID: 1522014536}
+  idleSpin: 10
   sway: 1
   swayAngle: 28
   screen: {fileID: 1767828466}
@@ -45171,7 +45418,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074697920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45179,7 +45426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.02}
   m_AnchorMax: {x: 0.9, y: 0.07}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1, y: 1002}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2074697922

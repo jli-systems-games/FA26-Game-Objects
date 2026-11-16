@@ -22,11 +22,13 @@ public class MuseumExhibit : MonoBehaviour
     [TextArea(4,12)] public string body="";
     [TextArea(2,6)] public string themeLink="";
     [TextArea(1,3)] public string credit="";
+    public Texture2D image;             // optional picture shown in the panel under the title
 
     [Header("Scene hooks")]
     public Transform interactPoint;
     public float interactRange=3f;
     public Transform model;
+    public float idleSpin=10f;          // degrees per second while nobody is reading the panel
     public bool sway;                   // true: model swings gently left/right facing the visitor instead of spinning
     public float swayAngle=28f;
     public Renderer screen;
@@ -86,7 +88,7 @@ public class MuseumExhibit : MonoBehaviour
         if(model==null)return;
         var m=Current;
         float target=Inspecting && m!=null ? m.lift : 0;
-        float spin=Inspecting && m!=null ? m.spinSpeed : 10;
+        float spin=Inspecting && m!=null ? m.spinSpeed : idleSpin;
         lift=Mathf.Lerp(lift,target,1-Mathf.Exp(-4*Time.deltaTime));
         model.localPosition=modelStart+Vector3.up*(lift+Mathf.Sin(Time.time*1.3f)*0.015f);
         if(sway)model.localRotation=modelRot*Quaternion.Euler(0,Mathf.Sin(Time.time*(0.4f+spin*0.02f))*swayAngle,0);

@@ -91,6 +91,7 @@ Note: Apple product models made by fans may still show Apple logos/trademarks; p
 
 | Item | File | Author / source | Licence |
 |---|---|---|---|
+| "The Blue Marble" photo (Apollo 17, 7 Dec 1972) | `Assets/MuseumSky/Earth_Apollo17_BlueMarble.jpg` | NASA / Apollo 17 crew, via Wikimedia Commons | Public domain |
 | Earth map (Blue Marble, land and oceans) | `Assets/MuseumSky/Earth_NASA_VisibleEarth.jpg` (3840x1920, imported at 1024) | NASA Goddard Space Flight Center, Visible Earth; via Wikimedia Commons "Whole world - land and oceans 12000.jpg" | Public domain |
 
 ## Facts used in exhibit labels
