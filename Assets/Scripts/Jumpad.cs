@@ -13,11 +13,12 @@ public class Jumpad : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        Debug.Log(other.gameObject.name);
+        if (other.gameObject.CompareTag("Player"))
         {
-            player = collision.gameObject;
+            player = other.gameObject;
             Jump();
             PlaySound();  // Play sound when the player touches the jump pad
         }
@@ -25,8 +26,8 @@ public class Jumpad : MonoBehaviour
 
     private void Jump()
     {
-        Rigidbody rig = player.GetComponent<Rigidbody>();
-        rig.AddForce(player.transform.up * jumpadSpeed, ForceMode.Impulse);
+        var playerController = player.GetComponentInParent<PlayerMovement>();
+        playerController.moveDirection.y = jumpadSpeed;
     }
 
     private void PlaySound()
