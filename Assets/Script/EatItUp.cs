@@ -1,25 +1,56 @@
 using UnityEngine;
-
 public class EatItUp : MonoBehaviour
 {
+    public enum InteractionType
+    {
+        Eat,
+        Animate
+    }
+
+    public InteractionType interactionType;
+
     public GameObject npc;
     public GameObject interactionText;
-    public AudioSource eatSound;
+    public Animator npcAnimator;
+    public string animationName;
+    public AudioSource soundSource;
+    public PlayerController playerController;
 
     private bool playerTrigger;
 
     void Start()
     {
-        interactionText.SetActive(false);
+        if (interactionText != null)
+            interactionText.SetActive(false);
     }
 
     void Update()
     {
-        if (playerTrigger && Input.GetKeyDown(KeyCode.E))
+        if (playerTrigger &&
+            playerController.enabled &&
+            Input.GetKeyDown(KeyCode.E))
         {
-            eatSound.Play();
-            interactionText.SetActive(false);
+            Interact();
+        }
+    }
+
+    void Interact()
+    {
+        if (soundSource != null)
+            soundSource.Play();
+
+        if (interactionType == InteractionType.Eat)
+        {
+            playerTrigger = false;
+
+            if (interactionText != null)
+                interactionText.SetActive(false);
+
             Destroy(npc);
+        }
+        else
+        {
+            npcAnimator.Play(animationName, 0, 0f);
         }
     }
 
@@ -28,18 +59,20 @@ public class EatItUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerTrigger = true;
-            interactionText.SetActive(true);
+
+            if (interactionText != null)
+                interactionText.SetActive(true);
         }
-    } // Detects if the player enters the trigger zone.
+    }
 
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             playerTrigger = false;
-            interactionText.SetActive(false);
+
+            if (interactionText != null)
+                interactionText.SetActive(false);
         }
-    } 
+    }
 }
-    
-    // Detects if the player exits the trigger zone.

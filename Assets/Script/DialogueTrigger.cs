@@ -9,97 +9,107 @@ public class DialogueTrigger : MonoBehaviour
     public string words;
 
     public GameObject interactionText;
+
+    public GameObject mainCameraRef;
+    public GameObject switchCamera;
     public Animator cameraAnimator;
-    public Transform playerCamera;
-    public Transform npc;
+    public string cameraAnimation;
 
     public PlayerController playerController;
-    public CameraController cameraController;
+
+    public float dialogueDelay = 1f;
 
     public KeyCode interactKey = KeyCode.E;
     public KeyCode exitKey = KeyCode.Q;
 
     private bool playerTrigger;
     private bool isTalking;
-    private Quaternion CamRotation;
 
     void Start()
     {
         dialogueBox.SetActive(false);
         interactionText.SetActive(false);
+        switchCamera.SetActive(false);
     }
 
     void Update()
     {
-        if (playerTrigger && !isTalking &&
-            Input.GetKeyDown(interactKey))
+        if (isTalking)
+        {
+            if (Input.GetKeyDown(exitKey) ||
+                (dialogueBox.activeSelf &&
+                Input.GetKeyDown(interactKey)))
+            {
+                ConEnd();
+            }
+        }
+        else if (playerTrigger &&
+                 mainCameraRef.activeInHierarchy &&
+                 playerController.enabled &&
+                 Input.GetKeyDown(interactKey))
         {
             StartCoroutine(Talk());
         }
     }
 
-    void LateUpdate()
-    {
-        if (isTalking)
-        {
-            playerCamera.LookAt(npc);
-        }
-    }
-
     IEnumerator Talk()
     {
-        CamRotation = playerCamera.localRotation;
-
         isTalking = true;
         interactionText.SetActive(false);
 
         playerController.enabled = false;
-        cameraController.enabled = false;
 
-        playerCamera.LookAt(npc);
-        cameraAnimator.Play("Base Layer.DiaCamera", 0, 0f);
+        mainCameraRef.SetActive(false);
+        switchCamera.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+        cameraAnimator.Play(cameraAnimation, 0, 0f);
 
-        if (playerTrigger)
-        {
-            dialogueText.text = words;
-            dialogueBox.SetActive(true);
+        yield return new WaitForSeconds(dialogueDelay);
 
-            yield return new WaitUntil(() =>
-                Input.GetKeyDown(interactKey) ||
-                Input.GetKeyDown(exitKey) ||
-                !playerTrigger);
-        }
+        dialogueText.text = words;
+        dialogueBox.SetActive(true);
+    }
+
+    void ConEnd()
+    {
+        StopAllCoroutines();
 
         dialogueBox.SetActive(false);
-        cameraAnimator.Play("Base Layer.Idle", 0, 0f);
 
-        isTalking = false;
-        playerCamera.localRotation = CamRotation;
+        switchCamera.SetActive(false);
+        mainCameraRef.SetActive(true);
 
         playerController.enabled = true;
-        cameraController.enabled = true;
+        isTalking = false;
 
         interactionText.SetActive(playerTrigger);
     }
 
-    private void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerTrigger = true;
-            interactionText.SetActive(!isTalking);
+
+            if (mainCameraRef.activeInHierarchy &&
+                playerController.enabled)
+            {
+                interactionText.SetActive(true);
+            }
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    void OnTriggerExit(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerTrigger = false;
             interactionText.SetActive(false);
-            dialogueBox.SetActive(false);
+
+            if (isTalking)
+            {
+                ConEnd();
+            }
         }
     }
 }
