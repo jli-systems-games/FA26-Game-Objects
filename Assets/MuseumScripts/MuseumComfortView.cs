@@ -7,6 +7,13 @@ public class MuseumComfortView : MonoBehaviour
 {
     RectTransform view;
     RawImage image;
+    int previousFrameRate;
+    void OnEnable()
+    {
+        previousFrameRate=Application.targetFrameRate;
+        Application.targetFrameRate=60;
+    }
+    void OnDisable(){Application.targetFrameRate=previousFrameRate;}
     void Awake(){view=(RectTransform)transform;image=GetComponent<RawImage>();}
     void LateUpdate()
     {
