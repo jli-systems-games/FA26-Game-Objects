@@ -13,11 +13,13 @@ public class MuseumViewingSofa : MonoBehaviour
     bool controllerEnabled, visitorEnabled;
     float cameraFov, yaw, pitch;
     Animator[] animators;bool[] animatorStates;
-    void Start(){visitor=FindFirstObjectByType<MuseumVisitorController>();if(visitor)body=visitor.GetComponent<CharacterController>();}
+    MuseumMenu menu;
+    MuseumExhibitInteractor interactor;bool interactorEnabled;
+    void Start(){visitor=FindFirstObjectByType<MuseumVisitorController>();menu=FindFirstObjectByType<MuseumMenu>();if(visitor){body=visitor.GetComponent<CharacterController>();interactor=visitor.GetComponent<MuseumExhibitInteractor>();}}
     bool CanUse => visitor && !visitor.inputLocked && visitor.cameraOverride==null && Vector3.Distance(visitor.transform.position,transform.position)<useRange;
     void Update()
     {
-        if(!visitor)return;
+        if(!visitor || (menu && menu.MenuOpen))return;
         var keyboard=Keyboard.current;
         if(IsReclining){
             if(keyboard!=null && (keyboard.rKey.wasPressedThisFrame || keyboard.qKey.wasPressedThisFrame)){StandUp();return;}
@@ -28,7 +30,7 @@ public class MuseumViewingSofa : MonoBehaviour
     {
         if(!IsReclining || !visitor.worldCamera)return;
         var camera=visitor.worldCamera;camera.transform.position=headRest.position;
-        camera.transform.rotation=Quaternion.LookRotation(screen.position-headRest.position,Vector3.up)*Quaternion.Euler(pitch,yaw,-5);
+        camera.transform.rotation=Quaternion.LookRotation(screen.position-headRest.position,Vector3.up)*Quaternion.Euler(pitch,yaw,0);
         camera.fieldOfView=60;
     }
     public void Recline()
@@ -36,6 +38,7 @@ public class MuseumViewingSofa : MonoBehaviour
         if(!CanUse || !headRest || !bodyRest || !screen)return;
         returnPosition=visitor.transform.position;returnRotation=visitor.transform.rotation;
         visitorEnabled=visitor.enabled;controllerEnabled=body.enabled;cameraFov=visitor.worldCamera.fieldOfView;
+        if(interactor){interactorEnabled=interactor.enabled;interactor.enabled=false;}
         animators=visitor.GetComponentsInChildren<Animator>();animatorStates=new bool[animators.Length];
         for(int i=0;i<animators.Length;i++){animatorStates[i]=animators[i].enabled;animators[i].enabled=false;}
         visitor.inputLocked=true;visitor.cameraOverride=headRest;visitor.enabled=false;body.enabled=false;
@@ -47,12 +50,13 @@ public class MuseumViewingSofa : MonoBehaviour
         if(!IsReclining || !visitor)return;
         IsReclining=false;visitor.transform.SetPositionAndRotation(returnPosition,returnRotation);
         visitor.cameraOverride=null;visitor.inputLocked=false;body.enabled=controllerEnabled;visitor.enabled=visitorEnabled;
+        if(interactor)interactor.enabled=interactorEnabled;
         for(int i=0;i<animators.Length;i++)if(animators[i])animators[i].enabled=animatorStates[i];
         if(visitor.worldCamera)visitor.worldCamera.fieldOfView=cameraFov;visitor.SetLocked(true);
     }
     void OnGUI()
     {
-        if(!IsReclining && !CanUse)return;
+        if((menu && menu.MenuOpen) || (!IsReclining && !CanUse))return;
         var style=new GUIStyle(GUI.skin.box){fontSize=22,alignment=TextAnchor.MiddleCenter};
         GUI.Box(new Rect(Screen.width*.5f-250,Screen.height-190,500,42),IsReclining?"[R / Q]  GET UP    ·    MOUSE  LOOK":"[R]  LIE DOWN ON SOFA",style);
     }

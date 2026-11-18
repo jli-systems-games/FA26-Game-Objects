@@ -118,6 +118,10 @@ public static class MuseumPianoValidation
             }
             if(loungePhase==1){standPosition=visitor.transform.position;sofa.Recline();LoungeCheck(sofa.IsReclining && !body.enabled && !visitor.enabled,"Sofa reclines player and locks movement");}
             if(loungePhase==2){LoungeCheck(Vector3.Dot(visitor.worldCamera.transform.forward,(sofa.screen.position-sofa.headRest.position).normalized)>.98f,"Reclining view faces video screen");
+                var menu=UnityEngine.Object.FindFirstObjectByType<MuseumMenu>();menu.TogglePause();
+                LoungeCheck(menu.MenuOpen && sofa.IsReclining && Time.timeScale==0,"Tab pause opens while reclining");
+                menu.TogglePause();LoungeCheck(!menu.MenuOpen && sofa.IsReclining && visitor.inputLocked && !visitor.enabled && Time.timeScale==1,"Resume preserves reclining controls");
+                LoungeCheck(Mathf.Abs(Vector3.Dot(visitor.worldCamera.transform.right,Vector3.up))<.001f,"Reclining camera has no sideways tilt");
                 var camera=visitor.worldCamera;camera.Render();var rt=camera.targetTexture;var previous=RenderTexture.active;RenderTexture.active=rt;var image=new Texture2D(rt.width,rt.height,TextureFormat.RGB24,false);image.ReadPixels(new Rect(0,0,rt.width,rt.height),0,0);image.Apply();File.WriteAllBytes(Path.Combine(Folder,"chaise-view.png"),image.EncodeToPNG());RenderTexture.active=previous;UnityEngine.Object.DestroyImmediate(image);
                 LoungeCheck(Physics.OverlapSphere(sofa.headRest.position,.08f).Length==0,"Reclining camera is clear of colliders");
                 sofa.StandUp();LoungeCheck(!sofa.IsReclining && body.enabled && visitor.enabled && Vector3.Distance(visitor.transform.position,standPosition)<.05f,"Getting up restores standing position and controls");}

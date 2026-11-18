@@ -15,10 +15,12 @@ public class MuseumMenu : MonoBehaviour
     public GameObject pauseMenu;
 
     static bool skipStartScreen;   // set by RESTART so the reloaded scene goes straight into the game
+    MuseumViewingSofa sofa;
     public bool MenuOpen => (startScreen!=null && startScreen.activeSelf) || (pauseMenu!=null && pauseMenu.activeSelf);
 
     void Start()
     {
+        sofa=FindFirstObjectByType<MuseumViewingSofa>();
         if(pauseMenu!=null)pauseMenu.SetActive(false);
         if(skipStartScreen){skipStartScreen=false;Show(null);}
         else Show(startScreen);
@@ -28,9 +30,13 @@ public class MuseumMenu : MonoBehaviour
     {
         var keys=Keyboard.current;if(keys==null)return;
         bool toggle=keys.tabKey.wasPressedThisFrame||keys.pKey.wasPressedThisFrame;
-        if(!toggle||(startScreen!=null && startScreen.activeSelf))return;
+        if(toggle)TogglePause();
+    }
+    public void TogglePause()
+    {
+        if(startScreen!=null && startScreen.activeSelf)return;
         if(pauseMenu.activeSelf)Resume();
-        else if((interactor==null||!interactor.IsReading)&&(visitor==null||visitor.cameraOverride==null))Show(pauseMenu); // not while reading or using the telescope
+        else if((interactor==null||!interactor.IsReading)&&(visitor==null||visitor.cameraOverride==null||(sofa && sofa.IsReclining)))Show(pauseMenu);
     }
 
     void Show(GameObject menu)
@@ -38,9 +44,10 @@ public class MuseumMenu : MonoBehaviour
         if(startScreen!=null)startScreen.SetActive(menu==startScreen);
         if(pauseMenu!=null)pauseMenu.SetActive(menu==pauseMenu);
         bool open=menu!=null;
+        bool reclining=sofa && sofa.IsReclining;
         Time.timeScale=open?0:1;
-        if(interactor!=null)interactor.enabled=!open;
-        if(visitor!=null){visitor.inputLocked=open;visitor.SetLocked(!open);}
+        if(interactor!=null)interactor.enabled=!open&&!reclining;
+        if(visitor!=null){visitor.inputLocked=open||reclining;visitor.SetLocked(!open);}
     }
 
     // Button callbacks (wired in the Inspector by the build tool)
