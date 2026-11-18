@@ -10,12 +10,13 @@ public class StartUILogic : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+void Update()
+{
+    if ((Keyboard.current != null && Keyboard.current.anyKey.wasPressedThisFrame) ||
+        (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame))
     {
-        if(Keyboard.current.enterKey.wasPressedThisFrame){
-            MainLogic.scene = 0;
-            Destroy(this.gameObject);
-        }
-        
+        MainLogic.scene = 0;
+        Destroy(gameObject);
     }
+}
 }
