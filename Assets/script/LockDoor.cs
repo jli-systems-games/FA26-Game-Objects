@@ -1,6 +1,8 @@
 using UnityEngine;
 
+
 public class LockDoor : MonoBehaviour
+  
 {
     public Vector3 openOffset = new Vector3(0, 3, 0);
     public float openSpeed = 2f;
