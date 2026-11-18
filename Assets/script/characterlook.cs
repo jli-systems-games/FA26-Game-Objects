@@ -12,7 +12,7 @@ public class characterlook : MonoBehaviour
 {
     public GameObject Camera;
 
-    private float speed = 5f;
+    private float speed = 3f;
     public CharacterController control;
     public InputAction move, look;
     private Vector2 direction, mouse;
