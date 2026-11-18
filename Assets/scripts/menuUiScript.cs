@@ -7,6 +7,7 @@ public class menuUiScript : MonoBehaviour
     public GameObject fullscreenImage;
     public GameObject controlsPanel;
     public GameObject menuScreen;
+    public GameObject[] hideOnControls;
     public characterScript player;
 
     int selected = 1;
@@ -16,6 +17,7 @@ public class menuUiScript : MonoBehaviour
         controlsPanel.SetActive(false);
         Time.timeScale = 0f;
         player.enabled = false;
+        Cursor.visible = false;
         ShowSelected();
     }
 
@@ -26,6 +28,7 @@ public class menuUiScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 controlsPanel.SetActive(false);
+                SetMenuVisible(true); 
             }
             return;
         }
@@ -50,10 +53,16 @@ public class menuUiScript : MonoBehaviour
             {
                 Time.timeScale = 1f;
                 player.enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;  
+                Cursor.visible = false;                     
                 menuScreen.SetActive(false);
                 enabled = false;
             }
-            if (selected == 2) controlsPanel.SetActive(true);
+            if (selected == 2)
+            {
+                controlsPanel.SetActive(true);
+                SetMenuVisible(false); 
+            }
             if (selected == 3) Screen.fullScreen = !Screen.fullScreen;
         }
     }
@@ -64,4 +73,13 @@ public class menuUiScript : MonoBehaviour
         controlsImage.SetActive(selected == 2);
         fullscreenImage.SetActive(selected == 3);
     }
+
+    void SetMenuVisible(bool visible)
+    {
+        foreach (GameObject g in hideOnControls)
+        {
+            g.SetActive(visible);
+        }
+    }
 }
+

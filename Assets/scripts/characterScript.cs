@@ -18,12 +18,16 @@ public class characterScript : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update() //for the looking around
     {
+        if (Cursor.lockState != CursorLockMode.Locked && Input.GetMouseButtonDown(0))
+        {
+        Cursor.lockState = CursorLockMode.Locked;
+        }
+        
         float mx = Input.GetAxis("Mouse X") * mouseSensitivity;
         float my = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
