@@ -1,0 +1,6 @@
+Source archive supplied by project owner: chaise-lounge-sofa-chair-3d-model-free.zip
+Imported model: source/f308ca58-31e6cf3d.glb
+Embedded GLB generator: Tripo
+Embedded base colour, normal and metallic/roughness textures retained.
+Changes: Unity scale, orientation, surface collision and reclining interaction anchors.
+The archive contains no creator, source URL or license statement; retain the original download page for attribution and usage terms.

@@ -1,0 +1,6 @@
+Model: Rigged, Cell-Shaded Grand Piano
+Creator: Stekapinko
+Source: https://sketchfab.com/3d-models/rigged-cell-shaded-grand-piano-e9f77ab00f204dbeb046f17c553ec071
+License: Creative Commons Attribution (CC BY), as stated by the model download page.
+Changes: Unity URP materials, scale/orientation, decorative key movement.
+Downloaded GLB supplied by the project owner. Original Blender source retained outside Assets as a working backup.

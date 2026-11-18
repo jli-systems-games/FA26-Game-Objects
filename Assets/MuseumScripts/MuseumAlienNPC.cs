@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
-// Another alien visitor. Walk close: it turns to you, plays a reaction (wave / nod / dance) and comments on the exhibit
+// Another alien visitor. Approach and press T to talk without interrupting exhibits automatically.
 // in a speech bubble, typed out with little "alien voice" blips. Walk away and come back: it says its next line.
-// No key needed, so it never interrupts reading. The bubble is screen UI, so the text stays sharp (not pixelated).
+// The bubble is screen UI, so the text stays sharp (not pixelated).
 public class MuseumAlienNPC : MonoBehaviour
 {
     [TextArea(2,4)] public string[] lines;
@@ -16,11 +17,16 @@ public class MuseumAlienNPC : MonoBehaviour
 
     static RectTransform bubble; static TMP_Text bubbleText; static MuseumAlienNPC speaker;
     MuseumVisitorController visitor; AudioSource voice; AudioClip blip;
-    int line=-1; float typed; bool near; Vector3 start; Quaternion homeRot;
+    int line=-1; float typed; Vector3 start; Quaternion homeRot;
+    MuseumAlienNPC[] otherVisitors;
+    bool focused;
+    public bool CanTalk => focused;
+    public bool IsTalking => speaker==this;
 
     void Start()
     {
         visitor=FindFirstObjectByType<MuseumVisitorController>();
+        otherVisitors=FindObjectsByType<MuseumAlienNPC>(FindObjectsSortMode.None);
         voice=gameObject.AddComponent<AudioSource>();voice.playOnAwake=false;voice.spatialBlend=0.6f;voice.minDistance=2;voice.maxDistance=12;
         blip=MuseumExhibitInteractor.Tone("Blip",new[]{520f*voicePitch,700f*voicePitch},0.035f,0.22f);
         start=transform.position;homeRot=transform.rotation;
@@ -32,16 +38,27 @@ public class MuseumAlienNPC : MonoBehaviour
         if(floats)transform.position=start+Vector3.up*(0.25f+Mathf.Sin(Time.time*1.3f+start.x)*0.08f);
         if(visitor==null)return;
         Vector3 to=visitor.transform.position-transform.position;to.y=0;
-        bool inRange=to.magnitude<talkRange && !visitor.inputLocked && visitor.cameraOverride==null;
-
-        if(inRange && !near && (speaker==null||speaker==this)){   // someone new walked up: next line
-            near=true;speaker=this;line=(line+1)%Mathf.Max(1,lines.Length);typed=0;
-            if(animator!=null)animator.SetTrigger("Talk");
+        float distance=to.magnitude;
+        var camera=visitor.worldCamera;
+        Vector3 look=camera?Vector3.ProjectOnPlane(camera.transform.forward,Vector3.up).normalized:visitor.transform.forward;
+        bool available=!visitor.inputLocked && visitor.cameraOverride==null;
+        // Explicit interaction is forgiving to approach and cannot interrupt a performance by itself.
+        float best=float.MaxValue;MuseumAlienNPC target=null;
+        if(available)foreach(var npc in otherVisitors){
+            if(!npc || !npc.isActiveAndEnabled)continue;
+            Vector3 offset=npc.transform.position-visitor.transform.position;offset.y=0;float d=offset.magnitude;
+            if(d>Mathf.Min(npc.talkRange,2.8f) || (d>.1f && Vector3.Dot(look,offset/d)<.5f))continue;
+            if(d<best){best=d;target=npc;}
         }
-        if(!inRange && near){near=false;if(speaker==this){speaker=null;bubble.gameObject.SetActive(false);}}
+        focused=target==this;
+
+        if(focused && Keyboard.current!=null && Keyboard.current.tKey.wasPressedThisFrame && lines!=null && lines.Length>0){
+            Talk();
+        }
+        if((!available || distance>Mathf.Min(talkRange,2.8f)+.5f) && speaker==this){speaker=null;voice.Stop();if(bubble)bubble.gameObject.SetActive(false);}
 
         // Turn toward the visitor while talking, back to the exhibit afterwards.
-        var want=near&&to.sqrMagnitude>0.01f?Quaternion.LookRotation(to):homeRot;
+        var want=speaker==this&&to.sqrMagnitude>0.01f?Quaternion.LookRotation(to):homeRot;
         transform.rotation=Quaternion.Slerp(transform.rotation,want,1-Mathf.Exp(-4*Time.deltaTime));
 
         if(speaker!=this||lines==null||lines.Length==0)return;
@@ -50,6 +67,19 @@ public class MuseumAlienNPC : MonoBehaviour
         if((int)typed>before && (int)typed<text.Length && (int)typed%3==0 && text[(int)typed]!=' ')voice.PlayOneShot(blip,0.5f);
         bubbleText.text=text.Substring(0,(int)typed);
         Place();
+    }
+    public void Talk()
+    {
+        if(!focused || lines==null || lines.Length==0)return;
+        if(speaker && speaker!=this)speaker.voice.Stop();
+        speaker=this;line=(line+1)%lines.Length;typed=0;
+        if(animator)animator.SetTrigger("Talk");
+    }
+    void OnGUI()
+    {
+        if(!focused)return;
+        var style=new GUIStyle(GUI.skin.box){fontSize=22,alignment=TextAnchor.MiddleCenter};
+        GUI.Box(new Rect(Screen.width*.5f-220,Screen.height-140,440,42),speaker==this?"[T]  NEXT LINE":"[T]  TALK TO ALIEN",style);
     }
 
     // Keep the bubble above the alien's head on screen.
