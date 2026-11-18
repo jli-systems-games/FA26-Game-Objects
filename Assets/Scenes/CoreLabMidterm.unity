@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 42740210}
   - component: {fileID: 42740213}
   - component: {fileID: 42740212}
-  - component: {fileID: 42740211}
+  - component: {fileID: 42740214}
   m_Layer: 0
   m_Name: stonepath_01 (3)
   m_TagString: Untagged
@@ -153,28 +153,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &42740211
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42740209}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &42740212
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -231,6 +209,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42740209}
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &42740214
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42740209}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &118545331
 GameObject:
@@ -306,12 +306,11 @@ Transform:
   m_GameObject: {fileID: 118545331}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.47, z: -104.61}
+  m_LocalPosition: {x: 0, y: 3.78, z: -104.61}
   m_LocalScale: {x: 2.2017856, y: 2.2017856, z: 2.2017856}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1389167260}
-  - {fileID: 833759706}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &340317453
@@ -325,7 +324,7 @@ GameObject:
   - component: {fileID: 340317454}
   - component: {fileID: 340317457}
   - component: {fileID: 340317456}
-  - component: {fileID: 340317455}
+  - component: {fileID: 340317458}
   m_Layer: 0
   m_Name: stonepath_01 (6)
   m_TagString: Untagged
@@ -342,34 +341,12 @@ Transform:
   m_GameObject: {fileID: 340317453}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -29.590002, y: -22.06, z: -20.2}
+  m_LocalPosition: {x: -101.490005, y: -22.06, z: -20.2}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &340317455
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340317453}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &340317456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -427,6 +404,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340317453}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &340317458
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340317453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &394558287
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +437,7 @@ GameObject:
   - component: {fileID: 394558288}
   - component: {fileID: 394558291}
   - component: {fileID: 394558290}
-  - component: {fileID: 394558289}
+  - component: {fileID: 394558292}
   m_Layer: 0
   m_Name: stonepath_01 (16)
   m_TagString: Untagged
@@ -455,34 +454,12 @@ Transform:
   m_GameObject: {fileID: 394558287}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 30.3, y: -22.06, z: 52.5}
+  m_LocalPosition: {x: -41.600002, y: -22.06, z: 52.5}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &394558289
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394558287}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &394558290
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -540,6 +517,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394558287}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &394558292
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394558287}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &423269158
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +583,7 @@ GameObject:
   - component: {fileID: 505658806}
   - component: {fileID: 505658809}
   - component: {fileID: 505658808}
-  - component: {fileID: 505658807}
+  - component: {fileID: 505658810}
   m_Layer: 0
   m_Name: stonepath_01 (4)
   m_TagString: Untagged
@@ -601,34 +600,12 @@ Transform:
   m_GameObject: {fileID: 505658805}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 6.3999987, y: -22.06, z: 52.5}
+  m_LocalPosition: {x: -65.5, y: -22.06, z: 52.5}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &505658807
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505658805}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &505658808
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -686,6 +663,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505658805}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &505658810
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505658805}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &507969574
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +729,7 @@ GameObject:
   - component: {fileID: 532857732}
   - component: {fileID: 532857735}
   - component: {fileID: 532857734}
-  - component: {fileID: 532857733}
+  - component: {fileID: 532857736}
   m_Layer: 0
   m_Name: stonepath_01 (14)
   m_TagString: Untagged
@@ -753,28 +752,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &532857733
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532857731}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &532857734
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -831,6 +808,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532857731}
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &532857736
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532857731}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &572534788
 GameObject:
@@ -956,7 +955,7 @@ GameObject:
   - component: {fileID: 582503643}
   - component: {fileID: 582503646}
   - component: {fileID: 582503645}
-  - component: {fileID: 582503644}
+  - component: {fileID: 582503647}
   m_Layer: 0
   m_Name: stonepath_01 (17)
   m_TagString: Untagged
@@ -979,28 +978,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &582503644
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582503642}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &582503645
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1058,6 +1035,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582503642}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &582503647
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582503642}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &622180622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,7 +1068,7 @@ GameObject:
   - component: {fileID: 622180623}
   - component: {fileID: 622180626}
   - component: {fileID: 622180625}
-  - component: {fileID: 622180624}
+  - component: {fileID: 622180627}
   m_Layer: 0
   m_Name: stonepath_01 (12)
   m_TagString: Untagged
@@ -1092,28 +1091,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &622180624
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622180622}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &622180625
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1171,6 +1148,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622180622}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &622180627
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622180622}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &629861280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1213,7 @@ GameObject:
   - component: {fileID: 633762995}
   - component: {fileID: 633762998}
   - component: {fileID: 633762997}
-  - component: {fileID: 633762996}
+  - component: {fileID: 633762999}
   m_Layer: 0
   m_Name: stonepath_01 (8)
   m_TagString: Untagged
@@ -1237,28 +1236,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &633762996
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633762994}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &633762997
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1316,6 +1293,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633762994}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &633762999
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633762994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &671213350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1326,7 @@ GameObject:
   - component: {fileID: 671213351}
   - component: {fileID: 671213354}
   - component: {fileID: 671213353}
-  - component: {fileID: 671213352}
+  - component: {fileID: 671213355}
   m_Layer: 0
   m_Name: stonepath_01 (15)
   m_TagString: Untagged
@@ -1350,28 +1349,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &671213352
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671213350}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &671213353
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1429,6 +1406,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671213350}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &671213355
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671213350}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &714909113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,7 +1439,7 @@ GameObject:
   - component: {fileID: 714909114}
   - component: {fileID: 714909117}
   - component: {fileID: 714909116}
-  - component: {fileID: 714909115}
+  - component: {fileID: 714909118}
   m_Layer: 0
   m_Name: stonepath_01 (8)
   m_TagString: Untagged
@@ -1457,34 +1456,12 @@ Transform:
   m_GameObject: {fileID: 714909113}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -29.590002, y: -22.06, z: -92.75001}
+  m_LocalPosition: {x: -101.490005, y: -22.06, z: -92.75001}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &714909115
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714909113}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &714909116
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1542,6 +1519,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714909113}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &714909118
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714909113}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &743636713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,7 +1586,7 @@ GameObject:
   - component: {fileID: 755515402}
   - component: {fileID: 755515405}
   - component: {fileID: 755515404}
-  - component: {fileID: 755515403}
+  - component: {fileID: 755515406}
   m_Layer: 0
   m_Name: stonepath_01 (9)
   m_TagString: Untagged
@@ -1610,28 +1609,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &755515403
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755515401}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &755515404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1689,6 +1666,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755515401}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &755515406
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755515401}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &771533279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,7 +1699,7 @@ GameObject:
   - component: {fileID: 771533280}
   - component: {fileID: 771533283}
   - component: {fileID: 771533282}
-  - component: {fileID: 771533281}
+  - component: {fileID: 771533284}
   m_Layer: 0
   m_Name: stonepath_01
   m_TagString: Untagged
@@ -1717,34 +1716,12 @@ Transform:
   m_GameObject: {fileID: 771533279}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -5.6, y: -22.06, z: -20.2}
+  m_LocalPosition: {x: -77.5, y: -22.06, z: -20.2}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &771533281
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771533279}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &771533282
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1802,6 +1779,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771533279}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &771533284
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771533279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &774989753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,7 +1812,7 @@ GameObject:
   - component: {fileID: 774989754}
   - component: {fileID: 774989757}
   - component: {fileID: 774989756}
-  - component: {fileID: 774989755}
+  - component: {fileID: 774989758}
   m_Layer: 0
   m_Name: stonepath_01 (2)
   m_TagString: Untagged
@@ -1830,34 +1829,12 @@ Transform:
   m_GameObject: {fileID: 774989753}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -5.6000004, y: -22.06, z: 52.5}
+  m_LocalPosition: {x: -77.5, y: -22.06, z: 52.5}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &774989755
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774989753}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &774989756
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1915,6 +1892,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774989753}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &774989758
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774989753}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &802337131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,7 +1925,7 @@ GameObject:
   - component: {fileID: 802337132}
   - component: {fileID: 802337135}
   - component: {fileID: 802337134}
-  - component: {fileID: 802337133}
+  - component: {fileID: 802337136}
   m_Layer: 0
   m_Name: stonepath_01 (2)
   m_TagString: Untagged
@@ -1949,28 +1948,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &802337133
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802337131}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &802337134
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2028,6 +2005,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802337131}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &802337136
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802337131}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &828530902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,7 +2038,7 @@ GameObject:
   - component: {fileID: 828530903}
   - component: {fileID: 828530906}
   - component: {fileID: 828530905}
-  - component: {fileID: 828530904}
+  - component: {fileID: 828530907}
   m_Layer: 0
   m_Name: stonepath_01 (7)
   m_TagString: Untagged
@@ -2056,34 +2055,12 @@ Transform:
   m_GameObject: {fileID: 828530902}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -29.590002, y: -22.06, z: 52.5}
+  m_LocalPosition: {x: -101.490005, y: -22.06, z: 52.5}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &828530904
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828530902}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &828530905
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2140,6 +2117,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828530902}
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &828530907
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828530902}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &833759703
 GameObject:
@@ -2228,11 +2227,11 @@ Transform:
   m_GameObject: {fileID: 833759703}
   serializedVersion: 2
   m_LocalRotation: {x: 0.09368262, y: -0, z: -0, w: 0.99560213}
-  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalPosition: {x: 0, y: 0.65000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 118545334}
+  m_Father: {fileID: 1389167260}
   m_LocalEulerAnglesHint: {x: 10.751, y: 0, z: 0}
 --- !u!114 &833759707
 MonoBehaviour:
@@ -2289,7 +2288,7 @@ GameObject:
   - component: {fileID: 877514716}
   - component: {fileID: 877514719}
   - component: {fileID: 877514718}
-  - component: {fileID: 877514717}
+  - component: {fileID: 877514720}
   m_Layer: 0
   m_Name: stonepath_01 (16)
   m_TagString: Untagged
@@ -2312,28 +2311,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &877514717
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877514715}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &877514718
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2391,6 +2368,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877514715}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &877514720
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877514715}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &901959097
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,7 +2401,7 @@ GameObject:
   - component: {fileID: 901959098}
   - component: {fileID: 901959101}
   - component: {fileID: 901959100}
-  - component: {fileID: 901959099}
+  - component: {fileID: 901959102}
   m_Layer: 0
   m_Name: stonepath_01 (15)
   m_TagString: Untagged
@@ -2419,34 +2418,12 @@ Transform:
   m_GameObject: {fileID: 901959097}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 30.3, y: -22.06, z: -20.2}
+  m_LocalPosition: {x: -41.600002, y: -22.06, z: -20.2}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &901959099
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901959097}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &901959100
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2503,6 +2480,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901959097}
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &901959102
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901959097}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &915845951
 GameObject:
@@ -2676,7 +2675,7 @@ GameObject:
   - component: {fileID: 1025785499}
   - component: {fileID: 1025785502}
   - component: {fileID: 1025785501}
-  - component: {fileID: 1025785500}
+  - component: {fileID: 1025785503}
   m_Layer: 0
   m_Name: stonepath_01 (7)
   m_TagString: Untagged
@@ -2699,28 +2698,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1025785500
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025785498}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1025785501
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2778,55 +2755,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025785498}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
---- !u!1 &1085870077
-GameObject:
+--- !u!64 &1025785503
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1085870078}
-  m_Layer: 0
-  m_Name: StonePathFolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1085870078
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085870077}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.9, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 771533280}
-  - {fileID: 774989754}
-  - {fileID: 2016348592}
-  - {fileID: 1752214279}
-  - {fileID: 505658806}
-  - {fileID: 2097510843}
-  - {fileID: 1586088152}
-  - {fileID: 1793296584}
-  - {fileID: 1735431858}
-  - {fileID: 901959098}
-  - {fileID: 394558288}
-  - {fileID: 1484434581}
-  - {fileID: 340317454}
-  - {fileID: 828530903}
-  - {fileID: 714909114}
-  - {fileID: 2031529238}
-  - {fileID: 1244521548}
-  - {fileID: 1418329482}
-  m_Father: {fileID: 1866153298}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1025785498}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1088095284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,7 +2788,7 @@ GameObject:
   - component: {fileID: 1088095285}
   - component: {fileID: 1088095288}
   - component: {fileID: 1088095287}
-  - component: {fileID: 1088095286}
+  - component: {fileID: 1088095289}
   m_Layer: 0
   m_Name: stonepath_01 (11)
   m_TagString: Untagged
@@ -2861,28 +2811,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1088095286
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088095284}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1088095287
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2939,6 +2867,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088095284}
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1088095289
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088095284}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1105510166
 GameObject:
@@ -3152,7 +3102,7 @@ GameObject:
   - component: {fileID: 1244521548}
   - component: {fileID: 1244521551}
   - component: {fileID: 1244521550}
-  - component: {fileID: 1244521549}
+  - component: {fileID: 1244521552}
   m_Layer: 0
   m_Name: stonepath_01 (10)
   m_TagString: Untagged
@@ -3169,34 +3119,12 @@ Transform:
   m_GameObject: {fileID: 1244521547}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -17.59, y: -22.06, z: 52.5}
+  m_LocalPosition: {x: -89.490005, y: -22.06, z: 52.5}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1244521549
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244521547}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1244521550
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3254,6 +3182,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244521547}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1244521552
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244521547}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1298093424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,7 +3215,7 @@ GameObject:
   - component: {fileID: 1298093425}
   - component: {fileID: 1298093428}
   - component: {fileID: 1298093427}
-  - component: {fileID: 1298093426}
+  - component: {fileID: 1298093429}
   m_Layer: 0
   m_Name: stonepath_01 (6)
   m_TagString: Untagged
@@ -3288,28 +3238,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1298093426
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298093424}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1298093427
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3367,6 +3295,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298093424}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1298093429
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298093424}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1389167259
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,7 +3328,7 @@ GameObject:
   - component: {fileID: 1389167260}
   - component: {fileID: 1389167263}
   - component: {fileID: 1389167262}
-  - component: {fileID: 1389167261}
+  - component: {fileID: 1389167264}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3398,32 +3348,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 833759706}
   m_Father: {fileID: 118545334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1389167261
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389167259}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1389167262
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3481,6 +3409,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389167259}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &1389167264
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389167259}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1418329481
 GameObject:
   m_ObjectHideFlags: 0
@@ -3492,7 +3443,7 @@ GameObject:
   - component: {fileID: 1418329482}
   - component: {fileID: 1418329485}
   - component: {fileID: 1418329484}
-  - component: {fileID: 1418329483}
+  - component: {fileID: 1418329486}
   m_Layer: 0
   m_Name: stonepath_01 (11)
   m_TagString: Untagged
@@ -3509,34 +3460,12 @@ Transform:
   m_GameObject: {fileID: 1418329481}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -17.590002, y: -22.06, z: -92.75001}
+  m_LocalPosition: {x: -89.490005, y: -22.06, z: -92.75001}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1418329483
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418329481}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1418329484
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3594,6 +3523,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418329481}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1418329486
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418329481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1484434580
 GameObject:
   m_ObjectHideFlags: 0
@@ -3605,7 +3556,7 @@ GameObject:
   - component: {fileID: 1484434581}
   - component: {fileID: 1484434584}
   - component: {fileID: 1484434583}
-  - component: {fileID: 1484434582}
+  - component: {fileID: 1484434585}
   m_Layer: 0
   m_Name: stonepath_01 (17)
   m_TagString: Untagged
@@ -3622,34 +3573,12 @@ Transform:
   m_GameObject: {fileID: 1484434580}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 30.3, y: -22.06, z: -92.75001}
+  m_LocalPosition: {x: -41.600002, y: -22.06, z: -92.75001}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1484434582
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484434580}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1484434583
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3707,6 +3636,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484434580}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1484434585
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484434580}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1586088151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,7 +3669,7 @@ GameObject:
   - component: {fileID: 1586088152}
   - component: {fileID: 1586088155}
   - component: {fileID: 1586088154}
-  - component: {fileID: 1586088153}
+  - component: {fileID: 1586088156}
   m_Layer: 0
   m_Name: stonepath_01 (12)
   m_TagString: Untagged
@@ -3735,34 +3686,12 @@ Transform:
   m_GameObject: {fileID: 1586088151}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 18.3, y: -22.06, z: -20.2}
+  m_LocalPosition: {x: -53.600002, y: -22.06, z: -20.2}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1586088153
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586088151}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1586088154
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3820,6 +3749,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586088151}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1586088156
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586088151}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1586766206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3863,7 +3814,7 @@ GameObject:
   - component: {fileID: 1614248113}
   - component: {fileID: 1614248116}
   - component: {fileID: 1614248115}
-  - component: {fileID: 1614248114}
+  - component: {fileID: 1614248117}
   m_Layer: 0
   m_Name: stonepath_01 (1)
   m_TagString: Untagged
@@ -3886,28 +3837,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1614248114
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614248112}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1614248115
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3965,6 +3894,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614248112}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1614248117
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614248112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1710407481
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,7 +3927,7 @@ GameObject:
   - component: {fileID: 1710407482}
   - component: {fileID: 1710407485}
   - component: {fileID: 1710407484}
-  - component: {fileID: 1710407483}
+  - component: {fileID: 1710407486}
   m_Layer: 0
   m_Name: stonepath_01 (10)
   m_TagString: Untagged
@@ -3999,28 +3950,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1710407483
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710407481}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1710407484
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4078,6 +4007,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710407481}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1710407486
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710407481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1735431857
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,7 +4040,7 @@ GameObject:
   - component: {fileID: 1735431858}
   - component: {fileID: 1735431861}
   - component: {fileID: 1735431860}
-  - component: {fileID: 1735431859}
+  - component: {fileID: 1735431862}
   m_Layer: 0
   m_Name: stonepath_01 (14)
   m_TagString: Untagged
@@ -4106,34 +4057,12 @@ Transform:
   m_GameObject: {fileID: 1735431857}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 18.3, y: -22.06, z: -92.75001}
+  m_LocalPosition: {x: -53.600002, y: -22.06, z: -92.75001}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1735431859
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735431857}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1735431860
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4191,6 +4120,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735431857}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1735431862
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735431857}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1752214278
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,7 +4153,7 @@ GameObject:
   - component: {fileID: 1752214279}
   - component: {fileID: 1752214282}
   - component: {fileID: 1752214281}
-  - component: {fileID: 1752214280}
+  - component: {fileID: 1752214283}
   m_Layer: 0
   m_Name: stonepath_01 (3)
   m_TagString: Untagged
@@ -4219,34 +4170,12 @@ Transform:
   m_GameObject: {fileID: 1752214278}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 6.3999996, y: -22.06, z: -20.2}
+  m_LocalPosition: {x: -65.5, y: -22.06, z: -20.2}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1752214280
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752214278}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1752214281
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4304,6 +4233,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752214278}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1752214283
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752214278}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1793296583
 GameObject:
   m_ObjectHideFlags: 0
@@ -4315,7 +4266,7 @@ GameObject:
   - component: {fileID: 1793296584}
   - component: {fileID: 1793296587}
   - component: {fileID: 1793296586}
-  - component: {fileID: 1793296585}
+  - component: {fileID: 1793296588}
   m_Layer: 0
   m_Name: stonepath_01 (13)
   m_TagString: Untagged
@@ -4332,34 +4283,12 @@ Transform:
   m_GameObject: {fileID: 1793296583}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 18.3, y: -22.06, z: 52.5}
+  m_LocalPosition: {x: -53.600002, y: -22.06, z: 52.5}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1793296585
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793296583}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1793296586
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4417,6 +4346,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793296583}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1793296588
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793296583}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1866153297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4464,7 +4415,24 @@ Transform:
   - {fileID: 755515402}
   - {fileID: 1710407482}
   - {fileID: 1088095285}
-  - {fileID: 1085870078}
+  - {fileID: 771533280}
+  - {fileID: 774989754}
+  - {fileID: 2016348592}
+  - {fileID: 1752214279}
+  - {fileID: 505658806}
+  - {fileID: 2097510843}
+  - {fileID: 1586088152}
+  - {fileID: 1793296584}
+  - {fileID: 1735431858}
+  - {fileID: 901959098}
+  - {fileID: 394558288}
+  - {fileID: 1484434581}
+  - {fileID: 340317454}
+  - {fileID: 828530903}
+  - {fileID: 714909114}
+  - {fileID: 2031529238}
+  - {fileID: 1244521548}
+  - {fileID: 1418329482}
   m_Father: {fileID: 1228332103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1884815282
@@ -4478,7 +4446,7 @@ GameObject:
   - component: {fileID: 1884815283}
   - component: {fileID: 1884815286}
   - component: {fileID: 1884815285}
-  - component: {fileID: 1884815284}
+  - component: {fileID: 1884815287}
   m_Layer: 0
   m_Name: stonepath_01 (5)
   m_TagString: Untagged
@@ -4501,28 +4469,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &1884815284
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884815282}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &1884815285
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4580,6 +4526,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884815282}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &1884815287
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884815282}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &1964518017
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,7 +4595,7 @@ GameObject:
   - component: {fileID: 2016348592}
   - component: {fileID: 2016348595}
   - component: {fileID: 2016348594}
-  - component: {fileID: 2016348593}
+  - component: {fileID: 2016348596}
   m_Layer: 0
   m_Name: stonepath_01 (1)
   m_TagString: Untagged
@@ -4644,34 +4612,12 @@ Transform:
   m_GameObject: {fileID: 2016348591}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -5.6000004, y: -22.06, z: -92.75001}
+  m_LocalPosition: {x: -77.5, y: -22.06, z: -92.75001}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &2016348593
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016348591}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &2016348594
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4729,6 +4675,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016348591}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &2016348596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016348591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &2031529237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4740,7 +4708,7 @@ GameObject:
   - component: {fileID: 2031529238}
   - component: {fileID: 2031529241}
   - component: {fileID: 2031529240}
-  - component: {fileID: 2031529239}
+  - component: {fileID: 2031529242}
   m_Layer: 0
   m_Name: stonepath_01 (9)
   m_TagString: Untagged
@@ -4757,34 +4725,12 @@ Transform:
   m_GameObject: {fileID: 2031529237}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -17.59, y: -22.06, z: -20.2}
+  m_LocalPosition: {x: -89.490005, y: -22.06, z: -20.2}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &2031529239
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031529237}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &2031529240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4842,6 +4788,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031529237}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &2031529242
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031529237}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &2097510842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4853,7 +4821,7 @@ GameObject:
   - component: {fileID: 2097510843}
   - component: {fileID: 2097510846}
   - component: {fileID: 2097510845}
-  - component: {fileID: 2097510844}
+  - component: {fileID: 2097510847}
   m_Layer: 0
   m_Name: stonepath_01 (5)
   m_TagString: Untagged
@@ -4870,34 +4838,12 @@ Transform:
   m_GameObject: {fileID: 2097510842}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 6.3999987, y: -22.06, z: -92.75001}
+  m_LocalPosition: {x: -65.5, y: -22.06, z: -92.75001}
   m_LocalScale: {x: 100, y: 100, z: 85}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1085870078}
+  m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &2097510844
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097510842}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &2097510845
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4955,6 +4901,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097510842}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &2097510847
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097510842}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &2104559238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4966,7 +4934,7 @@ GameObject:
   - component: {fileID: 2104559239}
   - component: {fileID: 2104559242}
   - component: {fileID: 2104559241}
-  - component: {fileID: 2104559240}
+  - component: {fileID: 2104559243}
   m_Layer: 0
   m_Name: stonepath_01 (4)
   m_TagString: Untagged
@@ -4989,28 +4957,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &2104559240
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104559238}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &2104559241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5068,6 +5014,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104559238}
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &2104559243
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104559238}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!1 &2147254845
 GameObject:
   m_ObjectHideFlags: 0
@@ -5079,7 +5047,7 @@ GameObject:
   - component: {fileID: 2147254846}
   - component: {fileID: 2147254849}
   - component: {fileID: 2147254848}
-  - component: {fileID: 2147254847}
+  - component: {fileID: 2147254850}
   m_Layer: 0
   m_Name: stonepath_01 (13)
   m_TagString: Untagged
@@ -5102,28 +5070,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1866153298}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!64 &2147254847
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147254845}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &2147254848
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5180,6 +5126,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147254845}
+  m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
+--- !u!64 &2147254850
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147254845}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 031692378e316444c9ad51116348a868, type: 3}
 --- !u!23 &104071470869188277
 MeshRenderer:
