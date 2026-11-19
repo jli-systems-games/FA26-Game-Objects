@@ -11,8 +11,8 @@ using UnityEngine.InputSystem;
 public class MainCharacter : MonoBehaviour
 {
 
-     private float speed = 5f;
-     public CharacterController control;
+     public float speed = 5f;
+     private CharacterController control;
      public InputAction move, look;
      private Vector2 direction,mouse;
      private float pitch;
