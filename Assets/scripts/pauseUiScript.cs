@@ -28,27 +28,12 @@ public class pauseUiScript : MonoBehaviour
         // don't do anything
         if (startMenu.enabled) return;
 
-        // wait for Esc
+        // wait for p
         if (!paused)
         {
-            // in a browser, Esc just releases the mouse, so also pause when the mouse lock is lost
-            if (Cursor.lockState == CursorLockMode.Locked)
-            {
-                lockedTime += Time.unscaledDeltaTime;
-                if (lockedTime > 0.5f) wasLocked = true;
-            }
-            else
-            {
-                lockedTime = 0f;
-            }
-
-            bool lostLock = wasLocked && Cursor.lockState != CursorLockMode.Locked;
-
-            if (Input.GetKeyDown(KeyCode.Escape) || lostLock)
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 paused = true;
-                wasLocked = false;
-                lockedTime = 0f;
                 selected = 1;
                 Time.timeScale = 0f;
                 player.enabled = false;
@@ -58,10 +43,10 @@ public class pauseUiScript : MonoBehaviour
             return;
         }
 
-        // Esc opens it it
+        // p opens it it
         if (controlsPanel.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 controlsPanel.SetActive(false);
                 SetMenuVisible(true);
@@ -69,8 +54,8 @@ public class pauseUiScript : MonoBehaviour
             return;
         }
 
-        // Esc closes it
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // p closes it
+        if (Input.GetKeyDown(KeyCode.P))
         {
             paused = false;
             Time.timeScale = 1f;
