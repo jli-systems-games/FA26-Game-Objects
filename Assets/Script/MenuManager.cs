@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
     public GameObject player, p1, p2, p3, p4, p5;
 
     public static bool menuOpen;
-    private float oldTimeScale = 1f;
+    private float oldTimeScale = 1f; //
 
     void Start()
     {
