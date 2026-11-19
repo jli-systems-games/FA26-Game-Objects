@@ -288,8 +288,6 @@ public static class BasicGalleryGenerator
         pull.transform.localPosition = new Vector3(direction * .22f, 1.45f, -.15f);
         pull.transform.localScale = new Vector3(.09f, .5f, .055f);
         pull.GetComponent<Renderer>().sharedMaterial = brass;
-        var interaction = hinge.AddComponent<GalleryDoorInteraction>();
-        interaction.door = hinge.transform;
     }
 
     private static void AtelierArtwork(string name, Vector3 pos, Material art, Material frame, bool onPortWall, float width = 1.7f, float height = 1.55f)
@@ -353,8 +351,6 @@ public static class BasicGalleryGenerator
         stripe.transform.localPosition = new Vector3(direction * 1.1f, 1.5f, -.145f);
         stripe.transform.localScale = new Vector3(.08f, 2.25f, .035f);
         stripe.GetComponent<Renderer>().sharedMaterial = Mat("Space Gallery - Door Status Light", new Color(.08f, .72f, .95f), true);
-        var interaction = hinge.AddComponent<GalleryDoorInteraction>();
-        interaction.door = hinge.transform;
     }
 
     private static void DoorControl(string name, Vector3 pos, Material active)
