@@ -4,7 +4,7 @@ public class BossKick : MonoBehaviour
 {
     public float speed = 5f, rotateSpeed = 1080f;
     private float nowSpeed = 0f, spin = 0f;
-    public GameObject DeadCell;
+    public GameObject DeadCell,blood;
 
     void Update()
     {
@@ -19,6 +19,8 @@ public class BossKick : MonoBehaviour
         {
             nowSpeed = speed;
             spin = rotateSpeed;
+            blood.SetActive(false);
+
         }
     }
 }
