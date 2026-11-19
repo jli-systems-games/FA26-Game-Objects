@@ -13,11 +13,14 @@ public class characterScript : MonoBehaviour
     float currentAngle;
     bool jumped;
 
+    float jumpTimer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
         rb = GetComponent<Rigidbody>();
+        rb.maxDepenetrationVelocity = 2f;
     }
 
     // Update is called once per frame
@@ -63,7 +66,12 @@ public class characterScript : MonoBehaviour
         {
             v.y = jump;
         }
+        else if (IsGrounded() && jumpTimer <= 0f)
+        {
+            v.y = Mathf.Min(v.y, 0f); //bumps cant launch
+        }
 
+        jumpTimer -= Time.fixedDeltaTime;
         jumped = false;
         rb.linearVelocity = v;
     }

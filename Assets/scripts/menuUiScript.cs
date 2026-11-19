@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class menuUiScript : MonoBehaviour
 {
+
+    //start menu
     public GameObject startImage;
     public GameObject controlsImage;
     public GameObject fullscreenImage;
@@ -9,6 +11,7 @@ public class menuUiScript : MonoBehaviour
     public GameObject menuScreen;
     public GameObject[] hideOnControls;
     public characterScript player;
+    
 
     int selected = 1;
 
