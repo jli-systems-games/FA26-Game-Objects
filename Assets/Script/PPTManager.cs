@@ -10,6 +10,7 @@ public class PPTManager : MonoBehaviour
     public class Page
     {
         public Sprite image;
+        [TextArea]
         public string description;
     }
 
