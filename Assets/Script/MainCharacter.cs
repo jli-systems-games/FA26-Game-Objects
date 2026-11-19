@@ -16,7 +16,7 @@ public class MainCharacter : MonoBehaviour
      public InputAction move, look;
      private Vector2 direction,mouse;
      private float pitch;
-
+    
 
     void Start()
     {
@@ -27,12 +27,13 @@ public class MainCharacter : MonoBehaviour
 
     void Update()
     {
-        if (MainLogic.scene == 0)
+        if (MainLogic.scene == 0 && !MenuManager.menuOpen)
         {
             direction = move.ReadValue<Vector2>();
             control.Move(this.transform.TransformDirection(new Vector3(direction.x,0,direction.y)) * speed * Time.deltaTime);
             mouse = look.ReadValue<Vector2>();
             transform.Rotate(0, mouse.x * 0.5f, 0);
+
 
             pitch = Mathf.Clamp(pitch - mouse.y * 0.5f, -80f, 80f);
             Camera.main.transform.localRotation = Quaternion.Euler(pitch, 0, 0);
