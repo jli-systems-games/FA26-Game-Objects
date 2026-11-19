@@ -4,13 +4,24 @@ using UnityEngine.InputSystem;
 
 public class Character2D : MonoBehaviour
 {
-    public bool horizontal, vertical;
+    public bool horizontal, vertical, infiniteJump;
     public float speed = 5f, jumpSpeed = 4f;
     public float jumpDuration = 0.3f;
     public Vector2 gravity = new Vector2(0, -3);
 
-    private float jumpTime;
+    private bool ableToJump = false;
 
+    private float jumpTime;
+    
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ground")) ableToJump = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Ground")) ableToJump = false;
+    }
     void Update()
     {
         if (Time.timeScale == 0) return;
@@ -29,7 +40,8 @@ public class Character2D : MonoBehaviour
             if (Keyboard.current.sKey.isPressed) y -= speed;
         }
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+         if ((ableToJump && Keyboard.current.spaceKey.wasPressedThisFrame) ||
+          (infiniteJump&& Keyboard.current.spaceKey.wasPressedThisFrame))
             jumpTime = jumpDuration;
 
         if (jumpTime > 0)

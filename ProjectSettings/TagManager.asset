@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Apple
+  - DeadCell
   layers:
   - Default
   - TransparentFX
