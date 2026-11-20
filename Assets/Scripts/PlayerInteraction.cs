@@ -55,7 +55,7 @@ public class PlayerInteraction : MonoBehaviour
         Artifact found = null;
 
         // 检测所有层，让墙能挡住射线
-        if (Physics.Raycast(ray, out hit, interactRange))
+        if (Physics.Raycast(ray, out hit, interactRange, ~0, QueryTriggerInteraction.Ignore))
         {
             found = hit.collider.GetComponent<Artifact>();
         }
@@ -110,5 +110,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (audioSource != null && clip != null)
             audioSource.PlayOneShot(clip);
+    }
+
+    // 被黑影抓到时，从外部强制关闭说明牌
+    public void ForceClosePanel()
+    {
+        if (isReading) ClosePanel();
     }
 }
