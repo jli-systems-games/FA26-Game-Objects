@@ -9,7 +9,7 @@ public class MainLogic : MonoBehaviour
     public static int scene;
 
     public Camera[] cameras;
-    public GameObject s1,s2,s3,s4,s5;
+    public GameObject s1,s2,s3,s4,s5,winPPT;
     private GameObject[] allScenes;
     public bool IsTesting;
 
@@ -70,5 +70,7 @@ public class MainLogic : MonoBehaviour
     void win()
     {
         Debug.LogError("u win");
+        winPPT.SetActive(true);
+
     }
 }
