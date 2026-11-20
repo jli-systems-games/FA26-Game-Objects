@@ -35,6 +35,7 @@ public class DRAWING : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentLineRenderer = GetComponent<LineRenderer>();
         Drawing();
     }
 

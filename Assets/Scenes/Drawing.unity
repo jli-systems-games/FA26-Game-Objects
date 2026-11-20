@@ -837,11 +837,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8901175740352959909, guid: ab5f5acea7d6944979fdcd626aff0afc, type: 3}
   m_PrefabInstance: {fileID: 318504105}
   m_PrefabAsset: {fileID: 0}
---- !u!120 &318504107 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 7283932054147384334, guid: ab5f5acea7d6944979fdcd626aff0afc, type: 3}
-  m_PrefabInstance: {fileID: 318504105}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &434426270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1088,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529422507}
   m_CullTransparentMesh: 1
+--- !u!1 &617589173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7258913559763509207, guid: ab5f5acea7d6944979fdcd626aff0afc, type: 3}
+  m_PrefabInstance: {fileID: 318504105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &617718707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1271516208071035471, guid: 21c12b65b204b41c096a698986c1dc13, type: 3}
+  m_PrefabInstance: {fileID: 1005578378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &679971824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,9 +1692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DRAWING
   m_camera: {fileID: 961739752}
-  brushRed: {fileID: 2328769853349812623, guid: d739b3749ca0748c98f6aea24bbca17c, type: 3}
-  brushBlue: {fileID: 7258913559763509207, guid: ab5f5acea7d6944979fdcd626aff0afc, type: 3}
-  brushGreen: {fileID: 1271516208071035471, guid: 21c12b65b204b41c096a698986c1dc13, type: 3}
+  brushRed: {fileID: 1292126832}
+  brushBlue: {fileID: 617589173}
+  brushGreen: {fileID: 617718707}
   brushWhite: {fileID: 1413905452965270304, guid: 665067f14eaff4080bf284e78e697d05, type: 3}
   brushCount: 4
   currentLineRenderer: {fileID: 0}
@@ -1824,8 +1829,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124814258}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 844.0745, y: 485.05872, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -115.925476, y: -54.941284, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1833,7 +1838,7 @@ Transform:
   - {fileID: 1005578379}
   - {fileID: 1537376850}
   - {fileID: 1748443863}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1243648284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182523118
 GameObject:
@@ -1940,6 +1945,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1852364427}
+  - {fileID: 1124814259}
   m_Father: {fileID: 691726098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1960,12 +1966,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DRAWING
   m_camera: {fileID: 961739752}
-  brushRed: {fileID: 2328769853349812623, guid: d739b3749ca0748c98f6aea24bbca17c, type: 3}
-  brushBlue: {fileID: 7258913559763509207, guid: ab5f5acea7d6944979fdcd626aff0afc, type: 3}
-  brushGreen: {fileID: 1271516208071035471, guid: 21c12b65b204b41c096a698986c1dc13, type: 3}
-  brushWhite: {fileID: 1413905452965270304, guid: 665067f14eaff4080bf284e78e697d05, type: 3}
+  brushRed: {fileID: 1292126832}
+  brushBlue: {fileID: 617589173}
+  brushGreen: {fileID: 617718707}
+  brushWhite: {fileID: 1669505096}
   brushCount: 5
-  currentLineRenderer: {fileID: 318504107}
+  currentLineRenderer: {fileID: 0}
 --- !u!1 &1251871249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2132,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258228062}
   m_CullTransparentMesh: 1
+--- !u!1 &1292126832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2328769853349812623, guid: d739b3749ca0748c98f6aea24bbca17c, type: 3}
+  m_PrefabInstance: {fileID: 1537376849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1397044673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2313,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1085919833506286862, guid: d739b3749ca0748c98f6aea24bbca17c, type: 3}
   m_PrefabInstance: {fileID: 1537376849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1669505096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1413905452965270304, guid: 665067f14eaff4080bf284e78e697d05, type: 3}
+  m_PrefabInstance: {fileID: 1748443862}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1706076623
 GameObject:
@@ -3337,4 +3353,3 @@ SceneRoots:
   - {fileID: 203844589}
   - {fileID: 691726098}
   - {fileID: 828883875}
-  - {fileID: 1124814259}
