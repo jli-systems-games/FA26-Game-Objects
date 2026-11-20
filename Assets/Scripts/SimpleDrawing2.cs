@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -100,36 +101,7 @@ public class SimpleDrawing : MonoBehaviour
         }
     }
 
-
-
-
-//buttons
-public void SelectRed()
-{
-    brushColor = Color.red; 
-}
-
-public void SelectBlue()
-{
-    brushColor = Color.blue; 
-}
-
-public void SelectGreen()
-{
-    brushColor = Color.green; 
-}
-
-public void SelectEraser()
-{
-    brushColor = Color.white; 
-}
-
-
-
-
-
-
-    // clear canvas
+    // CLEAR
 
     public void ClearCanvas()
     {
