@@ -8,6 +8,7 @@ public class characterScript : MonoBehaviour
 
     public float sprintSpeed = 10f;
     public float jump = 6f;
+    
 
     Rigidbody rb;
     float currentAngle;
@@ -76,7 +77,7 @@ public class characterScript : MonoBehaviour
         rb.linearVelocity = v;
     }
 
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics.SphereCast(transform.position, 0.4f, Vector3.down, out _, 0.7f);
     }
