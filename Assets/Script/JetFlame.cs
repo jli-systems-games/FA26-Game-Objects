@@ -4,7 +4,7 @@ using UnityEngine;
 public class JetFlame : MonoBehaviour
 {
     public GameObject[] flames;
-    private bool onGround = true;
+    private bool onGround = false;
 
 
     void Enable(){
