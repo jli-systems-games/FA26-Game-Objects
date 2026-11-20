@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World2.unity
     guid: 17425aebbe8594065b8ef71af75b53a5
+  - enabled: 1
+    path: Assets/Scenes/Secret2.unity
+    guid: 4ebb0a3dd8c9543b5b3580c69a1e6201
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
