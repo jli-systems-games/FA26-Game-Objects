@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerCam : MonoBehaviour
     public GameObject PressE;
     public GameObject GetCloser;
     public GameObject NotInteractable;
+
+    public GameObject Canvas;
 
     public bool infoShowing = false;
     
@@ -63,26 +66,28 @@ public class PlayerCam : MonoBehaviour
                 PressE.SetActive(false);
                 GetCloser.SetActive(false);
                 NotInteractable.SetActive(false);
-                InfoCanvas.SetActive(true);
+                Canvas = hit.transform.gameObject.GetComponent<Interactive>().ThisItemsCanvas;
+                Canvas.SetActive(true);
                 Name.text = hit.transform.gameObject.GetComponent<Interactive>().ThisItemsName;
                 Description.text = hit.transform.gameObject.GetComponent<Interactive>().ThisItemsDescription;
+                
                 infoShowing = true;
             }
             else if (Input.GetKeyDown(KeyCode.E) && infoShowing == true)
             {
                 Debug.Log("NotHittingInteractive");
-                InfoCanvas.SetActive(false);
+                Canvas.SetActive(false);
             }
             else if (hit.collider.gameObject.tag != "Interactive" && infoShowing == true)
             {
                 Debug.Log("NotHittingInteractive");
-                InfoCanvas.SetActive(false);
+                Canvas.SetActive(false);
             }
         }
         else
         {
             Debug.Log("Hit nothing");
-            InfoCanvas.SetActive(false);
+            Canvas.SetActive(false);
         }
         //right now it works no matter how far away a thing is
        
