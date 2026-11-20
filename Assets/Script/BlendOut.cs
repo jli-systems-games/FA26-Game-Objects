@@ -13,7 +13,7 @@ public class BlendOut : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-
+    
     void OnEnable()
     {
         image = GetComponent<Image>();

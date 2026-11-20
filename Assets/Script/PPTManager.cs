@@ -27,6 +27,10 @@ public class PPTManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    void OnDisable(){
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame ||
