@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
@@ -59,7 +58,7 @@ public class PlayerCam : MonoBehaviour
                 GetCloser.SetActive(false);
                 NotInteractable.SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag == "Interactive" && hit.distance < 1f) 
+            if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag == "Interactive" && hit.distance < 5f) 
             {
                 PressE.SetActive(false);
                 GetCloser.SetActive(false);
