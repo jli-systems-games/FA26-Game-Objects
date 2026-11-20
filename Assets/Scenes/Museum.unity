@@ -4058,7 +4058,7 @@ MonoBehaviour:
   s4: {fileID: 474848269}
   s5: {fileID: 1044383972}
   winPPT: {fileID: 1832653801}
-  IsTesting: 1
+  IsTesting: 0
 --- !u!4 &261510056
 Transform:
   m_ObjectHideFlags: 0
@@ -11377,12 +11377,6 @@ MonoBehaviour:
       no need to spend hours trying to find her.
 
 '
-  - image: {fileID: 21300000, guid: 176a094b2ca9ee94b94f408dd38f8c1a, type: 3}
-    description: 'The touchscreen reacted with a noticeable delay. The bird kept
-      hitting pipes, and getting past even ten was difficult. I still played outside
-      the classroom for ages.
-
-'
   - image: {fileID: 21300000, guid: 18aa79e35ad0a2e45bc0680542599ad9, type: 3}
     description: 'There''s just one problem. This boss has complicated attacks and
       animations. Unfortunately, I don''t have the Unity skills to recreate all of
@@ -11390,13 +11384,11 @@ MonoBehaviour:
 
 '
   - image: {fileID: 21300000, guid: 38b56dcb6fdbb2c4facd60fdca9e2d7d, type: 3}
-    description: Dead Cells has already crossed over with Blasphemous. So why not
+    description: 'Dead Cells has already crossed over with Blasphemous. So why not
       invite the Beheaded into my dream? No complicated boss mechanics. No endless
       retries. Just one powerful kick to send Isidora flying.
-  - image: {fileID: 0}
-    description: Dead Cells has already crossed over with Blasphemous. So why not
-      invite the Beheaded into my dream? No complicated boss mechanics. No endless
-      retries. Just one powerful kick to send Isidora flying.
+
+'
   - image: {fileID: 0}
     description: "A / D \u2014 Move left / right\r\nSpace \u2014 Jump\r\n"
   picture: {fileID: 2058378610}
