@@ -44,7 +44,7 @@ public class MuseumIntro : MonoBehaviour
 
     void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.T))
+        if (Time.timeScale == 0f || !Input.GetKeyDown(KeyCode.T))
             return;
 
         if (waitingForMap)
@@ -53,10 +53,9 @@ public class MuseumIntro : MonoBehaviour
         }
         else if (todoReady &&
                  todoPanel != null &&
-                 (todoPanel.activeSelf || playerController.enabled))
+                 playerController.enabled)
         {
             todoPanel.SetActive(!todoPanel.activeSelf);
-            playerController.enabled = !todoPanel.activeSelf;
         }
     }
 
@@ -70,7 +69,9 @@ public class MuseumIntro : MonoBehaviour
         musicHint.SetActive(true);
         yield return Say("Press M to switch the music!");
 
-        yield return DialogueFlow.TypeText(MeIntro, "Press T to open the map!", typingSpeed);
+        yield return DialogueFlow.TypeText(
+            MeIntro, "Press T to open the map!", typingSpeed);
+
         mapHint.SetActive(true);
         waitingForMap = true;
 
@@ -106,11 +107,14 @@ public class MuseumIntro : MonoBehaviour
 
         yield return PlayAnimation(MedoAnim, "MeIntro");
 
-        yield return Say("When you get close to that big screen, press E to play a video!");
+        yield return Say(
+            "When you get close to that big screen, press E to play a video!");
 
-        yield return Say("That's all! Try interacting with different things!");
+        yield return Say(
+            "That's all! Try interacting with different things!");
 
-        yield return Say("You might discover a few little Easter eggs!");
+        yield return Say(
+            "You might discover a few little Easter eggs!");
 
         yield return Say("Have fun!");
 

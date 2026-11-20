@@ -6,7 +6,7 @@ using System.Collections;
 public class HidisSpeak : MonoBehaviour
 {
     public Animator HidisAnim;
-    public TMP_Text HisisText;
+    public TMP_Text HidisText;
     public GameObject HiCanvas;
 
     public GameObject mainCameraRef;
@@ -27,7 +27,7 @@ public class HidisSpeak : MonoBehaviour
 
     void Start()
     {
-        DialogueFlow.Clear(HisisText);
+        DialogueFlow.Clear(HidisText);
         hiCamera.SetActive(false);
         HiCanvas.SetActive(false);
         ohNoVideo.loopPointReached += VideoFinished;
@@ -67,7 +67,7 @@ public class HidisSpeak : MonoBehaviour
             HidisAnim.Play("HiSpeak", 0, 0f);
 
             yield return DialogueFlow.TypeText(
-                HisisText, line, typingSpeed);
+                HidisText, line, typingSpeed);
 
             HidisAnim.Play("HiIdle", 0, 0f);
 
@@ -106,14 +106,14 @@ public class HidisSpeak : MonoBehaviour
         HidisAnim.Play("Wait" + (index + 1), 0, 0f);
 
         yield return DialogueFlow.TypeText(
-            HisisText, waitWords[index], typingSpeed);
+            HidisText, waitWords[index], typingSpeed);
 
         HidisAnim.Play("HiIdle", 0, 0f);
     }
 
     void ConEnd()
     {
-        DialogueFlow.Clear(HisisText);
+        DialogueFlow.Clear(HidisText);
         HiCanvas.SetActive(false);
         HidisAnim.Play("HiIdle", 0, 0f);
 

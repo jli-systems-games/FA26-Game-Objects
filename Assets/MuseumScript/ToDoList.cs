@@ -12,6 +12,7 @@ public class TodoList : MonoBehaviour
 
     public MonoBehaviour[] npcs;
     public VideoPlayer[] videos;
+    public EatItUp[] eats;
 
     public TMP_Text MeWord;
     public PlayerController playerController;
@@ -23,8 +24,8 @@ public class TodoList : MonoBehaviour
 
     private HashSet<MonoBehaviour> talked = new HashSet<MonoBehaviour>();
     private HashSet<VideoPlayer> watched = new HashSet<VideoPlayer>();
+    private HashSet<EatItUp> eaten = new HashSet<EatItUp>();
 
-    private bool eaten;
     private bool finished;
 
     void Start()
@@ -32,24 +33,6 @@ public class TodoList : MonoBehaviour
         talkComplete.SetActive(false);
         viewComplete.SetActive(false);
         eatComplete.SetActive(false);
-    }
-
-    void OnEnable()
-    {
-        foreach (VideoPlayer video in videos)
-        {
-            if (video != null)
-                video.loopPointReached += VideoFinished;
-        }
-    }
-
-    void OnDisable()
-    {
-        foreach (VideoPlayer video in videos)
-        {
-            if (video != null)
-                video.loopPointReached -= VideoFinished;
-        }
     }
 
     public void MarkTalked(MonoBehaviour npc)
@@ -61,18 +44,22 @@ public class TodoList : MonoBehaviour
         CheckTasks();
     }
 
-    public void MarkEaten()
-    {
-        eaten = true;
-        CheckTasks();
-    }
-
-    void VideoFinished(VideoPlayer video)
+    public bool MarkWatched(VideoPlayer video)
     {
         if (System.Array.IndexOf(videos, video) < 0)
-            return;
+            return false;
 
         watched.Add(video);
+        CheckTasks();
+        return true;
+    }
+
+    public void MarkEaten(EatItUp npc)
+    {
+        if (System.Array.IndexOf(eats, npc) < 0)
+            return;
+
+        eaten.Add(npc);
         CheckTasks();
     }
 
@@ -84,7 +71,8 @@ public class TodoList : MonoBehaviour
         viewComplete.SetActive(
             videos.Length > 0 && watched.Count == videos.Length);
 
-        eatComplete.SetActive(eaten);
+        eatComplete.SetActive(
+            eats.Length > 0 && eaten.Count == eats.Length);
 
         if (!finished &&
             talkComplete.activeSelf &&
@@ -104,6 +92,8 @@ public class TodoList : MonoBehaviour
             (todoPanel == null || !todoPanel.activeSelf));
 
         playerController.enabled = false;
+
+        MeWord.transform.SetAsLastSibling();
 
         yield return DialogueFlow.TypeText(
             MeWord,

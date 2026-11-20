@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public class EatItUp : MonoBehaviour
 {
     public enum InteractionType
@@ -42,7 +43,7 @@ public class EatItUp : MonoBehaviour
                 hintUI.LeaveRange(this);
 
             if (todoList != null)
-                todoList.MarkEaten();
+                todoList.MarkEaten(this);
 
             Destroy(npc);
         }

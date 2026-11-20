@@ -8,16 +8,10 @@ public class DialogueTrigger : MonoBehaviour
     public TMP_Text dialogueText;
     public string words;
 
-    public GameObject mainCameraRef;
-    public GameObject switchCamera;
-    public Animator cameraAnimator;
-    public string cameraAnimation;
-
     public PlayerController playerController;
     public TodoList todoList;
     public HintUI hintUI;
 
-    public float dialogueDelay = 1f;
     public float typingSpeed = 0.05f;
 
     private bool playerTrigger;
@@ -25,7 +19,6 @@ public class DialogueTrigger : MonoBehaviour
 
     void Start()
     {
-        switchCamera.SetActive(false);
         dialogueBox.SetActive(false);
     }
 
@@ -34,14 +27,10 @@ public class DialogueTrigger : MonoBehaviour
         if (isTalking)
         {
             if (Input.GetKeyDown(KeyCode.Q))
-            {
-                StopAllCoroutines();
                 ConEnd();
-            }
         }
         else if (playerTrigger &&
                  playerController.enabled &&
-                 mainCameraRef.activeInHierarchy &&
                  Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(Talk());
@@ -55,39 +44,25 @@ public class DialogueTrigger : MonoBehaviour
         if (hintUI != null)
             hintUI.BeginInteraction(this);
 
-        DialogueFlow.SwitchCamera(
-            mainCameraRef, switchCamera,
-            playerController, true);
-
-        if (cameraAnimator != null &&
-            !string.IsNullOrEmpty(cameraAnimation))
-        {
-            cameraAnimator.Play(cameraAnimation, 0, 0f);
-        }
-
-        yield return new WaitForSeconds(dialogueDelay);
-
         dialogueBox.SetActive(true);
 
         yield return DialogueFlow.TypeText(
             dialogueText, words, typingSpeed);
 
-        yield return DialogueFlow.WaitNext();
-
         if (todoList != null)
             todoList.MarkTalked(this);
+
+        yield return DialogueFlow.WaitNext();
 
         ConEnd();
     }
 
     void ConEnd()
     {
+        StopAllCoroutines();
+
         DialogueFlow.Clear(dialogueText);
         dialogueBox.SetActive(false);
-
-        DialogueFlow.SwitchCamera(
-            mainCameraRef, switchCamera,
-            playerController, false);
 
         isTalking = false;
 
@@ -116,10 +91,7 @@ public class DialogueTrigger : MonoBehaviour
                 hintUI.LeaveRange(this);
 
             if (isTalking)
-            {
-                StopAllCoroutines();
                 ConEnd();
-            }
         }
     }
 }

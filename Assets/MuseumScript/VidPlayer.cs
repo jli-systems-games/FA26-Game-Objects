@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Video;
 
-public class CameraSwitch : MonoBehaviour
+public class VidPlayer : MonoBehaviour
 {
     public GameObject mainCameraRef;
     public GameObject switchCamera;
@@ -12,20 +12,20 @@ public class CameraSwitch : MonoBehaviour
     public PlayerController playerController;
     public SwapMusic swapMusic;
     public HintUI hintUI;
+    public TodoList todoList;
 
     public KeyCode interactKey = KeyCode.E;
     public KeyCode exitKey = KeyCode.Q;
 
     private bool playerTrigger;
+    private bool counted;
+    private float watchedSeconds;
 
     void Start()
     {
-        if (swapMusic == null)
-            swapMusic = FindFirstObjectByType<SwapMusic>();
-
         currentCamera = mainCameraRef;
         switchCamera.SetActive(false);
-        
+
         videoPlayer.playOnAwake = false;
         videoPlayer.source = VideoSource.Url;
         videoPlayer.url = System.IO.Path.Combine(
@@ -34,6 +34,9 @@ public class CameraSwitch : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f)
+            return;
+
         if (playerTrigger &&
             currentCamera == mainCameraRef &&
             playerController.enabled &&
@@ -43,10 +46,18 @@ public class CameraSwitch : MonoBehaviour
             WatchVideo();
         }
 
-        if (currentCamera == switchCamera &&
-            (Input.GetKeyDown(exitKey) || !playerTrigger))
+        if (currentCamera == switchCamera)
         {
-            ExitVideo();
+            if (!counted)
+            {
+                watchedSeconds += Time.deltaTime;
+
+                if (watchedSeconds >= 10f && todoList != null)
+                    counted = todoList.MarkWatched(videoPlayer);
+            }
+
+            if (Input.GetKeyDown(exitKey) || !playerTrigger)
+                ExitVideo();
         }
     }
 

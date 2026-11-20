@@ -126,8 +126,9 @@ public class WorkIntro : MonoBehaviour
         yield return PlayAnimation(cameraAnimator, "MyDesk");
         yield return Say("My Desk, 2022.");
 
-        yield return Say(
-            "This was pretty much my first big pixel-art scene. My portfolio mentor actually noticed my talent because of it. Ah, those were the days!");
+        yield return Say("This was pretty much my first big pixel art scene drawing.");
+        yield return Say("My portfolio mentor actually noticed my talent because of it!");
+        yield return Say("I quite miss the days when I was in high school.");
 
         yield return PlayAnimation(cameraAnimator, "Foxxi");
         yield return Say("Foxxi, 2023.");
@@ -138,8 +139,8 @@ public class WorkIntro : MonoBehaviour
         yield return PlayAnimation(cameraAnimator, "SwingSix");
         yield return Say("SwingSix, 2024.");
 
-        yield return Say(
-            "I made this for a friend! I feel so bad for keeping her waiting almost six months!");
+        yield return Say("I made this for a friend!");
+        yield return Say("I feel so bad for keeping her waiting almost six months...");
 
         yield return PlayAnimation(cameraAnimator, "ISGYSD");
         yield return Say("ISGYSD, 2025.");
@@ -148,44 +149,38 @@ public class WorkIntro : MonoBehaviour
         worksCamera.SetActive(false);
         mainCameraRef.SetActive(true);
 
-        yield return Say(
-            "I know these names sound weird. I usually don't name my artworks. They're basically just variable names I made up on the spot!");
+        yield return Say("I know these names sound weird. I usually don't name my artworks.");
+        yield return Say("They're basically just variable names I just randomly typed.");
     }
 
     IEnumerator SecretStory()
     {
-        yield return Say(
-            "Wanna know why I look like this? Well...");
+        yield return Say("Wanna know why I look like this? Well...");
 
-        yield return Say(
-            "This is my online persona, since I don't really want to appear as a human on the internet.");
+        yield return Say("This is my online persona, since I don't really want to appear as a human on the internet.");
 
-        yield return Say(
-            "This is connected to some of my childhood experiences. I like birds, and when I was around ten years old, I used to keep some small parrots.");
+        yield return Say("This is connected to some of my childhood experiences...");
+        yield return Say(" I like birds, and when I was around 10, I used to keep some small parrots.");
 
-        yield return Say(
-            "So I named my WeChat account \"Experienced Old Hen.\" My classmates thought it was funny and started calling me \"Hen\" too.");
+        yield return Say("So I named my WeChat account \"Experienced Old Hen.\"");
+        yield return Say("My classmates thought it was funny and started calling me \"Hen\" too.");
 
-        yield return Say(
-            "Later, when I was in high school, I changed my online name to \"Mendori,\" which means \"hen\" in Japanese.");
+        yield return Say("Later, when I was in high school, I changed my online name to \"Mendori,\" which means \"hen\" in Japanese.");
 
-        yield return Say(
-            "The last syllable, \"ri,\" sounds like the Chinese word for pear. So I combined these ideas and designed this character as my online identity.");
-
-        yield return Say(
-            "So, I'm not telling you my legal name here. Haha!");
+        yield return Say("The last syllable, \"ri,\" sounds like the Chinese word for pear.");
+        yield return Say("So that's how I came up with my sona!");
+        
+        yield return Say("And I'm not telling you my legal name here. Haha!");
+        yield return Say("If you're my professor, you should already know it :)");
     }
 
     IEnumerator SecretThanks()
     {
-        yield return Say(
-            "Back when I made those four games, my mentor helped me so much!");
+        yield return Say("Back when I made those four games, my mentor helped me so much!");
 
-        yield return Say(
-            "My older sister even composed a short piece of music for each game!");
+        yield return Say("And my sister wrote music for every one of my games!");
 
-        yield return Say(
-            "That was honestly one of the most exciting times of my life!");
+        yield return Say("That was honestly one of the most exciting times of my life...");
     }
 
     IEnumerator Say(string words)

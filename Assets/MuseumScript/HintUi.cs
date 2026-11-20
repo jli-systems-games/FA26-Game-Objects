@@ -9,27 +9,60 @@ public class HintUI : MonoBehaviour
     public GameObject quit;
     public Animator quitAnimator;
     public GameObject fakeQuit;
+    public GameObject ExInfo;
 
     public PlayerController playerController;
     public GameObject mainCameraRef;
 
     private HashSet<MonoBehaviour> nearby = new HashSet<MonoBehaviour>();
     private MonoBehaviour activeOwner;
-    private bool hidisTalking;
-    private Coroutine interactExit;
-    private Coroutine quitExit;
+    private Coroutine uiRoutine;
+    private bool exInfoActive;
+
+    private enum HintState
+    {None, Interact, Quit, FakeQuit}
+
+    private HintState currentState;
 
     void Awake()
     {
-        if (interact != null) interact.SetActive(false);
-        if (quit != null) quit.SetActive(false);
-        if (fakeQuit != null) fakeQuit.SetActive(false);
+        interact.SetActive(false);
+        quit.SetActive(false);
+
+        if (fakeQuit != null)
+            fakeQuit.SetActive(false);
     }
 
     void LateUpdate()
     {
-        nearby.RemoveWhere(source => source == null || !source.isActiveAndEnabled);
-        RefreshInteract();
+        nearby.RemoveWhere(source =>
+            source == null || !source.isActiveAndEnabled);
+
+        bool showing = ExInfo != null && ExInfo.activeInHierarchy;
+
+        if (showing != exInfoActive)
+        {
+            exInfoActive = showing;
+
+            if (uiRoutine != null)
+            {
+                StopCoroutine(uiRoutine);
+                uiRoutine = null;
+            }
+
+            if (exInfoActive)
+            {
+                interact.SetActive(false);
+                quit.SetActive(false);
+            }
+            else
+            {
+                uiRoutine = StartCoroutine(SwitchUI(currentState));
+            }
+        }
+
+        if (activeOwner == null)
+            RefreshInteract();
     }
 
     public void EnterRange(MonoBehaviour source)
@@ -50,20 +83,13 @@ public class HintUI : MonoBehaviour
             return;
 
         activeOwner = source;
-        hidisTalking = false;
-        HideInteract();
-        ShowQuit();
+        ChangeState(HintState.Quit);
     }
 
     public void BeginHidis(MonoBehaviour source)
     {
         activeOwner = source;
-        hidisTalking = true;
-        HideInteractNow();
-        HideQuitNow();
-
-        if (fakeQuit != null)
-            fakeQuit.SetActive(true);
+        ChangeState(HintState.FakeQuit);
     }
 
     public void EndInteraction(MonoBehaviour source)
@@ -71,129 +97,102 @@ public class HintUI : MonoBehaviour
         if (activeOwner != source)
             return;
 
-        if (hidisTalking)
-        {
-            if (fakeQuit != null)
-                fakeQuit.SetActive(false);
-        }
-        else
-        {
-            HideQuit();
-        }
-
         activeOwner = null;
-        hidisTalking = false;
         RefreshInteract();
     }
 
     void RefreshInteract()
     {
-        bool canInteract = activeOwner == null && nearby.Count > 0 &&
-                           (playerController == null || playerController.enabled) &&
-                           (mainCameraRef == null || mainCameraRef.activeInHierarchy);
-
-        if (canInteract)
-            ShowInteract();
-        else
-            HideInteract();
-    }
-
-    void ShowInteract()
-    {
-        if (interact == null || interactAnimator == null)
+        if (activeOwner != null)
             return;
 
-        if (interact.activeSelf && interactExit == null)
+        bool canInteract =
+            nearby.Count > 0 &&
+            (playerController == null || playerController.enabled) &&
+            (mainCameraRef == null || mainCameraRef.activeInHierarchy);
+
+        ChangeState(canInteract ? HintState.Interact : HintState.None);
+    }
+
+    void ChangeState(HintState nextState)
+    {
+        if (currentState == nextState)
             return;
 
-        if (interactExit != null)
-        {
-            StopCoroutine(interactExit);
-            interactExit = null;
-        }
+        currentState = nextState;
 
-        interact.SetActive(true);
-        interactAnimator.Play("Interactive", 0, 0f);
+        if (uiRoutine != null)
+            StopCoroutine(uiRoutine);
+
+        uiRoutine = null;
+
+        if (!exInfoActive)
+            uiRoutine = StartCoroutine(SwitchUI(nextState));
     }
 
-    void HideInteract()
+    IEnumerator SwitchUI(HintState nextState)
     {
-        if (interact != null && interact.activeSelf && interactExit == null)
-            interactExit = StartCoroutine(Hide(interact, interactAnimator, "InteractExit", true));
-    }
-
-    void HideInteractNow()
-    {
-        if (interactExit != null)
+        if (nextState == HintState.FakeQuit)
         {
-            StopCoroutine(interactExit);
-            interactExit = null;
-        }
-
-        if (interact != null)
             interact.SetActive(false);
-    }
-
-    void ShowQuit()
-    {
-        if (quit == null || quitAnimator == null)
-            return;
-
-        if (quit.activeSelf && quitExit == null)
-            return;
-
-        if (quitExit != null)
-        {
-            StopCoroutine(quitExit);
-            quitExit = null;
-        }
-
-        quit.SetActive(true);
-        quitAnimator.Play("Quit", 0, 0f);
-    }
-
-    void HideQuit()
-    {
-        if (quit != null && quit.activeSelf && quitExit == null)
-            quitExit = StartCoroutine(Hide(quit, quitAnimator, "QuitExit", false));
-    }
-
-    void HideQuitNow()
-    {
-        if (quitExit != null)
-        {
-            StopCoroutine(quitExit);
-            quitExit = null;
-        }
-
-        if (quit != null)
             quit.SetActive(false);
+
+            if (fakeQuit != null)
+                fakeQuit.SetActive(true);
+        }
+        else
+        {
+            if (fakeQuit != null)
+                fakeQuit.SetActive(false);
+
+            if (nextState == HintState.Interact)
+            {
+                yield return HideUI(quit, quitAnimator, "QuitExit");
+
+                interact.SetActive(true);
+                interactAnimator.Play("Interactive", 0, 0f);
+                interactAnimator.Update(0f);
+            }
+            else if (nextState == HintState.Quit)
+            {
+                yield return HideUI(interact, interactAnimator, "InteractExit");
+
+                quit.SetActive(true);
+                quitAnimator.Play("Quit", 0, 0f);
+                quitAnimator.Update(0f);
+            }
+            else
+            {
+                yield return HideUI(interact, interactAnimator, "InteractExit");
+                yield return HideUI(quit, quitAnimator, "QuitExit");
+            }
+        }
+
+        uiRoutine = null;
     }
 
-    IEnumerator Hide(GameObject target, Animator animator, string stateName, bool isInteract)
+    IEnumerator HideUI(GameObject target, Animator animator, string animationName)
     {
-        if (animator != null)
+        if (target == null || !target.activeSelf)
+            yield break;
+
+        if (animator != null && animator.isActiveAndEnabled)
         {
-            int state = Animator.StringToHash(animator.GetLayerName(0) + "." + stateName);
+            int state = Animator.StringToHash(
+                animator.GetLayerName(0) + "." + animationName);
 
             if (animator.HasState(0, state))
             {
                 animator.Play(state, 0, 0f);
+
                 yield return null;
 
-                AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
-                float speed = Mathf.Max(0.01f, Mathf.Abs(info.speed * animator.speed));
-
-                if (info.fullPathHash == state)
-                    yield return new WaitForSeconds(info.length / speed);
+                yield return new WaitUntil(() =>
+                    animator.GetCurrentAnimatorStateInfo(0).fullPathHash == state &&
+                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
             }
         }
 
         target.SetActive(false);
-
-        if (isInteract)
-            interactExit = null;
-        else
-            quitExit = null;
     }
 }
