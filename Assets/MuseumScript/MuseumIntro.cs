@@ -107,14 +107,12 @@ public class MuseumIntro : MonoBehaviour
 
         yield return PlayAnimation(MedoAnim, "MeIntro");
 
-        yield return Say(
-            "When you get close to that big screen, press E to play a video!");
+        yield return Say("When you get close to that big screen, press E to play a video!");
 
-        yield return Say(
-            "That's all! Try interacting with different things!");
+        yield return Say("That's all! Try interacting with different things!");
 
-        yield return Say(
-            "You might discover a few little Easter eggs!");
+        yield return Say("You might discover a few little Easter eggs!");
+        yield return Say("And you can go back to the menu anytime by pressing Escape!");
 
         yield return Say("Have fun!");
 
