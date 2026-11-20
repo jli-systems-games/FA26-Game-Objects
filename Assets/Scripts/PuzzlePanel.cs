@@ -20,6 +20,8 @@ public class PuzzlePanel : MonoBehaviour
     private CursorLockMode previousCursorLockState;
     private bool previousCursorVisible;
 
+    public bool IsPuzzleOpen => puzzleIsOpen;
+
     private void Start()
     {
         FindPlayer();

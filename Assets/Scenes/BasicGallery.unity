@@ -9261,13 +9261,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296135861}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.000000087422784, y: -3.902434e-14, z: -0.9999975, w: -0.002264708}
   m_LocalPosition: {x: 0, y: 2.25, z: 5.5699997}
   m_LocalScale: {x: 3.4, y: 2.2, z: 0.06}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 256584651}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.26}
 --- !u!23 &296135863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9293,7 +9293,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 489bf40c0e3304348994adf627a9e035, type: 2}
+  - {fileID: 2100000, guid: 330d403cc154f7546aecaa6bd99e7f50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14716,7 +14716,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73e38697f294da04891089b446c7eeab, type: 2}
+  - {fileID: 2100000, guid: 52aa22973c3f234449c78fb1b5b13f47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19433,7 +19433,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 327bd64a2f78981478f8df5b334eb0c9, type: 2}
+  - {fileID: 2100000, guid: e2d066f18e6767f418c3b4fe07a1c3f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26374,6 +26374,8 @@ MonoBehaviour:
   startMenuCanvas: {fileID: 1450365103}
   pauseMenuCanvas: {fileID: 890459188}
   winCanvas: {fileID: 764500214}
+  backgroundMusic: {fileID: 0}
+  musicVolume: 0.28
 --- !u!224 &889416634
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40045,7 +40047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1450365104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40749,7 +40751,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5a775d17e0a661468f570b4ed792b0d, type: 2}
+  - {fileID: 2100000, guid: b1fbdc117ddae9c4090285367a81ef60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45931,7 +45933,7 @@ Transform:
   m_GameObject: {fileID: 1681667058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.71, z: -31.68}
+  m_LocalPosition: {x: 0, y: 0.71, z: -3.85}
   m_LocalScale: {x: 0.63409, y: 1.3865, z: 0.64295}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52180,7 +52182,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73e38697f294da04891089b446c7eeab, type: 2}
+  - {fileID: 2100000, guid: 863d7fdb3c245c6469f104452262c6eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -57615,7 +57617,13 @@ MonoBehaviour:
   interactionDistance: 2.2
   prompt: Press E to read
   title: Still Life in Ochre
-  description: Warm earth tones bring ordinary objects into focus.
+  description: 'Frozen Ruin Planet
+
+
+    This frozen sphere hides ancient alien structures
+    beneath thick ice. Bright cyan lights leak from cracked tunnels buried in frost.
+    It was once a busy outpost, now abandoned, locked away in the cold, silent dark
+    of deep space.'
 --- !u!114 &4000000008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57634,7 +57642,13 @@ MonoBehaviour:
   interactionDistance: 2.2
   prompt: Press E to read
   title: Evening Garden
-  description: A quiet arrangement of leaves and evening color.
+  description: 'Ringed Blue Habitable Planet
+
+
+    A peaceful blue world wrapped
+    in wide icy rings. Soft glowing city lights dot its dark continents, and swirling
+    clouds drift across its oceans. It holds a gentle, livable atmosphere, a quiet
+    home for life hidden among the stars.'
 --- !u!114 &4000000009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57653,7 +57667,13 @@ MonoBehaviour:
   interactionDistance: 2.2
   prompt: Press E to read
   title: The Long Table
-  description: A study of shared spaces and everyday rituals.
+  description: ' Volcanic Lava Planet
+
+
+    This is a violent, young volcanic world.
+    Its cracked crust glows with molten magma, and active volcanoes erupt thick smoke
+    and rivers of lava. No stable life can survive here. It is a raw, burning planet
+    still shaped by the heat inside its core.'
 --- !u!114 &4000000010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57672,7 +57692,15 @@ MonoBehaviour:
   interactionDistance: 2.2
   prompt: Press E to read
   title: Blue Room
-  description: Cool blues frame a calm interior scene.
+  description: 'Storm Gas Giant
+
+
+    A storm-wrapped gas giant, seen from orbit.
+    A huge, swirling cyclone stretches across its endless cloud layers. Powerful
+    winds rage nonstop. There is no solid ground here, only endless, churning atmospheric
+    chaos.
+
+'
 --- !u!114 &4000000011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57691,7 +57719,14 @@ MonoBehaviour:
   interactionDistance: 2.2
   prompt: Press E to read
   title: Portrait of a Window
-  description: Light from a window becomes the subject.
+  description: 'Purple Nebula Planet
+
+
+    A deep purple planet floating in a vibrant
+    nebula. Pink and blue cosmic clouds swirl all around it, lit by distant stars.
+    Warm light spills over its surface, giving it a mysterious, dreamlike atmosphere.
+
+'
 --- !u!114 &4000000012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57710,7 +57745,15 @@ MonoBehaviour:
   interactionDistance: 2.2
   prompt: Press E to read
   title: After the Rain
-  description: Soft greens and golds suggest a garden after rain.
+  description: 'Iridescent Ring Planet
+
+
+    A dark planet circled by dazzling rainbow
+    rings. Countless tiny crystals and stardust glow within the rings, shimmering
+    with soft pastel light. It looks magical and rare, like a cosmic jewel floating
+    in the black void.
+
+'
 --- !u!114 &4000000013
 MonoBehaviour:
   m_ObjectHideFlags: 0

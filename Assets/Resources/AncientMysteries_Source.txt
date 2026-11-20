@@ -1,0 +1,4 @@
+Track: Ancient Mysteries
+Author: Sperry Lion
+Source: https://opengameart.org/content/ancient-mysteries
+License: CC0 (attribution is optional; credit requested if convenient)

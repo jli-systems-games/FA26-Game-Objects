@@ -110,23 +110,59 @@ public class characterlook : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        bool menuIsOpen = MenuNeedsCursor();
+        bool keypadIsNear = NavKeypad.KeypadInteractionFPV.CursorUnlockRequested;
+
+        if (menuIsOpen || keypadIsNear)
+        {
+            lookActive = !menuIsOpen;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     private void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        bool menuIsOpen = MenuNeedsCursor();
+        bool keypadIsNear = NavKeypad.KeypadInteractionFPV.CursorUnlockRequested;
+
+        if (menuIsOpen)
         {
             lookActive = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        if (Cursor.lockState != CursorLockMode.Locked && Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        else if (keypadIsNear)
         {
+            // Keep the cursor available for keypad use while still allowing
+            // mouse movement to rotate the player's view.
             lookActive = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                lookActive = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            if (Cursor.lockState != CursorLockMode.Locked && Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                lookActive = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                lookActive = true;
+            }
         }
 
         Vector2 moveInput = Vector2.zero;
@@ -172,6 +208,12 @@ public class characterlook : MonoBehaviour
         return new Vector2(x, y).normalized;
     }
 
+    private bool MenuNeedsCursor()
+    {
+        GameUIManager manager = GameUIManager.Instance;
+        return manager != null && manager.CursorShouldBeUnlocked;
+    }
+
     private void OnDisable()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -181,6 +223,15 @@ public class characterlook : MonoBehaviour
     private void OnApplicationFocus(bool hasFocus)
     {
         if (!hasFocus) return;
+        bool menuIsOpen = MenuNeedsCursor();
+        bool keypadIsNear = NavKeypad.KeypadInteractionFPV.CursorUnlockRequested;
+        if (menuIsOpen || keypadIsNear)
+        {
+            lookActive = !menuIsOpen;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            return;
+        }
         lookActive = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

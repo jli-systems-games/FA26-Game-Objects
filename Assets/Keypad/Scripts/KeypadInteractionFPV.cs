@@ -5,21 +5,51 @@ using UnityEngine;
 namespace NavKeypad { 
 public class KeypadInteractionFPV : MonoBehaviour
 {
+    public static bool CursorUnlockRequested { get; private set; }
+
     private Camera cam;
+    private Keypad keypad;
+    private PuzzlePanel puzzlePanel;
     [SerializeField] private float interactionRange = 2.5f;
 
-    private void Awake() => cam = Camera.main;
+    private void Awake()
+    {
+        cam = Camera.main;
+        keypad = FindObjectOfType<Keypad>();
+        puzzlePanel = FindObjectOfType<PuzzlePanel>();
+    }
 
     private void Update()
     {
-        if (cam == null) return;
+        if (cam == null)
+            cam = Camera.main;
+        if (keypad == null)
+            keypad = FindObjectOfType<Keypad>();
+        if (puzzlePanel == null)
+            puzzlePanel = FindObjectOfType<PuzzlePanel>();
+
+        bool nearKeypad = cam != null && keypad != null &&
+                          Vector3.Distance(cam.transform.position, keypad.transform.position) <= interactionRange;
+        CursorUnlockRequested = nearKeypad;
+
+        GameUIManager manager = GameUIManager.Instance;
+        bool anotherUiNeedsCursor = (manager != null && manager.CursorShouldBeUnlocked) ||
+                                    (puzzlePanel != null && puzzlePanel.IsPuzzleOpen);
+
+        if (nearKeypad || anotherUiNeedsCursor)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if (keypad != null)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
 
         // Only allow keypad mouse input while the player is close enough.
-        var keypad = FindObjectOfType<Keypad>();
-        if (keypad == null || Vector3.Distance(cam.transform.position, keypad.transform.position) > interactionRange)
-        {
+        if (!nearKeypad || cam == null)
             return;
-        }
 
         var ray = cam.ScreenPointToRay(Input.mousePosition);
 
@@ -33,6 +63,11 @@ public class KeypadInteractionFPV : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        CursorUnlockRequested = false;
     }
 }
 }
