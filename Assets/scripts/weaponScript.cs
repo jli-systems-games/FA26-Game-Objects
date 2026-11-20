@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class weaponScript : MonoBehaviour
 {
-float rotateSpeed = 90f; //degrees
-       public float bobHeight = 0.2f; 
-        public float bobSpeed = 2.3f;
+public float rotateSpeed = 90f; //degrees
+public float bobHeight = 0.2f; 
+public float bobSpeed = 2.3f;
 
-        Vector3 startPos; //stores the starting position of obj
+Vector3 startPos; //stores the starting position of obj
 
     void Start()
     {
