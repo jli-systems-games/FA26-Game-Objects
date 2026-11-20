@@ -41,10 +41,10 @@ public class pauseUiScript : MonoBehaviour
             return;
         }
 
-        // p opens it it
+        // closes control
         if (controlsPanel.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 controlsPanel.SetActive(false);
                 SetMenuVisible(true);
