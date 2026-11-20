@@ -14,8 +14,6 @@ public class pauseUiScript : MonoBehaviour
 
     int selected = 1;
     bool paused = false;
-    bool wasLocked = false;
-    float lockedTime = 0f;
 
     void Start()
     {
