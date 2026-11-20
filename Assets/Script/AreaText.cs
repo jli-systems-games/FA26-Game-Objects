@@ -7,12 +7,14 @@ public class AreaText : MonoBehaviour
     public TMP_Text text;
     [TextArea]
     public string message;
+    public GameObject blackBackground;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             text.text = message;
+            blackBackground.SetActive(true);
         }
     }
 
@@ -21,6 +23,7 @@ public class AreaText : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             text.text = "";
+            blackBackground.SetActive(false);
         }
     }
 }

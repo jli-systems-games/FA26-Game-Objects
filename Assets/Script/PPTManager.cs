@@ -24,6 +24,7 @@ public class PPTManager : MonoBehaviour
     {
         currentPage = 0;
         ShowPage();
+        Time.timeScale = 0f;
     }
 
     void Update()
@@ -34,8 +35,11 @@ public class PPTManager : MonoBehaviour
         {
             currentPage++;
 
-            if (currentPage >= pages.Length)
+            if (currentPage >= pages.Length){
+                Time.timeScale = 1f;
                 Destroy(gameObject);
+            }
+                
             else
                 ShowPage();
         }
