@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SimpleDrawing : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class SimpleDrawing : MonoBehaviour
 
     private List<GameObject> allStrokes = new List<GameObject>();
 
-    private bool eraser = false;
 
     void Update()
     {
@@ -101,17 +101,15 @@ public class SimpleDrawing : MonoBehaviour
         }
     }
 
-    // CLEAR
 
-    public void ClearCanvas()
+
+
+
+    // CLEAR/Reload Scene
+
+    
+    public void LoadScene(string sceneName)
     {
-        foreach (GameObject stroke in allStrokes)
-        {
-            Destroy(stroke);
-        }
-
-        allStrokes.Clear();
-
-        currentLine = null;
+        SceneManager.LoadScene(4);
     }
 }
