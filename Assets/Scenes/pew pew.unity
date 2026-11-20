@@ -1076,10 +1076,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b7addc6840042709fed6b8c704ea5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::characterScript
-  moveSpeed: 1
+  moveSpeed: 1.5
   mouseSensitivity: 0.75
   camera: {fileID: 2132330103}
-  sprintSpeed: 2.5
+  sprintSpeed: 3
   jump: 6
 --- !u!82 &382845215
 AudioSource:
