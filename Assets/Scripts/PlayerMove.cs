@@ -4,12 +4,18 @@ public class PlayerMove : MonoBehaviour
 {
     public float speed = 5f;
     public float mouseSensitivity = 150f;
+    public float jumpForce = 5f;
+
+    public Transform playerCamera;
 
     float cameraRotationX = 0f;
-    public Transform playerCamera;
+    Rigidbody rb;
+    bool isGrounded;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -21,7 +27,19 @@ public class PlayerMove : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
 
         Vector3 movement = transform.right * x + transform.forward * z;
-        transform.position += movement.normalized * speed * Time.deltaTime;
+        movement = movement.normalized * speed;
+
+        rb.linearVelocity = new Vector3(
+            movement.x,
+            rb.linearVelocity.y,
+            movement.z
+        );
+
+        // Jump with Spacebar
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
 
         // Rotate player left/right with mouse
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -33,5 +51,15 @@ public class PlayerMove : MonoBehaviour
         cameraRotationX = Mathf.Clamp(cameraRotationX, -80f, 80f);
 
         playerCamera.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        isGrounded = true;
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        isGrounded = false;
     }
 }

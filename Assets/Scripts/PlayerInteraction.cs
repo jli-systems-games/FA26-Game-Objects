@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     public DialogueManager dialogueManager;
     public GameObject interactPrompt;
 
-    bool sphereIsTargeted;
+    SphereDialogue targetedSphere;
 
     void Start()
     {
@@ -22,24 +22,21 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
-        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        targetedSphere = null;
 
-        sphereIsTargeted = false;
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))
         {
-            if (hit.collider.CompareTag("Interactable"))
-            {
-                sphereIsTargeted = true;
-            }
+            targetedSphere = hit.collider.GetComponent<SphereDialogue>();
         }
 
-        interactPrompt.SetActive(sphereIsTargeted);
+        interactPrompt.SetActive(targetedSphere != null);
 
-        if (sphereIsTargeted && Input.GetKeyDown(KeyCode.E))
+        if (targetedSphere != null && Input.GetKeyDown(KeyCode.E))
         {
             interactPrompt.SetActive(false);
-            dialogueManager.StartDialogue();
+            dialogueManager.StartDialogue(targetedSphere.lines);
         }
     }
 }

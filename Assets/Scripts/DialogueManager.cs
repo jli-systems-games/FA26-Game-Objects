@@ -1,24 +1,18 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
 
-    string[] lines =
-    {
-        "Yo.",
-        "Hows the weather today? I know it's not the season of ice cream anymore but welcome to...",
-        "Oh yeah haven't introduced myself yet.",
-        "I'm Green Seafoo's daughter, Seafood Gree.",
-        "So, you're now in this little ice cream world."
-    };
-
+    string[] currentLines;
     int currentLine = 0;
     bool dialogueActive = false;
 
-    // PlayerInteraction uses this to know whether dialogue is open.
+    Action afterDialogue;
+
     public bool IsDialogueOpen => dialogueActive;
 
     void Start()
@@ -34,29 +28,77 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue()
+    // things
+    public void StartDialogue(string[] newLines)
     {
-        if (dialogueActive)
-            return;
-
-        dialoguePanel.SetActive(true);
-        dialogueActive = true;
-        currentLine = 0;
-        dialogueText.text = lines[currentLine];
+        StartDialogue(newLines, null);
     }
+
+    // fall zone
+    // 
+    
+    public void StartDialogue(string[] newLines, Action onDialogueFinished)
+{
+    Debug.Log("DialogueManager: StartDialogue was called.");
+
+    if (dialogueActive)
+    {
+        Debug.LogWarning("DialogueManager: Dialogue is  active.");
+        return;
+    }
+
+    if (newLines == null || newLines.Length == 0)
+    {
+        Debug.LogWarning("DialogueManager: No dialogue lines..");
+        return;
+    }
+
+    if (dialoguePanel == null)
+    {
+        Debug.LogError("DialogueManager: Dialogue Panel not assigned");
+        return;
+    }
+
+    if (dialogueText == null)
+    {
+        Debug.LogError("DialogueManager: Dialogue Text not assigned");
+        return;
+    }
+
+    currentLines = newLines;
+    currentLine = 0;
+    dialogueActive = true;
+    afterDialogue = onDialogueFinished;
+
+    dialoguePanel.SetActive(true);
+    //please work please
+    dialogueText.gameObject.SetActive(true);
+    dialogueText.enabled = true;
+    dialogueText.text = currentLines[currentLine];
+
+    Debug.Log("DialogueManager: Panel opened. First line: " + currentLines[0]);
+}
 
     void NextLine()
     {
         currentLine++;
 
-        if (currentLine < lines.Length)
+        if (currentLine < currentLines.Length)
         {
-            dialogueText.text = lines[currentLine];
+            dialogueText.text = currentLines[currentLine];
         }
         else
         {
             dialogueActive = false;
             dialoguePanel.SetActive(false);
+
+            Action finished = afterDialogue;
+            afterDialogue = null;
+
+            if (finished != null)
+            {
+                finished.Invoke();
+            }
         }
     }
 }
