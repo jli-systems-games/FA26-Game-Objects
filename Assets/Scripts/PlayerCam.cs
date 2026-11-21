@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCam : MonoBehaviour
 {
     Camera cam;
-    public GameObject InfoCanvas;
+   
     public TMP_Text Name;
     public TMP_Text Description;
 
@@ -14,6 +14,10 @@ public class PlayerCam : MonoBehaviour
     public GameObject NotInteractable;
 
     public GameObject Canvas;
+
+    public GameObject Music;
+
+    public GameObject TalanCanvas;
 
     public bool infoShowing = false;
     
@@ -53,13 +57,29 @@ public class PlayerCam : MonoBehaviour
                 NotInteractable.SetActive(false);
                 PressE.SetActive(false);
                 GetCloser.SetActive(true);
+                
             }
-            if(Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag != "Interactive")
+            if (Input.GetKeyDown(KeyCode.E) && hit.distance < 5f && hit.collider.gameObject.tag == "Talan")
+            {
+                Debug.Log("Hit music box");
+                NotInteractable.SetActive(false);
+                PressE.SetActive(false);
+                GetCloser.SetActive(false);
+                TalanCanvas.SetActive(true);
+                Canvas.SetActive(true);
+                Name.text = hit.transform.gameObject.GetComponent<Interactive>().ThisItemsName;
+                Description.text = hit.transform.gameObject.GetComponent<Interactive>().ThisItemsDescription;
+                Music.SetActive(true);
+                infoShowing = true;
+
+            }
+            if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag != "Interactive")
             {
                 Debug.Log("Hit notinteractive");
                 PressE.SetActive(false);
                 GetCloser.SetActive(false);
                 NotInteractable.SetActive(true);
+                
             }
             if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag == "Interactive" && hit.distance < 5f) 
             {
@@ -70,24 +90,28 @@ public class PlayerCam : MonoBehaviour
                 Canvas.SetActive(true);
                 Name.text = hit.transform.gameObject.GetComponent<Interactive>().ThisItemsName;
                 Description.text = hit.transform.gameObject.GetComponent<Interactive>().ThisItemsDescription;
-                
+                TalanCanvas.SetActive(false);
+
                 infoShowing = true;
             }
             else if (Input.GetKeyDown(KeyCode.E) && infoShowing == true)
             {
                 Debug.Log("NotHittingInteractive");
                 Canvas.SetActive(false);
+                
             }
             else if (hit.collider.gameObject.tag != "Interactive" && infoShowing == true)
             {
                 Debug.Log("NotHittingInteractive");
                 Canvas.SetActive(false);
+                
             }
         }
         else
         {
             Debug.Log("Hit nothing");
             Canvas.SetActive(false);
+            TalanCanvas.SetActive(false);
         }
         //right now it works no matter how far away a thing is
        
