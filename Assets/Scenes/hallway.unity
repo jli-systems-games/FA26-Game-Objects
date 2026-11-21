@@ -3450,8 +3450,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.4798326, y: 1.91374, z: 3.8386626}
-  m_Center: {x: 0.6752441, y: 0.9556145, z: 0.82722163}
+  m_Size: {x: 2.4798326, y: 1.91374, z: 3.2458909}
+  m_Center: {x: 0.6752444, y: 0.9556145, z: 1.1236075}
 --- !u!4 &604986940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e2c12cc399276f34997617080b02d780, type: 3}
@@ -6175,8 +6175,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8051,8 +8051,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.4732757, y: 2.3925145, z: 1.6417773}
-  m_Center: {x: -0.17035337, y: 1.1952001, z: 0.7955321}
+  m_Size: {x: 2.862204, y: 2.3925145, z: 1.6417773}
+  m_Center: {x: 0.63517857, y: 1.1952001, z: 0.7955321}
 --- !u!1 &1596553815
 GameObject:
   m_ObjectHideFlags: 0
@@ -8385,7 +8385,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hello! This is a chair. You can sit here.
+  m_text: 'Have you finished looking around?
+
+    
+
+    Press SPACE to leave
+
+    Press
+    C to continue'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
