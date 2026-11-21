@@ -5,6 +5,7 @@ public class Exit : MonoBehaviour
 {
     public GameObject floatingPrompt;
     public GameObject confirmPanel;
+    public AudioSource audioSource;
 
     public string endSceneName = "EndScene";
 
@@ -37,6 +38,7 @@ public class Exit : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                audioSource.Play();
                 confirmPanel.SetActive(true);
                 floatingPrompt.SetActive(false);
             }
@@ -46,11 +48,13 @@ public class Exit : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                audioSource.Play();
                 SceneManager.LoadScene(endSceneName);
             }
 
             if (Input.GetKeyDown(KeyCode.C))
             {
+                audioSource.Play();
                 confirmPanel.SetActive(false);
 
                 if (playerNear)

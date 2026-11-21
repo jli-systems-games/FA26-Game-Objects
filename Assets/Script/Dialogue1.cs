@@ -7,6 +7,8 @@ public class Dialogue1 : MonoBehaviour
     public GameObject floatingPrompt;
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
+    public AudioSource audioSource;
+
 
     [TextArea(2, 5)]
     public string[] sentences;
@@ -48,10 +50,12 @@ public class Dialogue1 : MonoBehaviour
             if (dialogueActive == false)
             {
                 StartDialogue();
+                audioSource.Play();
             }
             else if (isTyping == false)
             {
                 NextSentence();
+                audioSource.Play();
             }
         }
     }
