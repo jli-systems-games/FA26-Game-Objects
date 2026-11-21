@@ -8824,7 +8824,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Have you finished looking around?
 
-    
+
 
     Press SPACE to leave
 
@@ -10574,7 +10574,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069498527}
   m_LocalRotation: {x: -0, y: -0.9997142, z: -0, w: 0.023907008}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5950005}
+  m_LocalPosition: {x: 0, y: 0, z: 1.01}
   m_LocalScale: {x: 0.0017482493, y: 0.003085714, z: 0.007778452}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10583,7 +10583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -139.722, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.04865229, y: 1.3437144}
+  m_AnchoredPosition: {x: 1.01, y: 1.072}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2069498529
