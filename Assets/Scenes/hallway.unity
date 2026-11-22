@@ -10834,10 +10834,10 @@ MonoBehaviour:
 
 
 
-    Press SPACE to leave
+    Press SPACE for Yes
 
     Press
-    C to continue'
+    C for No'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 53d407583f47afe4c8b745f3f59e60ca, type: 2}
   m_sharedMaterial: {fileID: -5402024480670432479, guid: 53d407583f47afe4c8b745f3f59e60ca, type: 2}
