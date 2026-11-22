@@ -6,17 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/hallway.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/EndScene.unity
-    guid: e397aab426ca6da418a81f07cfa241f8
-  - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 3b93c9f9aeb34b947b167c64604a02fc
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: ee20b8c22614b3d48857564a735f4670
+  - enabled: 1
+    path: Assets/Scenes/hallway.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: e397aab426ca6da418a81f07cfa241f8
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
