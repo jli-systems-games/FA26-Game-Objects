@@ -9,7 +9,7 @@ public class OpenScene : MonoBehaviour
     public Animator MedoAnim;
     public TMP_Text MedoText;
     public float typingSpeed = 0.05f;
-    public float txtTime = 2f;
+    public float txtTime = 1f;
 
     public Button StartButton;
     public GameObject BlackScreen;

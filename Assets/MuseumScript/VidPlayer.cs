@@ -52,7 +52,7 @@ public class VidPlayer : MonoBehaviour
             {
                 watchedSeconds += Time.deltaTime;
 
-                if (watchedSeconds >= 60f && todoList != null)
+                if (watchedSeconds >= 30f && todoList != null)
                     counted = todoList.MarkWatched(videoPlayer);
             }
 
